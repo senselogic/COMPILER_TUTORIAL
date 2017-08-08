@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Shows how to translate a minimalistic Go-like imperative language to P-Code instructions, using Flex and Bison.
+Shows how to translate a minimalistic Go-like language to P-Code instructions, using Flex and Bison.
 
 ## Samples
 
