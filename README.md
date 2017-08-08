@@ -6,7 +6,7 @@ Shows how to translate a minimalistic Go-like imperative language to P-Code inst
 
 ## Samples
 
-```
+```go
 func main(
     ) : void
 {
