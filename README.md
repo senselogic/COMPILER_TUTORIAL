@@ -47,8 +47,7 @@ func main(
     write fibonacci;
 }
 ```
-
-```go
+```
 ssp 0
 ujp @program
 define @function_int_GetFibonacci_int_of_void_main
