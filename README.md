@@ -46,8 +46,8 @@ func main(
     SetFibonacci( fibonacci, 8 );
     write fibonacci;
 }
-```
-```
+
+; p-code
 ssp 0
 ujp @program
 define @function_int_GetFibonacci_int_of_void_main
