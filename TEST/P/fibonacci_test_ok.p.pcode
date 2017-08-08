@@ -1,0 +1,344 @@
+ssp 0
+ujp @program
+define @function_int_GetFibonacci_int_of_void_main
+ssp 7
+; P/fibonacci_test_ok.p(11) : if index < 2
+; index of int_GetFibonacci_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; P/fibonacci_test_ok.p(11) : <
+les i
+fjp @if_else_1
+; P/fibonacci_test_ok.p(13) : fibonacci = index ;
+; fibonacci of int_GetFibonacci_int_of_void_main
+lda i 0 6
+; index of int_GetFibonacci_int_of_void_main
+lda i 0 5
+ind i
+; P/fibonacci_test_ok.p(13) : :=
+sto i
+ujp @if_end_1
+define @if_else_1
+; P/fibonacci_test_ok.p(15) : else
+; P/fibonacci_test_ok.p(17) : fibonacci = GetFibonacci ( index - 1 ) + GetFibonacci ( index - 2 ) ;
+; fibonacci of int_GetFibonacci_int_of_void_main
+lda i 0 6
+mst 1
+; index of int_GetFibonacci_int_of_void_main
+lda i 0 5
+ind i
+; 1
+ldc i 1
+; P/fibonacci_test_ok.p(17) : -
+sub i
+cup 1 @function_int_GetFibonacci_int_of_void_main
+mst 1
+; index of int_GetFibonacci_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; P/fibonacci_test_ok.p(17) : -
+sub i
+cup 1 @function_int_GetFibonacci_int_of_void_main
+; P/fibonacci_test_ok.p(17) : +
+add i
+; P/fibonacci_test_ok.p(17) : :=
+sto i
+define @if_end_1
+; P/fibonacci_test_ok.p(20) : return fibonacci ;
+lda i 0 0
+; fibonacci of int_GetFibonacci_int_of_void_main
+lda i 0 6
+ind i
+sto i
+retf
+retf
+define @function_void_SetFibonacci_int_int_of_void_main
+ssp 7
+; P/fibonacci_test_ok.p(28) : fibonacci = GetFibonacci ( index ) ;
+; fibonacci of void_SetFibonacci_int_int_of_void_main
+lod a 0 5
+mst 1
+; index of void_SetFibonacci_int_int_of_void_main
+lda i 0 6
+ind i
+cup 1 @function_int_GetFibonacci_int_of_void_main
+; P/fibonacci_test_ok.p(28) : :=
+sto i
+retp
+define @function_void_main
+ssp 7
+; P/fibonacci_test_ok.p(35) : fibonacci = GetFibonacci ( 8 ) ;
+; fibonacci of void_main
+lda i 0 5
+mst 0
+; 8
+ldc i 8
+cup 1 @function_int_GetFibonacci_int_of_void_main
+; P/fibonacci_test_ok.p(35) : :=
+sto i
+; P/fibonacci_test_ok.p(36) : write fibonacci ;
+; fibonacci of void_main
+lda i 0 5
+ind i
+; P/fibonacci_test_ok.p(36) : write
+prin
+; P/fibonacci_test_ok.p(38) : SetFibonacci ( fibonacci , 8 ) ;
+mst 0
+; fibonacci of void_main
+lda i 0 5
+; 8
+ldc i 8
+cup 2 @function_void_SetFibonacci_int_int_of_void_main
+; P/fibonacci_test_ok.p(39) : write fibonacci ;
+; fibonacci of void_main
+lda i 0 5
+ind i
+; P/fibonacci_test_ok.p(39) : write
+prin
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; P/fibonacci_test_ok.p(1) :    Program
+; P/fibonacci_test_ok.p(1) :        FunctionDeclaration
+; P/fibonacci_test_ok.p(1) :            "func"
+; P/fibonacci_test_ok.p(1) :            FunctionName
+; P/fibonacci_test_ok.p(1) :                "main"
+; P/fibonacci_test_ok.p(1) :            "("
+; P/fibonacci_test_ok.p(2) :            FunctionParameterList
+; P/fibonacci_test_ok.p(2) :            ")"
+; P/fibonacci_test_ok.p(2) :            ":"
+; P/fibonacci_test_ok.p(2) :            FunctionType
+; P/fibonacci_test_ok.p(2) :                "void"
+; P/fibonacci_test_ok.p(3) :            "{"
+; P/fibonacci_test_ok.p(4) :            LocalDeclarationList
+; P/fibonacci_test_ok.p(4) :                LocalDeclaration
+; P/fibonacci_test_ok.p(4) :                    FunctionDeclaration
+; P/fibonacci_test_ok.p(4) :                        "func"
+; P/fibonacci_test_ok.p(4) :                        FunctionName
+; P/fibonacci_test_ok.p(4) :                            "GetFibonacci"
+; P/fibonacci_test_ok.p(4) :                        "("
+; P/fibonacci_test_ok.p(5) :                        FunctionParameterList
+; P/fibonacci_test_ok.p(5) :                            FunctionParameter
+; P/fibonacci_test_ok.p(5) :                                VariableName
+; P/fibonacci_test_ok.p(5) :                                    "index"
+; P/fibonacci_test_ok.p(5) :                                ":"
+; P/fibonacci_test_ok.p(5) :                                VariableType
+; P/fibonacci_test_ok.p(5) :                                    "int"
+; P/fibonacci_test_ok.p(6) :                        ")"
+; P/fibonacci_test_ok.p(6) :                        ":"
+; P/fibonacci_test_ok.p(6) :                        FunctionType
+; P/fibonacci_test_ok.p(6) :                            "int"
+; P/fibonacci_test_ok.p(7) :                        "{"
+; P/fibonacci_test_ok.p(8) :                        LocalDeclarationList
+; P/fibonacci_test_ok.p(8) :                            LocalDeclaration
+; P/fibonacci_test_ok.p(8) :                                VariableDeclaration
+; P/fibonacci_test_ok.p(8) :                                    "var"
+; P/fibonacci_test_ok.p(9) :                                    Variable
+; P/fibonacci_test_ok.p(9) :                                        VariableName
+; P/fibonacci_test_ok.p(9) :                                            "fibonacci"
+; P/fibonacci_test_ok.p(9) :                                        ":"
+; P/fibonacci_test_ok.p(9) :                                        VariableType
+; P/fibonacci_test_ok.p(9) :                                            "int"
+; P/fibonacci_test_ok.p(9) :                                    ";"
+; P/fibonacci_test_ok.p(11) :                       StatementList
+; P/fibonacci_test_ok.p(11) :                           Statement
+; P/fibonacci_test_ok.p(11) :                               IfStatement
+; P/fibonacci_test_ok.p(11) :                                   "if"
+; P/fibonacci_test_ok.p(11) :                                   SmallerExpression
+; P/fibonacci_test_ok.p(11) :                                       VariableExpression
+; P/fibonacci_test_ok.p(11) :                                           VariableName
+; P/fibonacci_test_ok.p(11) :                                               "index"
+; P/fibonacci_test_ok.p(12) :                                       "<"
+; P/fibonacci_test_ok.p(11) :                                       IntegerConstantExpression
+; P/fibonacci_test_ok.p(11) :                                           IntegerConstant
+; P/fibonacci_test_ok.p(11) :                                               "2"
+; P/fibonacci_test_ok.p(12) :                                   "{"
+; P/fibonacci_test_ok.p(13) :                                   StatementList
+; P/fibonacci_test_ok.p(13) :                                       Statement
+; P/fibonacci_test_ok.p(13) :                                           AssignmentStatement
+; P/fibonacci_test_ok.p(13) :                                               VariableExpression
+; P/fibonacci_test_ok.p(13) :                                                   VariableName
+; P/fibonacci_test_ok.p(13) :                                                       "fibonacci"
+; P/fibonacci_test_ok.p(13) :                                               "="
+; P/fibonacci_test_ok.p(13) :                                               VariableExpression
+; P/fibonacci_test_ok.p(13) :                                                   VariableName
+; P/fibonacci_test_ok.p(13) :                                                       "index"
+; P/fibonacci_test_ok.p(13) :                                               ";"
+; P/fibonacci_test_ok.p(14) :                                   "}"
+; P/fibonacci_test_ok.p(15) :                                   ElseStatement
+; P/fibonacci_test_ok.p(15) :                                       "else"
+; P/fibonacci_test_ok.p(16) :                                       "{"
+; P/fibonacci_test_ok.p(17) :                                       StatementList
+; P/fibonacci_test_ok.p(17) :                                           Statement
+; P/fibonacci_test_ok.p(17) :                                               AssignmentStatement
+; P/fibonacci_test_ok.p(17) :                                                   VariableExpression
+; P/fibonacci_test_ok.p(17) :                                                       VariableName
+; P/fibonacci_test_ok.p(17) :                                                           "fibonacci"
+; P/fibonacci_test_ok.p(17) :                                                   "="
+; P/fibonacci_test_ok.p(17) :                                                   PlusExpression
+; P/fibonacci_test_ok.p(17) :                                                       FunctionCallExpression
+; P/fibonacci_test_ok.p(17) :                                                           FunctionCall
+; P/fibonacci_test_ok.p(17) :                                                               FunctionName
+; P/fibonacci_test_ok.p(17) :                                                                   "GetFibonacci"
+; P/fibonacci_test_ok.p(17) :                                                               "("
+; P/fibonacci_test_ok.p(17) :                                                               FunctionArgumentList
+; P/fibonacci_test_ok.p(17) :                                                                   FunctionArgument
+; P/fibonacci_test_ok.p(17) :                                                                       MinusExpression
+; P/fibonacci_test_ok.p(17) :                                                                           VariableExpression
+; P/fibonacci_test_ok.p(17) :                                                                               VariableName
+; P/fibonacci_test_ok.p(17) :                                                                                   "index"
+; P/fibonacci_test_ok.p(17) :                                                                           "-"
+; P/fibonacci_test_ok.p(17) :                                                                           IntegerConstantExpression
+; P/fibonacci_test_ok.p(17) :                                                                               IntegerConstant
+; P/fibonacci_test_ok.p(17) :                                                                                   "1"
+; P/fibonacci_test_ok.p(17) :                                                               ")"
+; P/fibonacci_test_ok.p(17) :                                                       "+"
+; P/fibonacci_test_ok.p(17) :                                                       FunctionCallExpression
+; P/fibonacci_test_ok.p(17) :                                                           FunctionCall
+; P/fibonacci_test_ok.p(17) :                                                               FunctionName
+; P/fibonacci_test_ok.p(17) :                                                                   "GetFibonacci"
+; P/fibonacci_test_ok.p(17) :                                                               "("
+; P/fibonacci_test_ok.p(17) :                                                               FunctionArgumentList
+; P/fibonacci_test_ok.p(17) :                                                                   FunctionArgument
+; P/fibonacci_test_ok.p(17) :                                                                       MinusExpression
+; P/fibonacci_test_ok.p(17) :                                                                           VariableExpression
+; P/fibonacci_test_ok.p(17) :                                                                               VariableName
+; P/fibonacci_test_ok.p(17) :                                                                                   "index"
+; P/fibonacci_test_ok.p(17) :                                                                           "-"
+; P/fibonacci_test_ok.p(17) :                                                                           IntegerConstantExpression
+; P/fibonacci_test_ok.p(17) :                                                                               IntegerConstant
+; P/fibonacci_test_ok.p(17) :                                                                                   "2"
+; P/fibonacci_test_ok.p(17) :                                                               ")"
+; P/fibonacci_test_ok.p(17) :                                                   ";"
+; P/fibonacci_test_ok.p(18) :                                       "}"
+; P/fibonacci_test_ok.p(20) :                           Statement
+; P/fibonacci_test_ok.p(20) :                               ReturnStatement
+; P/fibonacci_test_ok.p(20) :                                   "return"
+; P/fibonacci_test_ok.p(20) :                                   VariableExpression
+; P/fibonacci_test_ok.p(20) :                                       VariableName
+; P/fibonacci_test_ok.p(20) :                                           "fibonacci"
+; P/fibonacci_test_ok.p(20) :                                   ";"
+; P/fibonacci_test_ok.p(21) :                       "}"
+; P/fibonacci_test_ok.p(23) :               LocalDeclaration
+; P/fibonacci_test_ok.p(23) :                   FunctionDeclaration
+; P/fibonacci_test_ok.p(23) :                       "func"
+; P/fibonacci_test_ok.p(23) :                       FunctionName
+; P/fibonacci_test_ok.p(23) :                           "SetFibonacci"
+; P/fibonacci_test_ok.p(23) :                       "("
+; P/fibonacci_test_ok.p(24) :                       FunctionParameterList
+; P/fibonacci_test_ok.p(24) :                           FunctionParameter
+; P/fibonacci_test_ok.p(24) :                               "ref"
+; P/fibonacci_test_ok.p(24) :                               VariableName
+; P/fibonacci_test_ok.p(24) :                                   "fibonacci"
+; P/fibonacci_test_ok.p(24) :                               ":"
+; P/fibonacci_test_ok.p(24) :                               VariableType
+; P/fibonacci_test_ok.p(24) :                                   "int"
+; P/fibonacci_test_ok.p(24) :                           ","
+; P/fibonacci_test_ok.p(25) :                           FunctionParameter
+; P/fibonacci_test_ok.p(25) :                               VariableName
+; P/fibonacci_test_ok.p(25) :                                   "index"
+; P/fibonacci_test_ok.p(25) :                               ":"
+; P/fibonacci_test_ok.p(25) :                               VariableType
+; P/fibonacci_test_ok.p(25) :                                   "int"
+; P/fibonacci_test_ok.p(26) :                       ")"
+; P/fibonacci_test_ok.p(26) :                       ":"
+; P/fibonacci_test_ok.p(26) :                       FunctionType
+; P/fibonacci_test_ok.p(26) :                           "void"
+; P/fibonacci_test_ok.p(27) :                       "{"
+; P/fibonacci_test_ok.p(28) :                       LocalDeclarationList
+; P/fibonacci_test_ok.p(28) :                       StatementList
+; P/fibonacci_test_ok.p(28) :                           Statement
+; P/fibonacci_test_ok.p(28) :                               AssignmentStatement
+; P/fibonacci_test_ok.p(28) :                                   VariableExpression
+; P/fibonacci_test_ok.p(28) :                                       VariableName
+; P/fibonacci_test_ok.p(28) :                                           "fibonacci"
+; P/fibonacci_test_ok.p(28) :                                   "="
+; P/fibonacci_test_ok.p(28) :                                   FunctionCallExpression
+; P/fibonacci_test_ok.p(28) :                                       FunctionCall
+; P/fibonacci_test_ok.p(28) :                                           FunctionName
+; P/fibonacci_test_ok.p(28) :                                               "GetFibonacci"
+; P/fibonacci_test_ok.p(28) :                                           "("
+; P/fibonacci_test_ok.p(28) :                                           FunctionArgumentList
+; P/fibonacci_test_ok.p(28) :                                               FunctionArgument
+; P/fibonacci_test_ok.p(28) :                                                   VariableExpression
+; P/fibonacci_test_ok.p(28) :                                                       VariableName
+; P/fibonacci_test_ok.p(28) :                                                           "index"
+; P/fibonacci_test_ok.p(28) :                                           ")"
+; P/fibonacci_test_ok.p(28) :                                   ";"
+; P/fibonacci_test_ok.p(29) :                       "}"
+; P/fibonacci_test_ok.p(31) :               LocalDeclaration
+; P/fibonacci_test_ok.p(31) :                   VariableDeclaration
+; P/fibonacci_test_ok.p(31) :                       "var"
+; P/fibonacci_test_ok.p(32) :                       Variable
+; P/fibonacci_test_ok.p(32) :                           VariableName
+; P/fibonacci_test_ok.p(32) :                               "fibonacci"
+; P/fibonacci_test_ok.p(32) :                           ":"
+; P/fibonacci_test_ok.p(32) :                           VariableType
+; P/fibonacci_test_ok.p(32) :                               "int"
+; P/fibonacci_test_ok.p(32) :                       ","
+; P/fibonacci_test_ok.p(33) :                       Variable
+; P/fibonacci_test_ok.p(33) :                           VariableName
+; P/fibonacci_test_ok.p(33) :                               "power"
+; P/fibonacci_test_ok.p(33) :                           ":"
+; P/fibonacci_test_ok.p(33) :                           VariableType
+; P/fibonacci_test_ok.p(33) :                               "int"
+; P/fibonacci_test_ok.p(33) :                       ";"
+; P/fibonacci_test_ok.p(35) :           StatementList
+; P/fibonacci_test_ok.p(35) :               Statement
+; P/fibonacci_test_ok.p(35) :                   AssignmentStatement
+; P/fibonacci_test_ok.p(35) :                       VariableExpression
+; P/fibonacci_test_ok.p(35) :                           VariableName
+; P/fibonacci_test_ok.p(35) :                               "fibonacci"
+; P/fibonacci_test_ok.p(35) :                       "="
+; P/fibonacci_test_ok.p(35) :                       FunctionCallExpression
+; P/fibonacci_test_ok.p(35) :                           FunctionCall
+; P/fibonacci_test_ok.p(35) :                               FunctionName
+; P/fibonacci_test_ok.p(35) :                                   "GetFibonacci"
+; P/fibonacci_test_ok.p(35) :                               "("
+; P/fibonacci_test_ok.p(35) :                               FunctionArgumentList
+; P/fibonacci_test_ok.p(35) :                                   FunctionArgument
+; P/fibonacci_test_ok.p(35) :                                       IntegerConstantExpression
+; P/fibonacci_test_ok.p(35) :                                           IntegerConstant
+; P/fibonacci_test_ok.p(35) :                                               "8"
+; P/fibonacci_test_ok.p(35) :                               ")"
+; P/fibonacci_test_ok.p(35) :                       ";"
+; P/fibonacci_test_ok.p(36) :               Statement
+; P/fibonacci_test_ok.p(36) :                   WriteStatement
+; P/fibonacci_test_ok.p(36) :                       "write"
+; P/fibonacci_test_ok.p(36) :                       VariableExpression
+; P/fibonacci_test_ok.p(36) :                           VariableName
+; P/fibonacci_test_ok.p(36) :                               "fibonacci"
+; P/fibonacci_test_ok.p(36) :                       ";"
+; P/fibonacci_test_ok.p(38) :               Statement
+; P/fibonacci_test_ok.p(38) :                   ExpressionStatement
+; P/fibonacci_test_ok.p(38) :                       FunctionCallExpression
+; P/fibonacci_test_ok.p(38) :                           FunctionCall
+; P/fibonacci_test_ok.p(38) :                               FunctionName
+; P/fibonacci_test_ok.p(38) :                                   "SetFibonacci"
+; P/fibonacci_test_ok.p(38) :                               "("
+; P/fibonacci_test_ok.p(38) :                               FunctionArgumentList
+; P/fibonacci_test_ok.p(38) :                                   FunctionArgument
+; P/fibonacci_test_ok.p(38) :                                       VariableExpression
+; P/fibonacci_test_ok.p(38) :                                           VariableName
+; P/fibonacci_test_ok.p(38) :                                               "fibonacci"
+; P/fibonacci_test_ok.p(38) :                                   ","
+; P/fibonacci_test_ok.p(38) :                                   FunctionArgument
+; P/fibonacci_test_ok.p(38) :                                       IntegerConstantExpression
+; P/fibonacci_test_ok.p(38) :                                           IntegerConstant
+; P/fibonacci_test_ok.p(38) :                                               "8"
+; P/fibonacci_test_ok.p(38) :                               ")"
+; P/fibonacci_test_ok.p(38) :                       ";"
+; P/fibonacci_test_ok.p(39) :               Statement
+; P/fibonacci_test_ok.p(39) :                   WriteStatement
+; P/fibonacci_test_ok.p(39) :                       "write"
+; P/fibonacci_test_ok.p(39) :                       VariableExpression
+; P/fibonacci_test_ok.p(39) :                           VariableName
+; P/fibonacci_test_ok.p(39) :                               "fibonacci"
+; P/fibonacci_test_ok.p(39) :                       ";"
+; P/fibonacci_test_ok.p(40) :           "}"

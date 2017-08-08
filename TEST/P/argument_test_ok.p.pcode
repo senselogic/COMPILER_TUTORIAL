@@ -1,0 +1,1167 @@
+ssp 0
+ujp @program
+define @function_int_f_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(11) : return x + y * 2 ;
+lda i 0 0
+; x of int_f_int_int_of_void_main
+lda i 0 5
+ind i
+; y of int_f_int_int_of_void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+; P/argument_test_ok.p(11) : *
+mul i
+; P/argument_test_ok.p(11) : +
+add i
+sto i
+retf
+retf
+define @function_void_p_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(19) : write x ;
+; x of void_p_int_int_of_void_main
+lda i 0 5
+ind i
+; P/argument_test_ok.p(19) : write
+prin
+; P/argument_test_ok.p(20) : write y ;
+; y of void_p_int_int_of_void_main
+lod a 0 6
+ind i
+; P/argument_test_ok.p(20) : write
+prin
+retp
+define @function_void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(38) : write 555 ;
+; 555
+ldc i 555
+; P/argument_test_ok.p(38) : write
+prin
+; P/argument_test_ok.p(39) : p ( x5 , y5 ) ;
+mst 3
+; x5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(40) : x5 = x5 + f ( x5 , y5 ) ;
+; x5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+; x5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+mst 3
+; x5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+ind i
+cup 2 @function_int_f_int_int_of_void_main
+; P/argument_test_ok.p(40) : +
+add i
+; P/argument_test_ok.p(40) : :=
+sto i
+; P/argument_test_ok.p(41) : p ( x5 , y5 ) ;
+mst 3
+; x5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y5 of void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(42) : p ( x4 , y4 ) ;
+mst 3
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 1 5
+ind i
+; y4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 1 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(43) : p ( x3 , y3 ) ;
+mst 3
+; x3 of void_p3_int_int_of_void_main
+lod a 2 5
+ind i
+; y3 of void_p3_int_int_of_void_main
+lda i 2 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(44) : write -555 ;
+; -555
+ldc i -555
+; P/argument_test_ok.p(44) : write
+prin
+retp
+define @function_void_p4_int_int_of_void_p3_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(47) : write 444 ;
+; 444
+ldc i 444
+; P/argument_test_ok.p(47) : write
+prin
+; P/argument_test_ok.p(48) : p ( x4 , y4 ) ;
+mst 2
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(49) : x4 = x4 + f ( x4 , y4 ) ;
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+mst 2
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+ind i
+cup 2 @function_int_f_int_int_of_void_main
+; P/argument_test_ok.p(49) : +
+add i
+; P/argument_test_ok.p(49) : :=
+sto i
+; P/argument_test_ok.p(50) : p5 ( x4 , y4 * 2 ) ;
+mst 0
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+; y4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+; P/argument_test_ok.p(50) : *
+mul i
+cup 2 @function_void_p5_int_int_of_void_p4_int_int_of_void_p3_int_int_of_void_main
+; P/argument_test_ok.p(51) : p ( x4 , y4 ) ;
+mst 2
+; x4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y4 of void_p4_int_int_of_void_p3_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(52) : write -444 ;
+; -444
+ldc i -444
+; P/argument_test_ok.p(52) : write
+prin
+retp
+define @function_void_p3_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(55) : write 333 ;
+; 333
+ldc i 333
+; P/argument_test_ok.p(55) : write
+prin
+; P/argument_test_ok.p(56) : p ( x3 , y3 ) ;
+mst 1
+; x3 of void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y3 of void_p3_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(57) : x3 = f ( x3 , y3 ) ;
+; x3 of void_p3_int_int_of_void_main
+lod a 0 5
+mst 1
+; x3 of void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y3 of void_p3_int_int_of_void_main
+lda i 0 6
+ind i
+cup 2 @function_int_f_int_int_of_void_main
+; P/argument_test_ok.p(57) : :=
+sto i
+; P/argument_test_ok.p(58) : p4 ( x3 , y3 * 2 ) ;
+mst 0
+; x3 of void_p3_int_int_of_void_main
+lod a 0 5
+; y3 of void_p3_int_int_of_void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+; P/argument_test_ok.p(58) : *
+mul i
+cup 2 @function_void_p4_int_int_of_void_p3_int_int_of_void_main
+; P/argument_test_ok.p(59) : p ( x3 , y3 ) ;
+mst 1
+; x3 of void_p3_int_int_of_void_main
+lod a 0 5
+ind i
+; y3 of void_p3_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(60) : write -333 ;
+; -333
+ldc i -333
+; P/argument_test_ok.p(60) : write
+prin
+retp
+define @function_void_p2_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(68) : write 222 ;
+; 222
+ldc i 222
+; P/argument_test_ok.p(68) : write
+prin
+; P/argument_test_ok.p(69) : p ( x2 , y2 ) ;
+mst 1
+; x2 of void_p2_int_int_of_void_main
+lod a 0 5
+ind i
+; y2 of void_p2_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(70) : x2 = x2 + f ( x2 , y2 ) ;
+; x2 of void_p2_int_int_of_void_main
+lod a 0 5
+; x2 of void_p2_int_int_of_void_main
+lod a 0 5
+ind i
+mst 1
+; x2 of void_p2_int_int_of_void_main
+lod a 0 5
+ind i
+; y2 of void_p2_int_int_of_void_main
+lda i 0 6
+ind i
+cup 2 @function_int_f_int_int_of_void_main
+; P/argument_test_ok.p(70) : +
+add i
+; P/argument_test_ok.p(70) : :=
+sto i
+; P/argument_test_ok.p(71) : p3 ( x2 , y2 * 2 ) ;
+mst 1
+; x2 of void_p2_int_int_of_void_main
+lod a 0 5
+; y2 of void_p2_int_int_of_void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+; P/argument_test_ok.p(71) : *
+mul i
+cup 2 @function_void_p3_int_int_of_void_main
+; P/argument_test_ok.p(72) : p ( x2 , y2 ) ;
+mst 1
+; x2 of void_p2_int_int_of_void_main
+lod a 0 5
+ind i
+; y2 of void_p2_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(73) : write -222 ;
+; -222
+ldc i -222
+; P/argument_test_ok.p(73) : write
+prin
+retp
+define @function_void_p1_int_int_of_void_main
+ssp 7
+; P/argument_test_ok.p(81) : write 111 ;
+; 111
+ldc i 111
+; P/argument_test_ok.p(81) : write
+prin
+; P/argument_test_ok.p(82) : p ( x1 , y1 ) ;
+mst 1
+; x1 of void_p1_int_int_of_void_main
+lod a 0 5
+ind i
+; y1 of void_p1_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(83) : x1 = x1 + f ( x1 , y1 ) ;
+; x1 of void_p1_int_int_of_void_main
+lod a 0 5
+; x1 of void_p1_int_int_of_void_main
+lod a 0 5
+ind i
+mst 1
+; x1 of void_p1_int_int_of_void_main
+lod a 0 5
+ind i
+; y1 of void_p1_int_int_of_void_main
+lda i 0 6
+ind i
+cup 2 @function_int_f_int_int_of_void_main
+; P/argument_test_ok.p(83) : +
+add i
+; P/argument_test_ok.p(83) : :=
+sto i
+; P/argument_test_ok.p(84) : p2 ( x1 , y1 * 2 ) ;
+mst 1
+; x1 of void_p1_int_int_of_void_main
+lod a 0 5
+; y1 of void_p1_int_int_of_void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+; P/argument_test_ok.p(84) : *
+mul i
+cup 2 @function_void_p2_int_int_of_void_main
+; P/argument_test_ok.p(85) : p ( x1 , y1 ) ;
+mst 1
+; x1 of void_p1_int_int_of_void_main
+lod a 0 5
+ind i
+; y1 of void_p1_int_int_of_void_main
+lda i 0 6
+cup 2 @function_void_p_int_int_of_void_main
+; P/argument_test_ok.p(86) : write -111 ;
+; -111
+ldc i -111
+; P/argument_test_ok.p(86) : write
+prin
+retp
+define @function_void_main
+ssp 6
+; P/argument_test_ok.p(89) : x = 1 ;
+; x of void_main
+lda i 0 5
+; 1
+ldc i 1
+; P/argument_test_ok.p(89) : :=
+sto i
+; P/argument_test_ok.p(90) : p1 ( x , 2 ) ;
+mst 0
+; x of void_main
+lda i 0 5
+; 2
+ldc i 2
+cup 2 @function_void_p1_int_int_of_void_main
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; P/argument_test_ok.p(1) :    Program
+; P/argument_test_ok.p(1) :        FunctionDeclaration
+; P/argument_test_ok.p(1) :            "func"
+; P/argument_test_ok.p(1) :            FunctionName
+; P/argument_test_ok.p(1) :                "main"
+; P/argument_test_ok.p(1) :            "("
+; P/argument_test_ok.p(1) :            FunctionParameterList
+; P/argument_test_ok.p(1) :            ")"
+; P/argument_test_ok.p(1) :            ":"
+; P/argument_test_ok.p(1) :            FunctionType
+; P/argument_test_ok.p(1) :                "void"
+; P/argument_test_ok.p(2) :            "{"
+; P/argument_test_ok.p(3) :            LocalDeclarationList
+; P/argument_test_ok.p(3) :                LocalDeclaration
+; P/argument_test_ok.p(3) :                    VariableDeclaration
+; P/argument_test_ok.p(3) :                        "var"
+; P/argument_test_ok.p(4) :                        Variable
+; P/argument_test_ok.p(4) :                            VariableName
+; P/argument_test_ok.p(4) :                                "x"
+; P/argument_test_ok.p(4) :                            ":"
+; P/argument_test_ok.p(4) :                            VariableType
+; P/argument_test_ok.p(4) :                                "int"
+; P/argument_test_ok.p(4) :                        ";"
+; P/argument_test_ok.p(6) :                LocalDeclaration
+; P/argument_test_ok.p(6) :                    FunctionDeclaration
+; P/argument_test_ok.p(6) :                        "func"
+; P/argument_test_ok.p(6) :                        FunctionName
+; P/argument_test_ok.p(6) :                            "f"
+; P/argument_test_ok.p(6) :                        "("
+; P/argument_test_ok.p(7) :                        FunctionParameterList
+; P/argument_test_ok.p(7) :                            FunctionParameter
+; P/argument_test_ok.p(7) :                                VariableName
+; P/argument_test_ok.p(7) :                                    "x"
+; P/argument_test_ok.p(7) :                                ":"
+; P/argument_test_ok.p(7) :                                VariableType
+; P/argument_test_ok.p(7) :                                    "int"
+; P/argument_test_ok.p(7) :                            ","
+; P/argument_test_ok.p(8) :                            FunctionParameter
+; P/argument_test_ok.p(8) :                                VariableName
+; P/argument_test_ok.p(8) :                                    "y"
+; P/argument_test_ok.p(8) :                                ":"
+; P/argument_test_ok.p(8) :                                VariableType
+; P/argument_test_ok.p(8) :                                    "int"
+; P/argument_test_ok.p(9) :                        ")"
+; P/argument_test_ok.p(9) :                        ":"
+; P/argument_test_ok.p(9) :                        FunctionType
+; P/argument_test_ok.p(9) :                            "int"
+; P/argument_test_ok.p(10) :                       "{"
+; P/argument_test_ok.p(11) :                       LocalDeclarationList
+; P/argument_test_ok.p(11) :                       StatementList
+; P/argument_test_ok.p(11) :                           Statement
+; P/argument_test_ok.p(11) :                               ReturnStatement
+; P/argument_test_ok.p(11) :                                   "return"
+; P/argument_test_ok.p(11) :                                   PlusExpression
+; P/argument_test_ok.p(11) :                                       VariableExpression
+; P/argument_test_ok.p(11) :                                           VariableName
+; P/argument_test_ok.p(11) :                                               "x"
+; P/argument_test_ok.p(11) :                                       "+"
+; P/argument_test_ok.p(11) :                                       StarExpression
+; P/argument_test_ok.p(11) :                                           VariableExpression
+; P/argument_test_ok.p(11) :                                               VariableName
+; P/argument_test_ok.p(11) :                                                   "y"
+; P/argument_test_ok.p(11) :                                           "*"
+; P/argument_test_ok.p(11) :                                           IntegerConstantExpression
+; P/argument_test_ok.p(11) :                                               IntegerConstant
+; P/argument_test_ok.p(11) :                                                   "2"
+; P/argument_test_ok.p(11) :                                   ";"
+; P/argument_test_ok.p(12) :                       "}"
+; P/argument_test_ok.p(14) :               LocalDeclaration
+; P/argument_test_ok.p(14) :                   FunctionDeclaration
+; P/argument_test_ok.p(14) :                       "func"
+; P/argument_test_ok.p(14) :                       FunctionName
+; P/argument_test_ok.p(14) :                           "p"
+; P/argument_test_ok.p(14) :                       "("
+; P/argument_test_ok.p(15) :                       FunctionParameterList
+; P/argument_test_ok.p(15) :                           FunctionParameter
+; P/argument_test_ok.p(15) :                               VariableName
+; P/argument_test_ok.p(15) :                                   "x"
+; P/argument_test_ok.p(15) :                               ":"
+; P/argument_test_ok.p(15) :                               VariableType
+; P/argument_test_ok.p(15) :                                   "int"
+; P/argument_test_ok.p(15) :                           ","
+; P/argument_test_ok.p(16) :                           FunctionParameter
+; P/argument_test_ok.p(16) :                               "ref"
+; P/argument_test_ok.p(16) :                               VariableName
+; P/argument_test_ok.p(16) :                                   "y"
+; P/argument_test_ok.p(16) :                               ":"
+; P/argument_test_ok.p(16) :                               VariableType
+; P/argument_test_ok.p(16) :                                   "int"
+; P/argument_test_ok.p(17) :                       ")"
+; P/argument_test_ok.p(17) :                       ":"
+; P/argument_test_ok.p(17) :                       FunctionType
+; P/argument_test_ok.p(17) :                           "void"
+; P/argument_test_ok.p(18) :                       "{"
+; P/argument_test_ok.p(19) :                       LocalDeclarationList
+; P/argument_test_ok.p(19) :                       StatementList
+; P/argument_test_ok.p(19) :                           Statement
+; P/argument_test_ok.p(19) :                               WriteStatement
+; P/argument_test_ok.p(19) :                                   "write"
+; P/argument_test_ok.p(19) :                                   VariableExpression
+; P/argument_test_ok.p(19) :                                       VariableName
+; P/argument_test_ok.p(19) :                                           "x"
+; P/argument_test_ok.p(19) :                                   ";"
+; P/argument_test_ok.p(20) :                           Statement
+; P/argument_test_ok.p(20) :                               WriteStatement
+; P/argument_test_ok.p(20) :                                   "write"
+; P/argument_test_ok.p(20) :                                   VariableExpression
+; P/argument_test_ok.p(20) :                                       VariableName
+; P/argument_test_ok.p(20) :                                           "y"
+; P/argument_test_ok.p(20) :                                   ";"
+; P/argument_test_ok.p(21) :                       "}"
+; P/argument_test_ok.p(23) :               LocalDeclaration
+; P/argument_test_ok.p(23) :                   FunctionDeclaration
+; P/argument_test_ok.p(23) :                       "func"
+; P/argument_test_ok.p(23) :                       FunctionName
+; P/argument_test_ok.p(23) :                           "p3"
+; P/argument_test_ok.p(23) :                       "("
+; P/argument_test_ok.p(24) :                       FunctionParameterList
+; P/argument_test_ok.p(24) :                           FunctionParameter
+; P/argument_test_ok.p(24) :                               "ref"
+; P/argument_test_ok.p(24) :                               VariableName
+; P/argument_test_ok.p(24) :                                   "x3"
+; P/argument_test_ok.p(24) :                               ":"
+; P/argument_test_ok.p(24) :                               VariableType
+; P/argument_test_ok.p(24) :                                   "int"
+; P/argument_test_ok.p(24) :                           ","
+; P/argument_test_ok.p(25) :                           FunctionParameter
+; P/argument_test_ok.p(25) :                               VariableName
+; P/argument_test_ok.p(25) :                                   "y3"
+; P/argument_test_ok.p(25) :                               ":"
+; P/argument_test_ok.p(25) :                               VariableType
+; P/argument_test_ok.p(25) :                                   "int"
+; P/argument_test_ok.p(26) :                       ")"
+; P/argument_test_ok.p(26) :                       ":"
+; P/argument_test_ok.p(26) :                       FunctionType
+; P/argument_test_ok.p(26) :                           "void"
+; P/argument_test_ok.p(27) :                       "{"
+; P/argument_test_ok.p(28) :                       LocalDeclarationList
+; P/argument_test_ok.p(28) :                           LocalDeclaration
+; P/argument_test_ok.p(28) :                               FunctionDeclaration
+; P/argument_test_ok.p(28) :                                   "func"
+; P/argument_test_ok.p(28) :                                   FunctionName
+; P/argument_test_ok.p(28) :                                       "p4"
+; P/argument_test_ok.p(28) :                                   "("
+; P/argument_test_ok.p(29) :                                   FunctionParameterList
+; P/argument_test_ok.p(29) :                                       FunctionParameter
+; P/argument_test_ok.p(29) :                                           "ref"
+; P/argument_test_ok.p(29) :                                           VariableName
+; P/argument_test_ok.p(29) :                                               "x4"
+; P/argument_test_ok.p(29) :                                           ":"
+; P/argument_test_ok.p(29) :                                           VariableType
+; P/argument_test_ok.p(29) :                                               "int"
+; P/argument_test_ok.p(29) :                                       ","
+; P/argument_test_ok.p(30) :                                       FunctionParameter
+; P/argument_test_ok.p(30) :                                           VariableName
+; P/argument_test_ok.p(30) :                                               "y4"
+; P/argument_test_ok.p(30) :                                           ":"
+; P/argument_test_ok.p(30) :                                           VariableType
+; P/argument_test_ok.p(30) :                                               "int"
+; P/argument_test_ok.p(31) :                                   ")"
+; P/argument_test_ok.p(31) :                                   ":"
+; P/argument_test_ok.p(31) :                                   FunctionType
+; P/argument_test_ok.p(31) :                                       "void"
+; P/argument_test_ok.p(32) :                                   "{"
+; P/argument_test_ok.p(33) :                                   LocalDeclarationList
+; P/argument_test_ok.p(33) :                                       LocalDeclaration
+; P/argument_test_ok.p(33) :                                           FunctionDeclaration
+; P/argument_test_ok.p(33) :                                               "func"
+; P/argument_test_ok.p(33) :                                               FunctionName
+; P/argument_test_ok.p(33) :                                                   "p5"
+; P/argument_test_ok.p(33) :                                               "("
+; P/argument_test_ok.p(34) :                                               FunctionParameterList
+; P/argument_test_ok.p(34) :                                                   FunctionParameter
+; P/argument_test_ok.p(34) :                                                       "ref"
+; P/argument_test_ok.p(34) :                                                       VariableName
+; P/argument_test_ok.p(34) :                                                           "x5"
+; P/argument_test_ok.p(34) :                                                       ":"
+; P/argument_test_ok.p(34) :                                                       VariableType
+; P/argument_test_ok.p(34) :                                                           "int"
+; P/argument_test_ok.p(34) :                                                   ","
+; P/argument_test_ok.p(35) :                                                   FunctionParameter
+; P/argument_test_ok.p(35) :                                                       VariableName
+; P/argument_test_ok.p(35) :                                                           "y5"
+; P/argument_test_ok.p(35) :                                                       ":"
+; P/argument_test_ok.p(35) :                                                       VariableType
+; P/argument_test_ok.p(35) :                                                           "int"
+; P/argument_test_ok.p(36) :                                               ")"
+; P/argument_test_ok.p(36) :                                               ":"
+; P/argument_test_ok.p(36) :                                               FunctionType
+; P/argument_test_ok.p(36) :                                                   "void"
+; P/argument_test_ok.p(37) :                                               "{"
+; P/argument_test_ok.p(38) :                                               LocalDeclarationList
+; P/argument_test_ok.p(38) :                                               StatementList
+; P/argument_test_ok.p(38) :                                                   Statement
+; P/argument_test_ok.p(38) :                                                       WriteStatement
+; P/argument_test_ok.p(38) :                                                           "write"
+; P/argument_test_ok.p(38) :                                                           IntegerConstantExpression
+; P/argument_test_ok.p(38) :                                                               IntegerConstant
+; P/argument_test_ok.p(38) :                                                                   "555"
+; P/argument_test_ok.p(38) :                                                           ";"
+; P/argument_test_ok.p(39) :                                                   Statement
+; P/argument_test_ok.p(39) :                                                       ExpressionStatement
+; P/argument_test_ok.p(39) :                                                           FunctionCallExpression
+; P/argument_test_ok.p(39) :                                                               FunctionCall
+; P/argument_test_ok.p(39) :                                                                   FunctionName
+; P/argument_test_ok.p(39) :                                                                       "p"
+; P/argument_test_ok.p(39) :                                                                   "("
+; P/argument_test_ok.p(39) :                                                                   FunctionArgumentList
+; P/argument_test_ok.p(39) :                                                                       FunctionArgument
+; P/argument_test_ok.p(39) :                                                                           VariableExpression
+; P/argument_test_ok.p(39) :                                                                               VariableName
+; P/argument_test_ok.p(39) :                                                                                   "x5"
+; P/argument_test_ok.p(39) :                                                                       ","
+; P/argument_test_ok.p(39) :                                                                       FunctionArgument
+; P/argument_test_ok.p(39) :                                                                           VariableExpression
+; P/argument_test_ok.p(39) :                                                                               VariableName
+; P/argument_test_ok.p(39) :                                                                                   "y5"
+; P/argument_test_ok.p(39) :                                                                   ")"
+; P/argument_test_ok.p(39) :                                                           ";"
+; P/argument_test_ok.p(40) :                                                   Statement
+; P/argument_test_ok.p(40) :                                                       AssignmentStatement
+; P/argument_test_ok.p(40) :                                                           VariableExpression
+; P/argument_test_ok.p(40) :                                                               VariableName
+; P/argument_test_ok.p(40) :                                                                   "x5"
+; P/argument_test_ok.p(40) :                                                           "="
+; P/argument_test_ok.p(40) :                                                           PlusExpression
+; P/argument_test_ok.p(40) :                                                               VariableExpression
+; P/argument_test_ok.p(40) :                                                                   VariableName
+; P/argument_test_ok.p(40) :                                                                       "x5"
+; P/argument_test_ok.p(40) :                                                               "+"
+; P/argument_test_ok.p(40) :                                                               FunctionCallExpression
+; P/argument_test_ok.p(40) :                                                                   FunctionCall
+; P/argument_test_ok.p(40) :                                                                       FunctionName
+; P/argument_test_ok.p(40) :                                                                           "f"
+; P/argument_test_ok.p(40) :                                                                       "("
+; P/argument_test_ok.p(40) :                                                                       FunctionArgumentList
+; P/argument_test_ok.p(40) :                                                                           FunctionArgument
+; P/argument_test_ok.p(40) :                                                                               VariableExpression
+; P/argument_test_ok.p(40) :                                                                                   VariableName
+; P/argument_test_ok.p(40) :                                                                                       "x5"
+; P/argument_test_ok.p(40) :                                                                           ","
+; P/argument_test_ok.p(40) :                                                                           FunctionArgument
+; P/argument_test_ok.p(40) :                                                                               VariableExpression
+; P/argument_test_ok.p(40) :                                                                                   VariableName
+; P/argument_test_ok.p(40) :                                                                                       "y5"
+; P/argument_test_ok.p(40) :                                                                       ")"
+; P/argument_test_ok.p(40) :                                                           ";"
+; P/argument_test_ok.p(41) :                                                   Statement
+; P/argument_test_ok.p(41) :                                                       ExpressionStatement
+; P/argument_test_ok.p(41) :                                                           FunctionCallExpression
+; P/argument_test_ok.p(41) :                                                               FunctionCall
+; P/argument_test_ok.p(41) :                                                                   FunctionName
+; P/argument_test_ok.p(41) :                                                                       "p"
+; P/argument_test_ok.p(41) :                                                                   "("
+; P/argument_test_ok.p(41) :                                                                   FunctionArgumentList
+; P/argument_test_ok.p(41) :                                                                       FunctionArgument
+; P/argument_test_ok.p(41) :                                                                           VariableExpression
+; P/argument_test_ok.p(41) :                                                                               VariableName
+; P/argument_test_ok.p(41) :                                                                                   "x5"
+; P/argument_test_ok.p(41) :                                                                       ","
+; P/argument_test_ok.p(41) :                                                                       FunctionArgument
+; P/argument_test_ok.p(41) :                                                                           VariableExpression
+; P/argument_test_ok.p(41) :                                                                               VariableName
+; P/argument_test_ok.p(41) :                                                                                   "y5"
+; P/argument_test_ok.p(41) :                                                                   ")"
+; P/argument_test_ok.p(41) :                                                           ";"
+; P/argument_test_ok.p(42) :                                                   Statement
+; P/argument_test_ok.p(42) :                                                       ExpressionStatement
+; P/argument_test_ok.p(42) :                                                           FunctionCallExpression
+; P/argument_test_ok.p(42) :                                                               FunctionCall
+; P/argument_test_ok.p(42) :                                                                   FunctionName
+; P/argument_test_ok.p(42) :                                                                       "p"
+; P/argument_test_ok.p(42) :                                                                   "("
+; P/argument_test_ok.p(42) :                                                                   FunctionArgumentList
+; P/argument_test_ok.p(42) :                                                                       FunctionArgument
+; P/argument_test_ok.p(42) :                                                                           VariableExpression
+; P/argument_test_ok.p(42) :                                                                               VariableName
+; P/argument_test_ok.p(42) :                                                                                   "x4"
+; P/argument_test_ok.p(42) :                                                                       ","
+; P/argument_test_ok.p(42) :                                                                       FunctionArgument
+; P/argument_test_ok.p(42) :                                                                           VariableExpression
+; P/argument_test_ok.p(42) :                                                                               VariableName
+; P/argument_test_ok.p(42) :                                                                                   "y4"
+; P/argument_test_ok.p(42) :                                                                   ")"
+; P/argument_test_ok.p(42) :                                                           ";"
+; P/argument_test_ok.p(43) :                                                   Statement
+; P/argument_test_ok.p(43) :                                                       ExpressionStatement
+; P/argument_test_ok.p(43) :                                                           FunctionCallExpression
+; P/argument_test_ok.p(43) :                                                               FunctionCall
+; P/argument_test_ok.p(43) :                                                                   FunctionName
+; P/argument_test_ok.p(43) :                                                                       "p"
+; P/argument_test_ok.p(43) :                                                                   "("
+; P/argument_test_ok.p(43) :                                                                   FunctionArgumentList
+; P/argument_test_ok.p(43) :                                                                       FunctionArgument
+; P/argument_test_ok.p(43) :                                                                           VariableExpression
+; P/argument_test_ok.p(43) :                                                                               VariableName
+; P/argument_test_ok.p(43) :                                                                                   "x3"
+; P/argument_test_ok.p(43) :                                                                       ","
+; P/argument_test_ok.p(43) :                                                                       FunctionArgument
+; P/argument_test_ok.p(43) :                                                                           VariableExpression
+; P/argument_test_ok.p(43) :                                                                               VariableName
+; P/argument_test_ok.p(43) :                                                                                   "y3"
+; P/argument_test_ok.p(43) :                                                                   ")"
+; P/argument_test_ok.p(43) :                                                           ";"
+; P/argument_test_ok.p(44) :                                                   Statement
+; P/argument_test_ok.p(44) :                                                       WriteStatement
+; P/argument_test_ok.p(44) :                                                           "write"
+; P/argument_test_ok.p(44) :                                                           IntegerConstantExpression
+; P/argument_test_ok.p(44) :                                                               IntegerConstant
+; P/argument_test_ok.p(44) :                                                                   "-555"
+; P/argument_test_ok.p(44) :                                                           ";"
+; P/argument_test_ok.p(45) :                                               "}"
+; P/argument_test_ok.p(47) :                                   StatementList
+; P/argument_test_ok.p(47) :                                       Statement
+; P/argument_test_ok.p(47) :                                           WriteStatement
+; P/argument_test_ok.p(47) :                                               "write"
+; P/argument_test_ok.p(47) :                                               IntegerConstantExpression
+; P/argument_test_ok.p(47) :                                                   IntegerConstant
+; P/argument_test_ok.p(47) :                                                       "444"
+; P/argument_test_ok.p(47) :                                               ";"
+; P/argument_test_ok.p(48) :                                       Statement
+; P/argument_test_ok.p(48) :                                           ExpressionStatement
+; P/argument_test_ok.p(48) :                                               FunctionCallExpression
+; P/argument_test_ok.p(48) :                                                   FunctionCall
+; P/argument_test_ok.p(48) :                                                       FunctionName
+; P/argument_test_ok.p(48) :                                                           "p"
+; P/argument_test_ok.p(48) :                                                       "("
+; P/argument_test_ok.p(48) :                                                       FunctionArgumentList
+; P/argument_test_ok.p(48) :                                                           FunctionArgument
+; P/argument_test_ok.p(48) :                                                               VariableExpression
+; P/argument_test_ok.p(48) :                                                                   VariableName
+; P/argument_test_ok.p(48) :                                                                       "x4"
+; P/argument_test_ok.p(48) :                                                           ","
+; P/argument_test_ok.p(48) :                                                           FunctionArgument
+; P/argument_test_ok.p(48) :                                                               VariableExpression
+; P/argument_test_ok.p(48) :                                                                   VariableName
+; P/argument_test_ok.p(48) :                                                                       "y4"
+; P/argument_test_ok.p(48) :                                                       ")"
+; P/argument_test_ok.p(48) :                                               ";"
+; P/argument_test_ok.p(49) :                                       Statement
+; P/argument_test_ok.p(49) :                                           AssignmentStatement
+; P/argument_test_ok.p(49) :                                               VariableExpression
+; P/argument_test_ok.p(49) :                                                   VariableName
+; P/argument_test_ok.p(49) :                                                       "x4"
+; P/argument_test_ok.p(49) :                                               "="
+; P/argument_test_ok.p(49) :                                               PlusExpression
+; P/argument_test_ok.p(49) :                                                   VariableExpression
+; P/argument_test_ok.p(49) :                                                       VariableName
+; P/argument_test_ok.p(49) :                                                           "x4"
+; P/argument_test_ok.p(49) :                                                   "+"
+; P/argument_test_ok.p(49) :                                                   FunctionCallExpression
+; P/argument_test_ok.p(49) :                                                       FunctionCall
+; P/argument_test_ok.p(49) :                                                           FunctionName
+; P/argument_test_ok.p(49) :                                                               "f"
+; P/argument_test_ok.p(49) :                                                           "("
+; P/argument_test_ok.p(49) :                                                           FunctionArgumentList
+; P/argument_test_ok.p(49) :                                                               FunctionArgument
+; P/argument_test_ok.p(49) :                                                                   VariableExpression
+; P/argument_test_ok.p(49) :                                                                       VariableName
+; P/argument_test_ok.p(49) :                                                                           "x4"
+; P/argument_test_ok.p(49) :                                                               ","
+; P/argument_test_ok.p(49) :                                                               FunctionArgument
+; P/argument_test_ok.p(49) :                                                                   VariableExpression
+; P/argument_test_ok.p(49) :                                                                       VariableName
+; P/argument_test_ok.p(49) :                                                                           "y4"
+; P/argument_test_ok.p(49) :                                                           ")"
+; P/argument_test_ok.p(49) :                                               ";"
+; P/argument_test_ok.p(50) :                                       Statement
+; P/argument_test_ok.p(50) :                                           ExpressionStatement
+; P/argument_test_ok.p(50) :                                               FunctionCallExpression
+; P/argument_test_ok.p(50) :                                                   FunctionCall
+; P/argument_test_ok.p(50) :                                                       FunctionName
+; P/argument_test_ok.p(50) :                                                           "p5"
+; P/argument_test_ok.p(50) :                                                       "("
+; P/argument_test_ok.p(50) :                                                       FunctionArgumentList
+; P/argument_test_ok.p(50) :                                                           FunctionArgument
+; P/argument_test_ok.p(50) :                                                               VariableExpression
+; P/argument_test_ok.p(50) :                                                                   VariableName
+; P/argument_test_ok.p(50) :                                                                       "x4"
+; P/argument_test_ok.p(50) :                                                           ","
+; P/argument_test_ok.p(50) :                                                           FunctionArgument
+; P/argument_test_ok.p(50) :                                                               StarExpression
+; P/argument_test_ok.p(50) :                                                                   VariableExpression
+; P/argument_test_ok.p(50) :                                                                       VariableName
+; P/argument_test_ok.p(50) :                                                                           "y4"
+; P/argument_test_ok.p(50) :                                                                   "*"
+; P/argument_test_ok.p(50) :                                                                   IntegerConstantExpression
+; P/argument_test_ok.p(50) :                                                                       IntegerConstant
+; P/argument_test_ok.p(50) :                                                                           "2"
+; P/argument_test_ok.p(50) :                                                       ")"
+; P/argument_test_ok.p(50) :                                               ";"
+; P/argument_test_ok.p(51) :                                       Statement
+; P/argument_test_ok.p(51) :                                           ExpressionStatement
+; P/argument_test_ok.p(51) :                                               FunctionCallExpression
+; P/argument_test_ok.p(51) :                                                   FunctionCall
+; P/argument_test_ok.p(51) :                                                       FunctionName
+; P/argument_test_ok.p(51) :                                                           "p"
+; P/argument_test_ok.p(51) :                                                       "("
+; P/argument_test_ok.p(51) :                                                       FunctionArgumentList
+; P/argument_test_ok.p(51) :                                                           FunctionArgument
+; P/argument_test_ok.p(51) :                                                               VariableExpression
+; P/argument_test_ok.p(51) :                                                                   VariableName
+; P/argument_test_ok.p(51) :                                                                       "x4"
+; P/argument_test_ok.p(51) :                                                           ","
+; P/argument_test_ok.p(51) :                                                           FunctionArgument
+; P/argument_test_ok.p(51) :                                                               VariableExpression
+; P/argument_test_ok.p(51) :                                                                   VariableName
+; P/argument_test_ok.p(51) :                                                                       "y4"
+; P/argument_test_ok.p(51) :                                                       ")"
+; P/argument_test_ok.p(51) :                                               ";"
+; P/argument_test_ok.p(52) :                                       Statement
+; P/argument_test_ok.p(52) :                                           WriteStatement
+; P/argument_test_ok.p(52) :                                               "write"
+; P/argument_test_ok.p(52) :                                               IntegerConstantExpression
+; P/argument_test_ok.p(52) :                                                   IntegerConstant
+; P/argument_test_ok.p(52) :                                                       "-444"
+; P/argument_test_ok.p(52) :                                               ";"
+; P/argument_test_ok.p(53) :                                   "}"
+; P/argument_test_ok.p(55) :                       StatementList
+; P/argument_test_ok.p(55) :                           Statement
+; P/argument_test_ok.p(55) :                               WriteStatement
+; P/argument_test_ok.p(55) :                                   "write"
+; P/argument_test_ok.p(55) :                                   IntegerConstantExpression
+; P/argument_test_ok.p(55) :                                       IntegerConstant
+; P/argument_test_ok.p(55) :                                           "333"
+; P/argument_test_ok.p(55) :                                   ";"
+; P/argument_test_ok.p(56) :                           Statement
+; P/argument_test_ok.p(56) :                               ExpressionStatement
+; P/argument_test_ok.p(56) :                                   FunctionCallExpression
+; P/argument_test_ok.p(56) :                                       FunctionCall
+; P/argument_test_ok.p(56) :                                           FunctionName
+; P/argument_test_ok.p(56) :                                               "p"
+; P/argument_test_ok.p(56) :                                           "("
+; P/argument_test_ok.p(56) :                                           FunctionArgumentList
+; P/argument_test_ok.p(56) :                                               FunctionArgument
+; P/argument_test_ok.p(56) :                                                   VariableExpression
+; P/argument_test_ok.p(56) :                                                       VariableName
+; P/argument_test_ok.p(56) :                                                           "x3"
+; P/argument_test_ok.p(56) :                                               ","
+; P/argument_test_ok.p(56) :                                               FunctionArgument
+; P/argument_test_ok.p(56) :                                                   VariableExpression
+; P/argument_test_ok.p(56) :                                                       VariableName
+; P/argument_test_ok.p(56) :                                                           "y3"
+; P/argument_test_ok.p(56) :                                           ")"
+; P/argument_test_ok.p(56) :                                   ";"
+; P/argument_test_ok.p(57) :                           Statement
+; P/argument_test_ok.p(57) :                               AssignmentStatement
+; P/argument_test_ok.p(57) :                                   VariableExpression
+; P/argument_test_ok.p(57) :                                       VariableName
+; P/argument_test_ok.p(57) :                                           "x3"
+; P/argument_test_ok.p(57) :                                   "="
+; P/argument_test_ok.p(57) :                                   FunctionCallExpression
+; P/argument_test_ok.p(57) :                                       FunctionCall
+; P/argument_test_ok.p(57) :                                           FunctionName
+; P/argument_test_ok.p(57) :                                               "f"
+; P/argument_test_ok.p(57) :                                           "("
+; P/argument_test_ok.p(57) :                                           FunctionArgumentList
+; P/argument_test_ok.p(57) :                                               FunctionArgument
+; P/argument_test_ok.p(57) :                                                   VariableExpression
+; P/argument_test_ok.p(57) :                                                       VariableName
+; P/argument_test_ok.p(57) :                                                           "x3"
+; P/argument_test_ok.p(57) :                                               ","
+; P/argument_test_ok.p(57) :                                               FunctionArgument
+; P/argument_test_ok.p(57) :                                                   VariableExpression
+; P/argument_test_ok.p(57) :                                                       VariableName
+; P/argument_test_ok.p(57) :                                                           "y3"
+; P/argument_test_ok.p(57) :                                           ")"
+; P/argument_test_ok.p(57) :                                   ";"
+; P/argument_test_ok.p(58) :                           Statement
+; P/argument_test_ok.p(58) :                               ExpressionStatement
+; P/argument_test_ok.p(58) :                                   FunctionCallExpression
+; P/argument_test_ok.p(58) :                                       FunctionCall
+; P/argument_test_ok.p(58) :                                           FunctionName
+; P/argument_test_ok.p(58) :                                               "p4"
+; P/argument_test_ok.p(58) :                                           "("
+; P/argument_test_ok.p(58) :                                           FunctionArgumentList
+; P/argument_test_ok.p(58) :                                               FunctionArgument
+; P/argument_test_ok.p(58) :                                                   VariableExpression
+; P/argument_test_ok.p(58) :                                                       VariableName
+; P/argument_test_ok.p(58) :                                                           "x3"
+; P/argument_test_ok.p(58) :                                               ","
+; P/argument_test_ok.p(58) :                                               FunctionArgument
+; P/argument_test_ok.p(58) :                                                   StarExpression
+; P/argument_test_ok.p(58) :                                                       VariableExpression
+; P/argument_test_ok.p(58) :                                                           VariableName
+; P/argument_test_ok.p(58) :                                                               "y3"
+; P/argument_test_ok.p(58) :                                                       "*"
+; P/argument_test_ok.p(58) :                                                       IntegerConstantExpression
+; P/argument_test_ok.p(58) :                                                           IntegerConstant
+; P/argument_test_ok.p(58) :                                                               "2"
+; P/argument_test_ok.p(58) :                                           ")"
+; P/argument_test_ok.p(58) :                                   ";"
+; P/argument_test_ok.p(59) :                           Statement
+; P/argument_test_ok.p(59) :                               ExpressionStatement
+; P/argument_test_ok.p(59) :                                   FunctionCallExpression
+; P/argument_test_ok.p(59) :                                       FunctionCall
+; P/argument_test_ok.p(59) :                                           FunctionName
+; P/argument_test_ok.p(59) :                                               "p"
+; P/argument_test_ok.p(59) :                                           "("
+; P/argument_test_ok.p(59) :                                           FunctionArgumentList
+; P/argument_test_ok.p(59) :                                               FunctionArgument
+; P/argument_test_ok.p(59) :                                                   VariableExpression
+; P/argument_test_ok.p(59) :                                                       VariableName
+; P/argument_test_ok.p(59) :                                                           "x3"
+; P/argument_test_ok.p(59) :                                               ","
+; P/argument_test_ok.p(59) :                                               FunctionArgument
+; P/argument_test_ok.p(59) :                                                   VariableExpression
+; P/argument_test_ok.p(59) :                                                       VariableName
+; P/argument_test_ok.p(59) :                                                           "y3"
+; P/argument_test_ok.p(59) :                                           ")"
+; P/argument_test_ok.p(59) :                                   ";"
+; P/argument_test_ok.p(60) :                           Statement
+; P/argument_test_ok.p(60) :                               WriteStatement
+; P/argument_test_ok.p(60) :                                   "write"
+; P/argument_test_ok.p(60) :                                   IntegerConstantExpression
+; P/argument_test_ok.p(60) :                                       IntegerConstant
+; P/argument_test_ok.p(60) :                                           "-333"
+; P/argument_test_ok.p(60) :                                   ";"
+; P/argument_test_ok.p(61) :                       "}"
+; P/argument_test_ok.p(63) :               LocalDeclaration
+; P/argument_test_ok.p(63) :                   FunctionDeclaration
+; P/argument_test_ok.p(63) :                       "func"
+; P/argument_test_ok.p(63) :                       FunctionName
+; P/argument_test_ok.p(63) :                           "p2"
+; P/argument_test_ok.p(63) :                       "("
+; P/argument_test_ok.p(64) :                       FunctionParameterList
+; P/argument_test_ok.p(64) :                           FunctionParameter
+; P/argument_test_ok.p(64) :                               "ref"
+; P/argument_test_ok.p(64) :                               VariableName
+; P/argument_test_ok.p(64) :                                   "x2"
+; P/argument_test_ok.p(64) :                               ":"
+; P/argument_test_ok.p(64) :                               VariableType
+; P/argument_test_ok.p(64) :                                   "int"
+; P/argument_test_ok.p(64) :                           ","
+; P/argument_test_ok.p(65) :                           FunctionParameter
+; P/argument_test_ok.p(65) :                               VariableName
+; P/argument_test_ok.p(65) :                                   "y2"
+; P/argument_test_ok.p(65) :                               ":"
+; P/argument_test_ok.p(65) :                               VariableType
+; P/argument_test_ok.p(65) :                                   "int"
+; P/argument_test_ok.p(66) :                       ")"
+; P/argument_test_ok.p(66) :                       ":"
+; P/argument_test_ok.p(66) :                       FunctionType
+; P/argument_test_ok.p(66) :                           "void"
+; P/argument_test_ok.p(67) :                       "{"
+; P/argument_test_ok.p(68) :                       LocalDeclarationList
+; P/argument_test_ok.p(68) :                       StatementList
+; P/argument_test_ok.p(68) :                           Statement
+; P/argument_test_ok.p(68) :                               WriteStatement
+; P/argument_test_ok.p(68) :                                   "write"
+; P/argument_test_ok.p(68) :                                   IntegerConstantExpression
+; P/argument_test_ok.p(68) :                                       IntegerConstant
+; P/argument_test_ok.p(68) :                                           "222"
+; P/argument_test_ok.p(68) :                                   ";"
+; P/argument_test_ok.p(69) :                           Statement
+; P/argument_test_ok.p(69) :                               ExpressionStatement
+; P/argument_test_ok.p(69) :                                   FunctionCallExpression
+; P/argument_test_ok.p(69) :                                       FunctionCall
+; P/argument_test_ok.p(69) :                                           FunctionName
+; P/argument_test_ok.p(69) :                                               "p"
+; P/argument_test_ok.p(69) :                                           "("
+; P/argument_test_ok.p(69) :                                           FunctionArgumentList
+; P/argument_test_ok.p(69) :                                               FunctionArgument
+; P/argument_test_ok.p(69) :                                                   VariableExpression
+; P/argument_test_ok.p(69) :                                                       VariableName
+; P/argument_test_ok.p(69) :                                                           "x2"
+; P/argument_test_ok.p(69) :                                               ","
+; P/argument_test_ok.p(69) :                                               FunctionArgument
+; P/argument_test_ok.p(69) :                                                   VariableExpression
+; P/argument_test_ok.p(69) :                                                       VariableName
+; P/argument_test_ok.p(69) :                                                           "y2"
+; P/argument_test_ok.p(69) :                                           ")"
+; P/argument_test_ok.p(69) :                                   ";"
+; P/argument_test_ok.p(70) :                           Statement
+; P/argument_test_ok.p(70) :                               AssignmentStatement
+; P/argument_test_ok.p(70) :                                   VariableExpression
+; P/argument_test_ok.p(70) :                                       VariableName
+; P/argument_test_ok.p(70) :                                           "x2"
+; P/argument_test_ok.p(70) :                                   "="
+; P/argument_test_ok.p(70) :                                   PlusExpression
+; P/argument_test_ok.p(70) :                                       VariableExpression
+; P/argument_test_ok.p(70) :                                           VariableName
+; P/argument_test_ok.p(70) :                                               "x2"
+; P/argument_test_ok.p(70) :                                       "+"
+; P/argument_test_ok.p(70) :                                       FunctionCallExpression
+; P/argument_test_ok.p(70) :                                           FunctionCall
+; P/argument_test_ok.p(70) :                                               FunctionName
+; P/argument_test_ok.p(70) :                                                   "f"
+; P/argument_test_ok.p(70) :                                               "("
+; P/argument_test_ok.p(70) :                                               FunctionArgumentList
+; P/argument_test_ok.p(70) :                                                   FunctionArgument
+; P/argument_test_ok.p(70) :                                                       VariableExpression
+; P/argument_test_ok.p(70) :                                                           VariableName
+; P/argument_test_ok.p(70) :                                                               "x2"
+; P/argument_test_ok.p(70) :                                                   ","
+; P/argument_test_ok.p(70) :                                                   FunctionArgument
+; P/argument_test_ok.p(70) :                                                       VariableExpression
+; P/argument_test_ok.p(70) :                                                           VariableName
+; P/argument_test_ok.p(70) :                                                               "y2"
+; P/argument_test_ok.p(70) :                                               ")"
+; P/argument_test_ok.p(70) :                                   ";"
+; P/argument_test_ok.p(71) :                           Statement
+; P/argument_test_ok.p(71) :                               ExpressionStatement
+; P/argument_test_ok.p(71) :                                   FunctionCallExpression
+; P/argument_test_ok.p(71) :                                       FunctionCall
+; P/argument_test_ok.p(71) :                                           FunctionName
+; P/argument_test_ok.p(71) :                                               "p3"
+; P/argument_test_ok.p(71) :                                           "("
+; P/argument_test_ok.p(71) :                                           FunctionArgumentList
+; P/argument_test_ok.p(71) :                                               FunctionArgument
+; P/argument_test_ok.p(71) :                                                   VariableExpression
+; P/argument_test_ok.p(71) :                                                       VariableName
+; P/argument_test_ok.p(71) :                                                           "x2"
+; P/argument_test_ok.p(71) :                                               ","
+; P/argument_test_ok.p(71) :                                               FunctionArgument
+; P/argument_test_ok.p(71) :                                                   StarExpression
+; P/argument_test_ok.p(71) :                                                       VariableExpression
+; P/argument_test_ok.p(71) :                                                           VariableName
+; P/argument_test_ok.p(71) :                                                               "y2"
+; P/argument_test_ok.p(71) :                                                       "*"
+; P/argument_test_ok.p(71) :                                                       IntegerConstantExpression
+; P/argument_test_ok.p(71) :                                                           IntegerConstant
+; P/argument_test_ok.p(71) :                                                               "2"
+; P/argument_test_ok.p(71) :                                           ")"
+; P/argument_test_ok.p(71) :                                   ";"
+; P/argument_test_ok.p(72) :                           Statement
+; P/argument_test_ok.p(72) :                               ExpressionStatement
+; P/argument_test_ok.p(72) :                                   FunctionCallExpression
+; P/argument_test_ok.p(72) :                                       FunctionCall
+; P/argument_test_ok.p(72) :                                           FunctionName
+; P/argument_test_ok.p(72) :                                               "p"
+; P/argument_test_ok.p(72) :                                           "("
+; P/argument_test_ok.p(72) :                                           FunctionArgumentList
+; P/argument_test_ok.p(72) :                                               FunctionArgument
+; P/argument_test_ok.p(72) :                                                   VariableExpression
+; P/argument_test_ok.p(72) :                                                       VariableName
+; P/argument_test_ok.p(72) :                                                           "x2"
+; P/argument_test_ok.p(72) :                                               ","
+; P/argument_test_ok.p(72) :                                               FunctionArgument
+; P/argument_test_ok.p(72) :                                                   VariableExpression
+; P/argument_test_ok.p(72) :                                                       VariableName
+; P/argument_test_ok.p(72) :                                                           "y2"
+; P/argument_test_ok.p(72) :                                           ")"
+; P/argument_test_ok.p(72) :                                   ";"
+; P/argument_test_ok.p(73) :                           Statement
+; P/argument_test_ok.p(73) :                               WriteStatement
+; P/argument_test_ok.p(73) :                                   "write"
+; P/argument_test_ok.p(73) :                                   IntegerConstantExpression
+; P/argument_test_ok.p(73) :                                       IntegerConstant
+; P/argument_test_ok.p(73) :                                           "-222"
+; P/argument_test_ok.p(73) :                                   ";"
+; P/argument_test_ok.p(74) :                       "}"
+; P/argument_test_ok.p(76) :               LocalDeclaration
+; P/argument_test_ok.p(76) :                   FunctionDeclaration
+; P/argument_test_ok.p(76) :                       "func"
+; P/argument_test_ok.p(76) :                       FunctionName
+; P/argument_test_ok.p(76) :                           "p1"
+; P/argument_test_ok.p(76) :                       "("
+; P/argument_test_ok.p(77) :                       FunctionParameterList
+; P/argument_test_ok.p(77) :                           FunctionParameter
+; P/argument_test_ok.p(77) :                               "ref"
+; P/argument_test_ok.p(77) :                               VariableName
+; P/argument_test_ok.p(77) :                                   "x1"
+; P/argument_test_ok.p(77) :                               ":"
+; P/argument_test_ok.p(77) :                               VariableType
+; P/argument_test_ok.p(77) :                                   "int"
+; P/argument_test_ok.p(77) :                           ","
+; P/argument_test_ok.p(78) :                           FunctionParameter
+; P/argument_test_ok.p(78) :                               VariableName
+; P/argument_test_ok.p(78) :                                   "y1"
+; P/argument_test_ok.p(78) :                               ":"
+; P/argument_test_ok.p(78) :                               VariableType
+; P/argument_test_ok.p(78) :                                   "int"
+; P/argument_test_ok.p(79) :                       ")"
+; P/argument_test_ok.p(79) :                       ":"
+; P/argument_test_ok.p(79) :                       FunctionType
+; P/argument_test_ok.p(79) :                           "void"
+; P/argument_test_ok.p(80) :                       "{"
+; P/argument_test_ok.p(81) :                       LocalDeclarationList
+; P/argument_test_ok.p(81) :                       StatementList
+; P/argument_test_ok.p(81) :                           Statement
+; P/argument_test_ok.p(81) :                               WriteStatement
+; P/argument_test_ok.p(81) :                                   "write"
+; P/argument_test_ok.p(81) :                                   IntegerConstantExpression
+; P/argument_test_ok.p(81) :                                       IntegerConstant
+; P/argument_test_ok.p(81) :                                           "111"
+; P/argument_test_ok.p(81) :                                   ";"
+; P/argument_test_ok.p(82) :                           Statement
+; P/argument_test_ok.p(82) :                               ExpressionStatement
+; P/argument_test_ok.p(82) :                                   FunctionCallExpression
+; P/argument_test_ok.p(82) :                                       FunctionCall
+; P/argument_test_ok.p(82) :                                           FunctionName
+; P/argument_test_ok.p(82) :                                               "p"
+; P/argument_test_ok.p(82) :                                           "("
+; P/argument_test_ok.p(82) :                                           FunctionArgumentList
+; P/argument_test_ok.p(82) :                                               FunctionArgument
+; P/argument_test_ok.p(82) :                                                   VariableExpression
+; P/argument_test_ok.p(82) :                                                       VariableName
+; P/argument_test_ok.p(82) :                                                           "x1"
+; P/argument_test_ok.p(82) :                                               ","
+; P/argument_test_ok.p(82) :                                               FunctionArgument
+; P/argument_test_ok.p(82) :                                                   VariableExpression
+; P/argument_test_ok.p(82) :                                                       VariableName
+; P/argument_test_ok.p(82) :                                                           "y1"
+; P/argument_test_ok.p(82) :                                           ")"
+; P/argument_test_ok.p(82) :                                   ";"
+; P/argument_test_ok.p(83) :                           Statement
+; P/argument_test_ok.p(83) :                               AssignmentStatement
+; P/argument_test_ok.p(83) :                                   VariableExpression
+; P/argument_test_ok.p(83) :                                       VariableName
+; P/argument_test_ok.p(83) :                                           "x1"
+; P/argument_test_ok.p(83) :                                   "="
+; P/argument_test_ok.p(83) :                                   PlusExpression
+; P/argument_test_ok.p(83) :                                       VariableExpression
+; P/argument_test_ok.p(83) :                                           VariableName
+; P/argument_test_ok.p(83) :                                               "x1"
+; P/argument_test_ok.p(83) :                                       "+"
+; P/argument_test_ok.p(83) :                                       FunctionCallExpression
+; P/argument_test_ok.p(83) :                                           FunctionCall
+; P/argument_test_ok.p(83) :                                               FunctionName
+; P/argument_test_ok.p(83) :                                                   "f"
+; P/argument_test_ok.p(83) :                                               "("
+; P/argument_test_ok.p(83) :                                               FunctionArgumentList
+; P/argument_test_ok.p(83) :                                                   FunctionArgument
+; P/argument_test_ok.p(83) :                                                       VariableExpression
+; P/argument_test_ok.p(83) :                                                           VariableName
+; P/argument_test_ok.p(83) :                                                               "x1"
+; P/argument_test_ok.p(83) :                                                   ","
+; P/argument_test_ok.p(83) :                                                   FunctionArgument
+; P/argument_test_ok.p(83) :                                                       VariableExpression
+; P/argument_test_ok.p(83) :                                                           VariableName
+; P/argument_test_ok.p(83) :                                                               "y1"
+; P/argument_test_ok.p(83) :                                               ")"
+; P/argument_test_ok.p(83) :                                   ";"
+; P/argument_test_ok.p(84) :                           Statement
+; P/argument_test_ok.p(84) :                               ExpressionStatement
+; P/argument_test_ok.p(84) :                                   FunctionCallExpression
+; P/argument_test_ok.p(84) :                                       FunctionCall
+; P/argument_test_ok.p(84) :                                           FunctionName
+; P/argument_test_ok.p(84) :                                               "p2"
+; P/argument_test_ok.p(84) :                                           "("
+; P/argument_test_ok.p(84) :                                           FunctionArgumentList
+; P/argument_test_ok.p(84) :                                               FunctionArgument
+; P/argument_test_ok.p(84) :                                                   VariableExpression
+; P/argument_test_ok.p(84) :                                                       VariableName
+; P/argument_test_ok.p(84) :                                                           "x1"
+; P/argument_test_ok.p(84) :                                               ","
+; P/argument_test_ok.p(84) :                                               FunctionArgument
+; P/argument_test_ok.p(84) :                                                   StarExpression
+; P/argument_test_ok.p(84) :                                                       VariableExpression
+; P/argument_test_ok.p(84) :                                                           VariableName
+; P/argument_test_ok.p(84) :                                                               "y1"
+; P/argument_test_ok.p(84) :                                                       "*"
+; P/argument_test_ok.p(84) :                                                       IntegerConstantExpression
+; P/argument_test_ok.p(84) :                                                           IntegerConstant
+; P/argument_test_ok.p(84) :                                                               "2"
+; P/argument_test_ok.p(84) :                                           ")"
+; P/argument_test_ok.p(84) :                                   ";"
+; P/argument_test_ok.p(85) :                           Statement
+; P/argument_test_ok.p(85) :                               ExpressionStatement
+; P/argument_test_ok.p(85) :                                   FunctionCallExpression
+; P/argument_test_ok.p(85) :                                       FunctionCall
+; P/argument_test_ok.p(85) :                                           FunctionName
+; P/argument_test_ok.p(85) :                                               "p"
+; P/argument_test_ok.p(85) :                                           "("
+; P/argument_test_ok.p(85) :                                           FunctionArgumentList
+; P/argument_test_ok.p(85) :                                               FunctionArgument
+; P/argument_test_ok.p(85) :                                                   VariableExpression
+; P/argument_test_ok.p(85) :                                                       VariableName
+; P/argument_test_ok.p(85) :                                                           "x1"
+; P/argument_test_ok.p(85) :                                               ","
+; P/argument_test_ok.p(85) :                                               FunctionArgument
+; P/argument_test_ok.p(85) :                                                   VariableExpression
+; P/argument_test_ok.p(85) :                                                       VariableName
+; P/argument_test_ok.p(85) :                                                           "y1"
+; P/argument_test_ok.p(85) :                                           ")"
+; P/argument_test_ok.p(85) :                                   ";"
+; P/argument_test_ok.p(86) :                           Statement
+; P/argument_test_ok.p(86) :                               WriteStatement
+; P/argument_test_ok.p(86) :                                   "write"
+; P/argument_test_ok.p(86) :                                   IntegerConstantExpression
+; P/argument_test_ok.p(86) :                                       IntegerConstant
+; P/argument_test_ok.p(86) :                                           "-111"
+; P/argument_test_ok.p(86) :                                   ";"
+; P/argument_test_ok.p(87) :                       "}"
+; P/argument_test_ok.p(89) :           StatementList
+; P/argument_test_ok.p(89) :               Statement
+; P/argument_test_ok.p(89) :                   AssignmentStatement
+; P/argument_test_ok.p(89) :                       VariableExpression
+; P/argument_test_ok.p(89) :                           VariableName
+; P/argument_test_ok.p(89) :                               "x"
+; P/argument_test_ok.p(89) :                       "="
+; P/argument_test_ok.p(89) :                       IntegerConstantExpression
+; P/argument_test_ok.p(89) :                           IntegerConstant
+; P/argument_test_ok.p(89) :                               "1"
+; P/argument_test_ok.p(89) :                       ";"
+; P/argument_test_ok.p(90) :               Statement
+; P/argument_test_ok.p(90) :                   ExpressionStatement
+; P/argument_test_ok.p(90) :                       FunctionCallExpression
+; P/argument_test_ok.p(90) :                           FunctionCall
+; P/argument_test_ok.p(90) :                               FunctionName
+; P/argument_test_ok.p(90) :                                   "p1"
+; P/argument_test_ok.p(90) :                               "("
+; P/argument_test_ok.p(90) :                               FunctionArgumentList
+; P/argument_test_ok.p(90) :                                   FunctionArgument
+; P/argument_test_ok.p(90) :                                       VariableExpression
+; P/argument_test_ok.p(90) :                                           VariableName
+; P/argument_test_ok.p(90) :                                               "x"
+; P/argument_test_ok.p(90) :                                   ","
+; P/argument_test_ok.p(90) :                                   FunctionArgument
+; P/argument_test_ok.p(90) :                                       IntegerConstantExpression
+; P/argument_test_ok.p(90) :                                           IntegerConstant
+; P/argument_test_ok.p(90) :                                               "2"
+; P/argument_test_ok.p(90) :                               ")"
+; P/argument_test_ok.p(90) :                       ";"
+; P/argument_test_ok.p(91) :           "}"

@@ -1,0 +1,1528 @@
+ssp 0
+ujp @program
+define @function_int_f_int_of_int_f_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(11) : if true
+; true
+ldc b 1
+fjp @if_else_1
+; P/variable_test_2_ok.p(13) : a = b ;
+; a of int_f_int_of_void_main
+lda i 1 5
+; b of int_f_int_of_int_f_int_of_void_main
+lda i 0 5
+ind i
+; P/variable_test_2_ok.p(13) : :=
+sto i
+ujp @if_end_1
+define @if_else_1
+; P/variable_test_2_ok.p(15) : else
+; P/variable_test_2_ok.p(17) : if true
+; true
+ldc b 1
+fjp @if_else_2
+; P/variable_test_2_ok.p(19) : return 2 ;
+lda i 0 0
+; 2
+ldc i 2
+sto i
+retf
+ujp @if_end_2
+define @if_else_2
+define @if_end_2
+; P/variable_test_2_ok.p(22) : b = 0 ;
+; b of int_f_int_of_int_f_int_of_void_main
+lda i 0 5
+; 0
+ldc i 0
+; P/variable_test_2_ok.p(22) : :=
+sto i
+; P/variable_test_2_ok.p(24) : if a < 3
+; a of int_f_int_of_void_main
+lda i 1 5
+ind i
+; 3
+ldc i 3
+; P/variable_test_2_ok.p(24) : <
+les i
+fjp @if_else_3
+; P/variable_test_2_ok.p(26) : return 3 ;
+lda i 0 0
+; 3
+ldc i 3
+sto i
+retf
+ujp @if_end_3
+define @if_else_3
+define @if_end_3
+define @if_end_1
+retf
+define @function_int_f_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(31) : if f ( 1 ) == 1
+mst 0
+; 1
+ldc i 1
+cup 1 @function_int_f_int_of_int_f_int_of_void_main
+; 1
+ldc i 1
+; P/variable_test_2_ok.p(31) : =
+equ i
+fjp @if_else_4
+; P/variable_test_2_ok.p(33) : write 1 ;
+; 1
+ldc i 1
+; P/variable_test_2_ok.p(33) : write
+prin
+ujp @if_end_4
+define @if_else_4
+define @if_end_4
+; P/variable_test_2_ok.p(36) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_g_int_of_int_g_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(47) : if true
+; true
+ldc b 1
+fjp @if_else_5
+; P/variable_test_2_ok.p(49) : a = b ;
+; a of int_g_int_of_void_main
+lda i 1 5
+; b of int_g_int_of_int_g_int_of_void_main
+lda i 0 5
+ind i
+; P/variable_test_2_ok.p(49) : :=
+sto i
+ujp @if_end_5
+define @if_else_5
+; P/variable_test_2_ok.p(51) : else
+; P/variable_test_2_ok.p(53) : if true
+; true
+ldc b 1
+fjp @if_else_6
+; P/variable_test_2_ok.p(55) : return 2 ;
+lda i 0 0
+; 2
+ldc i 2
+sto i
+retf
+ujp @if_end_6
+define @if_else_6
+define @if_end_6
+; P/variable_test_2_ok.p(58) : b = 0 ;
+; b of int_g_int_of_int_g_int_of_void_main
+lda i 0 5
+; 0
+ldc i 0
+; P/variable_test_2_ok.p(58) : :=
+sto i
+; P/variable_test_2_ok.p(60) : if a < 3
+; a of int_g_int_of_void_main
+lda i 1 5
+ind i
+; 3
+ldc i 3
+; P/variable_test_2_ok.p(60) : <
+les i
+fjp @if_else_7
+; P/variable_test_2_ok.p(62) : return 3 ;
+lda i 0 0
+; 3
+ldc i 3
+sto i
+retf
+ujp @if_end_7
+define @if_else_7
+define @if_end_7
+define @if_end_5
+retf
+define @function_int_g_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(67) : if g ( 1 ) == 1
+mst 0
+; 1
+ldc i 1
+cup 1 @function_int_g_int_of_int_g_int_of_void_main
+; 1
+ldc i 1
+; P/variable_test_2_ok.p(67) : =
+equ i
+fjp @if_else_8
+; P/variable_test_2_ok.p(69) : write 1 ;
+; 1
+ldc i 1
+; P/variable_test_2_ok.p(69) : write
+prin
+ujp @if_end_8
+define @if_else_8
+define @if_end_8
+; P/variable_test_2_ok.p(72) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_h_int_of_int_h_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(83) : if true
+; true
+ldc b 1
+fjp @if_else_9
+; P/variable_test_2_ok.p(85) : a = b ;
+; a of int_h_int_of_void_main
+lda i 1 5
+; b of int_h_int_of_int_h_int_of_void_main
+lda i 0 5
+ind i
+; P/variable_test_2_ok.p(85) : :=
+sto i
+ujp @if_end_9
+define @if_else_9
+; P/variable_test_2_ok.p(87) : else
+; P/variable_test_2_ok.p(89) : if b < 2
+; b of int_h_int_of_int_h_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; P/variable_test_2_ok.p(89) : <
+les i
+fjp @if_else_10
+; P/variable_test_2_ok.p(91) : return a ;
+lda i 0 0
+; a of int_h_int_of_void_main
+lda i 1 5
+ind i
+sto i
+retf
+ujp @if_end_10
+define @if_else_10
+define @if_end_10
+; P/variable_test_2_ok.p(94) : if a < 3
+; a of int_h_int_of_void_main
+lda i 1 5
+ind i
+; 3
+ldc i 3
+; P/variable_test_2_ok.p(94) : <
+les i
+fjp @if_else_11
+; P/variable_test_2_ok.p(96) : return 3 ;
+lda i 0 0
+; 3
+ldc i 3
+sto i
+retf
+ujp @if_end_11
+define @if_else_11
+define @if_end_11
+define @if_end_9
+; P/variable_test_2_ok.p(100) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_h_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(103) : if h ( 1 ) == 1
+mst 0
+; 1
+ldc i 1
+cup 1 @function_int_h_int_of_int_h_int_of_void_main
+; 1
+ldc i 1
+; P/variable_test_2_ok.p(103) : =
+equ i
+fjp @if_else_12
+; P/variable_test_2_ok.p(105) : return 1 ;
+lda i 0 0
+; 1
+ldc i 1
+sto i
+retf
+ujp @if_end_12
+define @if_else_12
+define @if_end_12
+; P/variable_test_2_ok.p(108) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_i_int_of_int_i_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(119) : if true
+; true
+ldc b 1
+fjp @if_else_13
+; P/variable_test_2_ok.p(121) : a = b ;
+; a of int_i_int_of_void_main
+lda i 1 5
+; b of int_i_int_of_int_i_int_of_void_main
+lda i 0 5
+ind i
+; P/variable_test_2_ok.p(121) : :=
+sto i
+ujp @if_end_13
+define @if_else_13
+; P/variable_test_2_ok.p(123) : else
+; P/variable_test_2_ok.p(125) : if b < 2
+; b of int_i_int_of_int_i_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; P/variable_test_2_ok.p(125) : <
+les i
+fjp @if_else_14
+; P/variable_test_2_ok.p(127) : return a ;
+lda i 0 0
+; a of int_i_int_of_void_main
+lda i 1 5
+ind i
+sto i
+retf
+ujp @if_end_14
+define @if_else_14
+define @if_end_14
+; P/variable_test_2_ok.p(130) : if a < 3
+; a of int_i_int_of_void_main
+lda i 1 5
+ind i
+; 3
+ldc i 3
+; P/variable_test_2_ok.p(130) : <
+les i
+fjp @if_else_15
+; P/variable_test_2_ok.p(132) : return 3 ;
+lda i 0 0
+; 3
+ldc i 3
+sto i
+retf
+ujp @if_end_15
+define @if_else_15
+define @if_end_15
+define @if_end_13
+; P/variable_test_2_ok.p(136) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_i_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(139) : if true
+; true
+ldc b 1
+fjp @if_else_16
+; P/variable_test_2_ok.p(141) : return i ( 1 ) ;
+lda i 0 0
+mst 0
+; 1
+ldc i 1
+cup 1 @function_int_i_int_of_int_i_int_of_void_main
+sto i
+retf
+ujp @if_end_16
+define @if_else_16
+define @if_end_16
+; P/variable_test_2_ok.p(144) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_j_int_of_int_j_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(155) : if true
+; true
+ldc b 1
+fjp @if_else_17
+; P/variable_test_2_ok.p(157) : a = b ;
+; a of int_j_int_of_void_main
+lda i 1 5
+; b of int_j_int_of_int_j_int_of_void_main
+lda i 0 5
+ind i
+; P/variable_test_2_ok.p(157) : :=
+sto i
+ujp @if_end_17
+define @if_else_17
+; P/variable_test_2_ok.p(159) : else
+; P/variable_test_2_ok.p(161) : if b < 2
+; b of int_j_int_of_int_j_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; P/variable_test_2_ok.p(161) : <
+les i
+fjp @if_else_18
+; P/variable_test_2_ok.p(163) : return a ;
+lda i 0 0
+; a of int_j_int_of_void_main
+lda i 1 5
+ind i
+sto i
+retf
+ujp @if_end_18
+define @if_else_18
+define @if_end_18
+; P/variable_test_2_ok.p(166) : if a < 3
+; a of int_j_int_of_void_main
+lda i 1 5
+ind i
+; 3
+ldc i 3
+; P/variable_test_2_ok.p(166) : <
+les i
+fjp @if_else_19
+; P/variable_test_2_ok.p(168) : return 3 ;
+lda i 0 0
+; 3
+ldc i 3
+sto i
+retf
+ujp @if_end_19
+define @if_else_19
+define @if_end_19
+define @if_end_17
+; P/variable_test_2_ok.p(172) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_j_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(175) : if true
+; true
+ldc b 1
+fjp @if_else_20
+; P/variable_test_2_ok.p(177) : return j ( 1 ) ;
+lda i 0 0
+mst 0
+; 1
+ldc i 1
+cup 1 @function_int_j_int_of_int_j_int_of_void_main
+sto i
+retf
+ujp @if_end_20
+define @if_else_20
+define @if_end_20
+; P/variable_test_2_ok.p(180) : a = 0 ;
+; a of int_j_int_of_void_main
+lda i 0 5
+; 0
+ldc i 0
+; P/variable_test_2_ok.p(180) : :=
+sto i
+; P/variable_test_2_ok.p(182) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_k_int_of_int_k_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(193) : if true
+; true
+ldc b 1
+fjp @if_else_21
+; P/variable_test_2_ok.p(195) : return b ;
+lda i 0 0
+; b of int_k_int_of_int_k_int_of_void_main
+lda i 0 5
+ind i
+sto i
+retf
+ujp @if_end_21
+define @if_else_21
+; P/variable_test_2_ok.p(197) : else
+; P/variable_test_2_ok.p(199) : if true
+; true
+ldc b 1
+fjp @if_else_22
+; P/variable_test_2_ok.p(201) : return b ;
+lda i 0 0
+; b of int_k_int_of_int_k_int_of_void_main
+lda i 0 5
+ind i
+sto i
+retf
+ujp @if_end_22
+define @if_else_22
+define @if_end_22
+; P/variable_test_2_ok.p(204) : if a < 3
+; a of int_k_int_of_void_main
+lda i 1 5
+ind i
+; 3
+ldc i 3
+; P/variable_test_2_ok.p(204) : <
+les i
+fjp @if_else_23
+; P/variable_test_2_ok.p(206) : return 3 ;
+lda i 0 0
+; 3
+ldc i 3
+sto i
+retf
+ujp @if_end_23
+define @if_else_23
+define @if_end_23
+define @if_end_21
+; P/variable_test_2_ok.p(210) : b = 0 ;
+; b of int_k_int_of_int_k_int_of_void_main
+lda i 0 5
+; 0
+ldc i 0
+; P/variable_test_2_ok.p(210) : :=
+sto i
+; P/variable_test_2_ok.p(212) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_int_k_int_of_void_main
+ssp 6
+; P/variable_test_2_ok.p(215) : if k ( 1 ) == 1
+mst 0
+; 1
+ldc i 1
+cup 1 @function_int_k_int_of_int_k_int_of_void_main
+; 1
+ldc i 1
+; P/variable_test_2_ok.p(215) : =
+equ i
+fjp @if_else_24
+; P/variable_test_2_ok.p(217) : return 1 ;
+lda i 0 0
+; 1
+ldc i 1
+sto i
+retf
+ujp @if_end_24
+define @if_else_24
+define @if_end_24
+; P/variable_test_2_ok.p(220) : return 0 ;
+lda i 0 0
+; 0
+ldc i 0
+sto i
+retf
+retf
+define @function_void_main
+ssp 7
+; P/variable_test_2_ok.p(227) : x = f ( x + 2 ) ;
+; x of void_main
+lda i 0 5
+mst 0
+; x of void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; P/variable_test_2_ok.p(227) : +
+add i
+cup 1 @function_int_f_int_of_void_main
+; P/variable_test_2_ok.p(227) : :=
+sto i
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; P/variable_test_2_ok.p(1) :    Program
+; P/variable_test_2_ok.p(1) :        FunctionDeclaration
+; P/variable_test_2_ok.p(1) :            "func"
+; P/variable_test_2_ok.p(1) :            FunctionName
+; P/variable_test_2_ok.p(1) :                "main"
+; P/variable_test_2_ok.p(1) :            "("
+; P/variable_test_2_ok.p(1) :            FunctionParameterList
+; P/variable_test_2_ok.p(1) :            ")"
+; P/variable_test_2_ok.p(1) :            ":"
+; P/variable_test_2_ok.p(1) :            FunctionType
+; P/variable_test_2_ok.p(1) :                "void"
+; P/variable_test_2_ok.p(2) :            "{"
+; P/variable_test_2_ok.p(3) :            LocalDeclarationList
+; P/variable_test_2_ok.p(3) :                LocalDeclaration
+; P/variable_test_2_ok.p(3) :                    FunctionDeclaration
+; P/variable_test_2_ok.p(3) :                        "func"
+; P/variable_test_2_ok.p(3) :                        FunctionName
+; P/variable_test_2_ok.p(3) :                            "f"
+; P/variable_test_2_ok.p(3) :                        "("
+; P/variable_test_2_ok.p(4) :                        FunctionParameterList
+; P/variable_test_2_ok.p(4) :                            FunctionParameter
+; P/variable_test_2_ok.p(4) :                                VariableName
+; P/variable_test_2_ok.p(4) :                                    "a"
+; P/variable_test_2_ok.p(4) :                                ":"
+; P/variable_test_2_ok.p(4) :                                VariableType
+; P/variable_test_2_ok.p(4) :                                    "int"
+; P/variable_test_2_ok.p(5) :                        ")"
+; P/variable_test_2_ok.p(5) :                        ":"
+; P/variable_test_2_ok.p(5) :                        FunctionType
+; P/variable_test_2_ok.p(5) :                            "int"
+; P/variable_test_2_ok.p(6) :                        "{"
+; P/variable_test_2_ok.p(7) :                        LocalDeclarationList
+; P/variable_test_2_ok.p(7) :                            LocalDeclaration
+; P/variable_test_2_ok.p(7) :                                FunctionDeclaration
+; P/variable_test_2_ok.p(7) :                                    "func"
+; P/variable_test_2_ok.p(7) :                                    FunctionName
+; P/variable_test_2_ok.p(7) :                                        "f"
+; P/variable_test_2_ok.p(7) :                                    "("
+; P/variable_test_2_ok.p(8) :                                    FunctionParameterList
+; P/variable_test_2_ok.p(8) :                                        FunctionParameter
+; P/variable_test_2_ok.p(8) :                                            VariableName
+; P/variable_test_2_ok.p(8) :                                                "b"
+; P/variable_test_2_ok.p(8) :                                            ":"
+; P/variable_test_2_ok.p(8) :                                            VariableType
+; P/variable_test_2_ok.p(8) :                                                "int"
+; P/variable_test_2_ok.p(9) :                                    ")"
+; P/variable_test_2_ok.p(9) :                                    ":"
+; P/variable_test_2_ok.p(9) :                                    FunctionType
+; P/variable_test_2_ok.p(9) :                                        "int"
+; P/variable_test_2_ok.p(10) :                                   "{"
+; P/variable_test_2_ok.p(11) :                                   LocalDeclarationList
+; P/variable_test_2_ok.p(11) :                                   StatementList
+; P/variable_test_2_ok.p(11) :                                       Statement
+; P/variable_test_2_ok.p(11) :                                           IfStatement
+; P/variable_test_2_ok.p(11) :                                               "if"
+; P/variable_test_2_ok.p(11) :                                               BooleanConstantExpression
+; P/variable_test_2_ok.p(11) :                                                   BooleanConstant
+; P/variable_test_2_ok.p(11) :                                                       "true"
+; P/variable_test_2_ok.p(12) :                                               "{"
+; P/variable_test_2_ok.p(13) :                                               StatementList
+; P/variable_test_2_ok.p(13) :                                                   Statement
+; P/variable_test_2_ok.p(13) :                                                       AssignmentStatement
+; P/variable_test_2_ok.p(13) :                                                           VariableExpression
+; P/variable_test_2_ok.p(13) :                                                               VariableName
+; P/variable_test_2_ok.p(13) :                                                                   "a"
+; P/variable_test_2_ok.p(13) :                                                           "="
+; P/variable_test_2_ok.p(13) :                                                           VariableExpression
+; P/variable_test_2_ok.p(13) :                                                               VariableName
+; P/variable_test_2_ok.p(13) :                                                                   "b"
+; P/variable_test_2_ok.p(13) :                                                           ";"
+; P/variable_test_2_ok.p(14) :                                               "}"
+; P/variable_test_2_ok.p(15) :                                               ElseStatement
+; P/variable_test_2_ok.p(15) :                                                   "else"
+; P/variable_test_2_ok.p(16) :                                                   "{"
+; P/variable_test_2_ok.p(17) :                                                   StatementList
+; P/variable_test_2_ok.p(17) :                                                       Statement
+; P/variable_test_2_ok.p(17) :                                                           IfStatement
+; P/variable_test_2_ok.p(17) :                                                               "if"
+; P/variable_test_2_ok.p(17) :                                                               BooleanConstantExpression
+; P/variable_test_2_ok.p(17) :                                                                   BooleanConstant
+; P/variable_test_2_ok.p(17) :                                                                       "true"
+; P/variable_test_2_ok.p(18) :                                                               "{"
+; P/variable_test_2_ok.p(19) :                                                               StatementList
+; P/variable_test_2_ok.p(19) :                                                                   Statement
+; P/variable_test_2_ok.p(19) :                                                                       ReturnStatement
+; P/variable_test_2_ok.p(19) :                                                                           "return"
+; P/variable_test_2_ok.p(19) :                                                                           IntegerConstantExpression
+; P/variable_test_2_ok.p(19) :                                                                               IntegerConstant
+; P/variable_test_2_ok.p(19) :                                                                                   "2"
+; P/variable_test_2_ok.p(19) :                                                                           ";"
+; P/variable_test_2_ok.p(20) :                                                               "}"
+; P/variable_test_2_ok.p(22) :                                                               ElseStatement
+; P/variable_test_2_ok.p(22) :                                                       Statement
+; P/variable_test_2_ok.p(22) :                                                           AssignmentStatement
+; P/variable_test_2_ok.p(22) :                                                               VariableExpression
+; P/variable_test_2_ok.p(22) :                                                                   VariableName
+; P/variable_test_2_ok.p(22) :                                                                       "b"
+; P/variable_test_2_ok.p(22) :                                                               "="
+; P/variable_test_2_ok.p(22) :                                                               IntegerConstantExpression
+; P/variable_test_2_ok.p(22) :                                                                   IntegerConstant
+; P/variable_test_2_ok.p(22) :                                                                       "0"
+; P/variable_test_2_ok.p(22) :                                                               ";"
+; P/variable_test_2_ok.p(24) :                                                       Statement
+; P/variable_test_2_ok.p(24) :                                                           IfStatement
+; P/variable_test_2_ok.p(24) :                                                               "if"
+; P/variable_test_2_ok.p(24) :                                                               SmallerExpression
+; P/variable_test_2_ok.p(24) :                                                                   VariableExpression
+; P/variable_test_2_ok.p(24) :                                                                       VariableName
+; P/variable_test_2_ok.p(24) :                                                                           "a"
+; P/variable_test_2_ok.p(25) :                                                                   "<"
+; P/variable_test_2_ok.p(24) :                                                                   IntegerConstantExpression
+; P/variable_test_2_ok.p(24) :                                                                       IntegerConstant
+; P/variable_test_2_ok.p(24) :                                                                           "3"
+; P/variable_test_2_ok.p(25) :                                                               "{"
+; P/variable_test_2_ok.p(26) :                                                               StatementList
+; P/variable_test_2_ok.p(26) :                                                                   Statement
+; P/variable_test_2_ok.p(26) :                                                                       ReturnStatement
+; P/variable_test_2_ok.p(26) :                                                                           "return"
+; P/variable_test_2_ok.p(26) :                                                                           IntegerConstantExpression
+; P/variable_test_2_ok.p(26) :                                                                               IntegerConstant
+; P/variable_test_2_ok.p(26) :                                                                                   "3"
+; P/variable_test_2_ok.p(26) :                                                                           ";"
+; P/variable_test_2_ok.p(27) :                                                               "}"
+; P/variable_test_2_ok.p(28) :                                                               ElseStatement
+; P/variable_test_2_ok.p(28) :                                                   "}"
+; P/variable_test_2_ok.p(29) :                                   "}"
+; P/variable_test_2_ok.p(31) :                       StatementList
+; P/variable_test_2_ok.p(31) :                           Statement
+; P/variable_test_2_ok.p(31) :                               IfStatement
+; P/variable_test_2_ok.p(31) :                                   "if"
+; P/variable_test_2_ok.p(31) :                                   EqualExpression
+; P/variable_test_2_ok.p(31) :                                       FunctionCallExpression
+; P/variable_test_2_ok.p(31) :                                           FunctionCall
+; P/variable_test_2_ok.p(31) :                                               FunctionName
+; P/variable_test_2_ok.p(31) :                                                   "f"
+; P/variable_test_2_ok.p(31) :                                               "("
+; P/variable_test_2_ok.p(31) :                                               FunctionArgumentList
+; P/variable_test_2_ok.p(31) :                                                   FunctionArgument
+; P/variable_test_2_ok.p(31) :                                                       IntegerConstantExpression
+; P/variable_test_2_ok.p(31) :                                                           IntegerConstant
+; P/variable_test_2_ok.p(31) :                                                               "1"
+; P/variable_test_2_ok.p(31) :                                               ")"
+; P/variable_test_2_ok.p(32) :                                       "=="
+; P/variable_test_2_ok.p(31) :                                       IntegerConstantExpression
+; P/variable_test_2_ok.p(31) :                                           IntegerConstant
+; P/variable_test_2_ok.p(31) :                                               "1"
+; P/variable_test_2_ok.p(32) :                                   "{"
+; P/variable_test_2_ok.p(33) :                                   StatementList
+; P/variable_test_2_ok.p(33) :                                       Statement
+; P/variable_test_2_ok.p(33) :                                           WriteStatement
+; P/variable_test_2_ok.p(33) :                                               "write"
+; P/variable_test_2_ok.p(33) :                                               IntegerConstantExpression
+; P/variable_test_2_ok.p(33) :                                                   IntegerConstant
+; P/variable_test_2_ok.p(33) :                                                       "1"
+; P/variable_test_2_ok.p(33) :                                               ";"
+; P/variable_test_2_ok.p(34) :                                   "}"
+; P/variable_test_2_ok.p(36) :                                   ElseStatement
+; P/variable_test_2_ok.p(36) :                           Statement
+; P/variable_test_2_ok.p(36) :                               ReturnStatement
+; P/variable_test_2_ok.p(36) :                                   "return"
+; P/variable_test_2_ok.p(36) :                                   IntegerConstantExpression
+; P/variable_test_2_ok.p(36) :                                       IntegerConstant
+; P/variable_test_2_ok.p(36) :                                           "0"
+; P/variable_test_2_ok.p(36) :                                   ";"
+; P/variable_test_2_ok.p(37) :                       "}"
+; P/variable_test_2_ok.p(39) :               LocalDeclaration
+; P/variable_test_2_ok.p(39) :                   FunctionDeclaration
+; P/variable_test_2_ok.p(39) :                       "func"
+; P/variable_test_2_ok.p(39) :                       FunctionName
+; P/variable_test_2_ok.p(39) :                           "g"
+; P/variable_test_2_ok.p(39) :                       "("
+; P/variable_test_2_ok.p(40) :                       FunctionParameterList
+; P/variable_test_2_ok.p(40) :                           FunctionParameter
+; P/variable_test_2_ok.p(40) :                               VariableName
+; P/variable_test_2_ok.p(40) :                                   "a"
+; P/variable_test_2_ok.p(40) :                               ":"
+; P/variable_test_2_ok.p(40) :                               VariableType
+; P/variable_test_2_ok.p(40) :                                   "int"
+; P/variable_test_2_ok.p(41) :                       ")"
+; P/variable_test_2_ok.p(41) :                       ":"
+; P/variable_test_2_ok.p(41) :                       FunctionType
+; P/variable_test_2_ok.p(41) :                           "int"
+; P/variable_test_2_ok.p(42) :                       "{"
+; P/variable_test_2_ok.p(43) :                       LocalDeclarationList
+; P/variable_test_2_ok.p(43) :                           LocalDeclaration
+; P/variable_test_2_ok.p(43) :                               FunctionDeclaration
+; P/variable_test_2_ok.p(43) :                                   "func"
+; P/variable_test_2_ok.p(43) :                                   FunctionName
+; P/variable_test_2_ok.p(43) :                                       "g"
+; P/variable_test_2_ok.p(43) :                                   "("
+; P/variable_test_2_ok.p(44) :                                   FunctionParameterList
+; P/variable_test_2_ok.p(44) :                                       FunctionParameter
+; P/variable_test_2_ok.p(44) :                                           VariableName
+; P/variable_test_2_ok.p(44) :                                               "b"
+; P/variable_test_2_ok.p(44) :                                           ":"
+; P/variable_test_2_ok.p(44) :                                           VariableType
+; P/variable_test_2_ok.p(44) :                                               "int"
+; P/variable_test_2_ok.p(45) :                                   ")"
+; P/variable_test_2_ok.p(45) :                                   ":"
+; P/variable_test_2_ok.p(45) :                                   FunctionType
+; P/variable_test_2_ok.p(45) :                                       "int"
+; P/variable_test_2_ok.p(46) :                                   "{"
+; P/variable_test_2_ok.p(47) :                                   LocalDeclarationList
+; P/variable_test_2_ok.p(47) :                                   StatementList
+; P/variable_test_2_ok.p(47) :                                       Statement
+; P/variable_test_2_ok.p(47) :                                           IfStatement
+; P/variable_test_2_ok.p(47) :                                               "if"
+; P/variable_test_2_ok.p(47) :                                               BooleanConstantExpression
+; P/variable_test_2_ok.p(47) :                                                   BooleanConstant
+; P/variable_test_2_ok.p(47) :                                                       "true"
+; P/variable_test_2_ok.p(48) :                                               "{"
+; P/variable_test_2_ok.p(49) :                                               StatementList
+; P/variable_test_2_ok.p(49) :                                                   Statement
+; P/variable_test_2_ok.p(49) :                                                       AssignmentStatement
+; P/variable_test_2_ok.p(49) :                                                           VariableExpression
+; P/variable_test_2_ok.p(49) :                                                               VariableName
+; P/variable_test_2_ok.p(49) :                                                                   "a"
+; P/variable_test_2_ok.p(49) :                                                           "="
+; P/variable_test_2_ok.p(49) :                                                           VariableExpression
+; P/variable_test_2_ok.p(49) :                                                               VariableName
+; P/variable_test_2_ok.p(49) :                                                                   "b"
+; P/variable_test_2_ok.p(49) :                                                           ";"
+; P/variable_test_2_ok.p(50) :                                               "}"
+; P/variable_test_2_ok.p(51) :                                               ElseStatement
+; P/variable_test_2_ok.p(51) :                                                   "else"
+; P/variable_test_2_ok.p(52) :                                                   "{"
+; P/variable_test_2_ok.p(53) :                                                   StatementList
+; P/variable_test_2_ok.p(53) :                                                       Statement
+; P/variable_test_2_ok.p(53) :                                                           IfStatement
+; P/variable_test_2_ok.p(53) :                                                               "if"
+; P/variable_test_2_ok.p(53) :                                                               BooleanConstantExpression
+; P/variable_test_2_ok.p(53) :                                                                   BooleanConstant
+; P/variable_test_2_ok.p(53) :                                                                       "true"
+; P/variable_test_2_ok.p(54) :                                                               "{"
+; P/variable_test_2_ok.p(55) :                                                               StatementList
+; P/variable_test_2_ok.p(55) :                                                                   Statement
+; P/variable_test_2_ok.p(55) :                                                                       ReturnStatement
+; P/variable_test_2_ok.p(55) :                                                                           "return"
+; P/variable_test_2_ok.p(55) :                                                                           IntegerConstantExpression
+; P/variable_test_2_ok.p(55) :                                                                               IntegerConstant
+; P/variable_test_2_ok.p(55) :                                                                                   "2"
+; P/variable_test_2_ok.p(55) :                                                                           ";"
+; P/variable_test_2_ok.p(56) :                                                               "}"
+; P/variable_test_2_ok.p(58) :                                                               ElseStatement
+; P/variable_test_2_ok.p(58) :                                                       Statement
+; P/variable_test_2_ok.p(58) :                                                           AssignmentStatement
+; P/variable_test_2_ok.p(58) :                                                               VariableExpression
+; P/variable_test_2_ok.p(58) :                                                                   VariableName
+; P/variable_test_2_ok.p(58) :                                                                       "b"
+; P/variable_test_2_ok.p(58) :                                                               "="
+; P/variable_test_2_ok.p(58) :                                                               IntegerConstantExpression
+; P/variable_test_2_ok.p(58) :                                                                   IntegerConstant
+; P/variable_test_2_ok.p(58) :                                                                       "0"
+; P/variable_test_2_ok.p(58) :                                                               ";"
+; P/variable_test_2_ok.p(60) :                                                       Statement
+; P/variable_test_2_ok.p(60) :                                                           IfStatement
+; P/variable_test_2_ok.p(60) :                                                               "if"
+; P/variable_test_2_ok.p(60) :                                                               SmallerExpression
+; P/variable_test_2_ok.p(60) :                                                                   VariableExpression
+; P/variable_test_2_ok.p(60) :                                                                       VariableName
+; P/variable_test_2_ok.p(60) :                                                                           "a"
+; P/variable_test_2_ok.p(61) :                                                                   "<"
+; P/variable_test_2_ok.p(60) :                                                                   IntegerConstantExpression
+; P/variable_test_2_ok.p(60) :                                                                       IntegerConstant
+; P/variable_test_2_ok.p(60) :                                                                           "3"
+; P/variable_test_2_ok.p(61) :                                                               "{"
+; P/variable_test_2_ok.p(62) :                                                               StatementList
+; P/variable_test_2_ok.p(62) :                                                                   Statement
+; P/variable_test_2_ok.p(62) :                                                                       ReturnStatement
+; P/variable_test_2_ok.p(62) :                                                                           "return"
+; P/variable_test_2_ok.p(62) :                                                                           IntegerConstantExpression
+; P/variable_test_2_ok.p(62) :                                                                               IntegerConstant
+; P/variable_test_2_ok.p(62) :                                                                                   "3"
+; P/variable_test_2_ok.p(62) :                                                                           ";"
+; P/variable_test_2_ok.p(63) :                                                               "}"
+; P/variable_test_2_ok.p(64) :                                                               ElseStatement
+; P/variable_test_2_ok.p(64) :                                                   "}"
+; P/variable_test_2_ok.p(65) :                                   "}"
+; P/variable_test_2_ok.p(67) :                       StatementList
+; P/variable_test_2_ok.p(67) :                           Statement
+; P/variable_test_2_ok.p(67) :                               IfStatement
+; P/variable_test_2_ok.p(67) :                                   "if"
+; P/variable_test_2_ok.p(67) :                                   EqualExpression
+; P/variable_test_2_ok.p(67) :                                       FunctionCallExpression
+; P/variable_test_2_ok.p(67) :                                           FunctionCall
+; P/variable_test_2_ok.p(67) :                                               FunctionName
+; P/variable_test_2_ok.p(67) :                                                   "g"
+; P/variable_test_2_ok.p(67) :                                               "("
+; P/variable_test_2_ok.p(67) :                                               FunctionArgumentList
+; P/variable_test_2_ok.p(67) :                                                   FunctionArgument
+; P/variable_test_2_ok.p(67) :                                                       IntegerConstantExpression
+; P/variable_test_2_ok.p(67) :                                                           IntegerConstant
+; P/variable_test_2_ok.p(67) :                                                               "1"
+; P/variable_test_2_ok.p(67) :                                               ")"
+; P/variable_test_2_ok.p(68) :                                       "=="
+; P/variable_test_2_ok.p(67) :                                       IntegerConstantExpression
+; P/variable_test_2_ok.p(67) :                                           IntegerConstant
+; P/variable_test_2_ok.p(67) :                                               "1"
+; P/variable_test_2_ok.p(68) :                                   "{"
+; P/variable_test_2_ok.p(69) :                                   StatementList
+; P/variable_test_2_ok.p(69) :                                       Statement
+; P/variable_test_2_ok.p(69) :                                           WriteStatement
+; P/variable_test_2_ok.p(69) :                                               "write"
+; P/variable_test_2_ok.p(69) :                                               IntegerConstantExpression
+; P/variable_test_2_ok.p(69) :                                                   IntegerConstant
+; P/variable_test_2_ok.p(69) :                                                       "1"
+; P/variable_test_2_ok.p(69) :                                               ";"
+; P/variable_test_2_ok.p(70) :                                   "}"
+; P/variable_test_2_ok.p(72) :                                   ElseStatement
+; P/variable_test_2_ok.p(72) :                           Statement
+; P/variable_test_2_ok.p(72) :                               ReturnStatement
+; P/variable_test_2_ok.p(72) :                                   "return"
+; P/variable_test_2_ok.p(72) :                                   IntegerConstantExpression
+; P/variable_test_2_ok.p(72) :                                       IntegerConstant
+; P/variable_test_2_ok.p(72) :                                           "0"
+; P/variable_test_2_ok.p(72) :                                   ";"
+; P/variable_test_2_ok.p(73) :                       "}"
+; P/variable_test_2_ok.p(75) :               LocalDeclaration
+; P/variable_test_2_ok.p(75) :                   FunctionDeclaration
+; P/variable_test_2_ok.p(75) :                       "func"
+; P/variable_test_2_ok.p(75) :                       FunctionName
+; P/variable_test_2_ok.p(75) :                           "h"
+; P/variable_test_2_ok.p(75) :                       "("
+; P/variable_test_2_ok.p(76) :                       FunctionParameterList
+; P/variable_test_2_ok.p(76) :                           FunctionParameter
+; P/variable_test_2_ok.p(76) :                               VariableName
+; P/variable_test_2_ok.p(76) :                                   "a"
+; P/variable_test_2_ok.p(76) :                               ":"
+; P/variable_test_2_ok.p(76) :                               VariableType
+; P/variable_test_2_ok.p(76) :                                   "int"
+; P/variable_test_2_ok.p(77) :                       ")"
+; P/variable_test_2_ok.p(77) :                       ":"
+; P/variable_test_2_ok.p(77) :                       FunctionType
+; P/variable_test_2_ok.p(77) :                           "int"
+; P/variable_test_2_ok.p(78) :                       "{"
+; P/variable_test_2_ok.p(79) :                       LocalDeclarationList
+; P/variable_test_2_ok.p(79) :                           LocalDeclaration
+; P/variable_test_2_ok.p(79) :                               FunctionDeclaration
+; P/variable_test_2_ok.p(79) :                                   "func"
+; P/variable_test_2_ok.p(79) :                                   FunctionName
+; P/variable_test_2_ok.p(79) :                                       "h"
+; P/variable_test_2_ok.p(79) :                                   "("
+; P/variable_test_2_ok.p(80) :                                   FunctionParameterList
+; P/variable_test_2_ok.p(80) :                                       FunctionParameter
+; P/variable_test_2_ok.p(80) :                                           VariableName
+; P/variable_test_2_ok.p(80) :                                               "b"
+; P/variable_test_2_ok.p(80) :                                           ":"
+; P/variable_test_2_ok.p(80) :                                           VariableType
+; P/variable_test_2_ok.p(80) :                                               "int"
+; P/variable_test_2_ok.p(81) :                                   ")"
+; P/variable_test_2_ok.p(81) :                                   ":"
+; P/variable_test_2_ok.p(81) :                                   FunctionType
+; P/variable_test_2_ok.p(81) :                                       "int"
+; P/variable_test_2_ok.p(82) :                                   "{"
+; P/variable_test_2_ok.p(83) :                                   LocalDeclarationList
+; P/variable_test_2_ok.p(83) :                                   StatementList
+; P/variable_test_2_ok.p(83) :                                       Statement
+; P/variable_test_2_ok.p(83) :                                           IfStatement
+; P/variable_test_2_ok.p(83) :                                               "if"
+; P/variable_test_2_ok.p(83) :                                               BooleanConstantExpression
+; P/variable_test_2_ok.p(83) :                                                   BooleanConstant
+; P/variable_test_2_ok.p(83) :                                                       "true"
+; P/variable_test_2_ok.p(84) :                                               "{"
+; P/variable_test_2_ok.p(85) :                                               StatementList
+; P/variable_test_2_ok.p(85) :                                                   Statement
+; P/variable_test_2_ok.p(85) :                                                       AssignmentStatement
+; P/variable_test_2_ok.p(85) :                                                           VariableExpression
+; P/variable_test_2_ok.p(85) :                                                               VariableName
+; P/variable_test_2_ok.p(85) :                                                                   "a"
+; P/variable_test_2_ok.p(85) :                                                           "="
+; P/variable_test_2_ok.p(85) :                                                           VariableExpression
+; P/variable_test_2_ok.p(85) :                                                               VariableName
+; P/variable_test_2_ok.p(85) :                                                                   "b"
+; P/variable_test_2_ok.p(85) :                                                           ";"
+; P/variable_test_2_ok.p(86) :                                               "}"
+; P/variable_test_2_ok.p(87) :                                               ElseStatement
+; P/variable_test_2_ok.p(87) :                                                   "else"
+; P/variable_test_2_ok.p(88) :                                                   "{"
+; P/variable_test_2_ok.p(89) :                                                   StatementList
+; P/variable_test_2_ok.p(89) :                                                       Statement
+; P/variable_test_2_ok.p(89) :                                                           IfStatement
+; P/variable_test_2_ok.p(89) :                                                               "if"
+; P/variable_test_2_ok.p(89) :                                                               SmallerExpression
+; P/variable_test_2_ok.p(89) :                                                                   VariableExpression
+; P/variable_test_2_ok.p(89) :                                                                       VariableName
+; P/variable_test_2_ok.p(89) :                                                                           "b"
+; P/variable_test_2_ok.p(90) :                                                                   "<"
+; P/variable_test_2_ok.p(89) :                                                                   IntegerConstantExpression
+; P/variable_test_2_ok.p(89) :                                                                       IntegerConstant
+; P/variable_test_2_ok.p(89) :                                                                           "2"
+; P/variable_test_2_ok.p(90) :                                                               "{"
+; P/variable_test_2_ok.p(91) :                                                               StatementList
+; P/variable_test_2_ok.p(91) :                                                                   Statement
+; P/variable_test_2_ok.p(91) :                                                                       ReturnStatement
+; P/variable_test_2_ok.p(91) :                                                                           "return"
+; P/variable_test_2_ok.p(91) :                                                                           VariableExpression
+; P/variable_test_2_ok.p(91) :                                                                               VariableName
+; P/variable_test_2_ok.p(91) :                                                                                   "a"
+; P/variable_test_2_ok.p(91) :                                                                           ";"
+; P/variable_test_2_ok.p(92) :                                                               "}"
+; P/variable_test_2_ok.p(94) :                                                               ElseStatement
+; P/variable_test_2_ok.p(94) :                                                       Statement
+; P/variable_test_2_ok.p(94) :                                                           IfStatement
+; P/variable_test_2_ok.p(94) :                                                               "if"
+; P/variable_test_2_ok.p(94) :                                                               SmallerExpression
+; P/variable_test_2_ok.p(94) :                                                                   VariableExpression
+; P/variable_test_2_ok.p(94) :                                                                       VariableName
+; P/variable_test_2_ok.p(94) :                                                                           "a"
+; P/variable_test_2_ok.p(95) :                                                                   "<"
+; P/variable_test_2_ok.p(94) :                                                                   IntegerConstantExpression
+; P/variable_test_2_ok.p(94) :                                                                       IntegerConstant
+; P/variable_test_2_ok.p(94) :                                                                           "3"
+; P/variable_test_2_ok.p(95) :                                                               "{"
+; P/variable_test_2_ok.p(96) :                                                               StatementList
+; P/variable_test_2_ok.p(96) :                                                                   Statement
+; P/variable_test_2_ok.p(96) :                                                                       ReturnStatement
+; P/variable_test_2_ok.p(96) :                                                                           "return"
+; P/variable_test_2_ok.p(96) :                                                                           IntegerConstantExpression
+; P/variable_test_2_ok.p(96) :                                                                               IntegerConstant
+; P/variable_test_2_ok.p(96) :                                                                                   "3"
+; P/variable_test_2_ok.p(96) :                                                                           ";"
+; P/variable_test_2_ok.p(97) :                                                               "}"
+; P/variable_test_2_ok.p(98) :                                                               ElseStatement
+; P/variable_test_2_ok.p(98) :                                                   "}"
+; P/variable_test_2_ok.p(100) :                                      Statement
+; P/variable_test_2_ok.p(100) :                                          ReturnStatement
+; P/variable_test_2_ok.p(100) :                                              "return"
+; P/variable_test_2_ok.p(100) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(100) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(100) :                                                      "0"
+; P/variable_test_2_ok.p(100) :                                              ";"
+; P/variable_test_2_ok.p(101) :                                  "}"
+; P/variable_test_2_ok.p(103) :                      StatementList
+; P/variable_test_2_ok.p(103) :                          Statement
+; P/variable_test_2_ok.p(103) :                              IfStatement
+; P/variable_test_2_ok.p(103) :                                  "if"
+; P/variable_test_2_ok.p(103) :                                  EqualExpression
+; P/variable_test_2_ok.p(103) :                                      FunctionCallExpression
+; P/variable_test_2_ok.p(103) :                                          FunctionCall
+; P/variable_test_2_ok.p(103) :                                              FunctionName
+; P/variable_test_2_ok.p(103) :                                                  "h"
+; P/variable_test_2_ok.p(103) :                                              "("
+; P/variable_test_2_ok.p(103) :                                              FunctionArgumentList
+; P/variable_test_2_ok.p(103) :                                                  FunctionArgument
+; P/variable_test_2_ok.p(103) :                                                      IntegerConstantExpression
+; P/variable_test_2_ok.p(103) :                                                          IntegerConstant
+; P/variable_test_2_ok.p(103) :                                                              "1"
+; P/variable_test_2_ok.p(103) :                                              ")"
+; P/variable_test_2_ok.p(104) :                                      "=="
+; P/variable_test_2_ok.p(103) :                                      IntegerConstantExpression
+; P/variable_test_2_ok.p(103) :                                          IntegerConstant
+; P/variable_test_2_ok.p(103) :                                              "1"
+; P/variable_test_2_ok.p(104) :                                  "{"
+; P/variable_test_2_ok.p(105) :                                  StatementList
+; P/variable_test_2_ok.p(105) :                                      Statement
+; P/variable_test_2_ok.p(105) :                                          ReturnStatement
+; P/variable_test_2_ok.p(105) :                                              "return"
+; P/variable_test_2_ok.p(105) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(105) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(105) :                                                      "1"
+; P/variable_test_2_ok.p(105) :                                              ";"
+; P/variable_test_2_ok.p(106) :                                  "}"
+; P/variable_test_2_ok.p(108) :                                  ElseStatement
+; P/variable_test_2_ok.p(108) :                          Statement
+; P/variable_test_2_ok.p(108) :                              ReturnStatement
+; P/variable_test_2_ok.p(108) :                                  "return"
+; P/variable_test_2_ok.p(108) :                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(108) :                                      IntegerConstant
+; P/variable_test_2_ok.p(108) :                                          "0"
+; P/variable_test_2_ok.p(108) :                                  ";"
+; P/variable_test_2_ok.p(109) :                      "}"
+; P/variable_test_2_ok.p(111) :              LocalDeclaration
+; P/variable_test_2_ok.p(111) :                  FunctionDeclaration
+; P/variable_test_2_ok.p(111) :                      "func"
+; P/variable_test_2_ok.p(111) :                      FunctionName
+; P/variable_test_2_ok.p(111) :                          "i"
+; P/variable_test_2_ok.p(111) :                      "("
+; P/variable_test_2_ok.p(112) :                      FunctionParameterList
+; P/variable_test_2_ok.p(112) :                          FunctionParameter
+; P/variable_test_2_ok.p(112) :                              VariableName
+; P/variable_test_2_ok.p(112) :                                  "a"
+; P/variable_test_2_ok.p(112) :                              ":"
+; P/variable_test_2_ok.p(112) :                              VariableType
+; P/variable_test_2_ok.p(112) :                                  "int"
+; P/variable_test_2_ok.p(113) :                      ")"
+; P/variable_test_2_ok.p(113) :                      ":"
+; P/variable_test_2_ok.p(113) :                      FunctionType
+; P/variable_test_2_ok.p(113) :                          "int"
+; P/variable_test_2_ok.p(114) :                      "{"
+; P/variable_test_2_ok.p(115) :                      LocalDeclarationList
+; P/variable_test_2_ok.p(115) :                          LocalDeclaration
+; P/variable_test_2_ok.p(115) :                              FunctionDeclaration
+; P/variable_test_2_ok.p(115) :                                  "func"
+; P/variable_test_2_ok.p(115) :                                  FunctionName
+; P/variable_test_2_ok.p(115) :                                      "i"
+; P/variable_test_2_ok.p(115) :                                  "("
+; P/variable_test_2_ok.p(116) :                                  FunctionParameterList
+; P/variable_test_2_ok.p(116) :                                      FunctionParameter
+; P/variable_test_2_ok.p(116) :                                          VariableName
+; P/variable_test_2_ok.p(116) :                                              "b"
+; P/variable_test_2_ok.p(116) :                                          ":"
+; P/variable_test_2_ok.p(116) :                                          VariableType
+; P/variable_test_2_ok.p(116) :                                              "int"
+; P/variable_test_2_ok.p(117) :                                  ")"
+; P/variable_test_2_ok.p(117) :                                  ":"
+; P/variable_test_2_ok.p(117) :                                  FunctionType
+; P/variable_test_2_ok.p(117) :                                      "int"
+; P/variable_test_2_ok.p(118) :                                  "{"
+; P/variable_test_2_ok.p(119) :                                  LocalDeclarationList
+; P/variable_test_2_ok.p(119) :                                  StatementList
+; P/variable_test_2_ok.p(119) :                                      Statement
+; P/variable_test_2_ok.p(119) :                                          IfStatement
+; P/variable_test_2_ok.p(119) :                                              "if"
+; P/variable_test_2_ok.p(119) :                                              BooleanConstantExpression
+; P/variable_test_2_ok.p(119) :                                                  BooleanConstant
+; P/variable_test_2_ok.p(119) :                                                      "true"
+; P/variable_test_2_ok.p(120) :                                              "{"
+; P/variable_test_2_ok.p(121) :                                              StatementList
+; P/variable_test_2_ok.p(121) :                                                  Statement
+; P/variable_test_2_ok.p(121) :                                                      AssignmentStatement
+; P/variable_test_2_ok.p(121) :                                                          VariableExpression
+; P/variable_test_2_ok.p(121) :                                                              VariableName
+; P/variable_test_2_ok.p(121) :                                                                  "a"
+; P/variable_test_2_ok.p(121) :                                                          "="
+; P/variable_test_2_ok.p(121) :                                                          VariableExpression
+; P/variable_test_2_ok.p(121) :                                                              VariableName
+; P/variable_test_2_ok.p(121) :                                                                  "b"
+; P/variable_test_2_ok.p(121) :                                                          ";"
+; P/variable_test_2_ok.p(122) :                                              "}"
+; P/variable_test_2_ok.p(123) :                                              ElseStatement
+; P/variable_test_2_ok.p(123) :                                                  "else"
+; P/variable_test_2_ok.p(124) :                                                  "{"
+; P/variable_test_2_ok.p(125) :                                                  StatementList
+; P/variable_test_2_ok.p(125) :                                                      Statement
+; P/variable_test_2_ok.p(125) :                                                          IfStatement
+; P/variable_test_2_ok.p(125) :                                                              "if"
+; P/variable_test_2_ok.p(125) :                                                              SmallerExpression
+; P/variable_test_2_ok.p(125) :                                                                  VariableExpression
+; P/variable_test_2_ok.p(125) :                                                                      VariableName
+; P/variable_test_2_ok.p(125) :                                                                          "b"
+; P/variable_test_2_ok.p(126) :                                                                  "<"
+; P/variable_test_2_ok.p(125) :                                                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(125) :                                                                      IntegerConstant
+; P/variable_test_2_ok.p(125) :                                                                          "2"
+; P/variable_test_2_ok.p(126) :                                                              "{"
+; P/variable_test_2_ok.p(127) :                                                              StatementList
+; P/variable_test_2_ok.p(127) :                                                                  Statement
+; P/variable_test_2_ok.p(127) :                                                                      ReturnStatement
+; P/variable_test_2_ok.p(127) :                                                                          "return"
+; P/variable_test_2_ok.p(127) :                                                                          VariableExpression
+; P/variable_test_2_ok.p(127) :                                                                              VariableName
+; P/variable_test_2_ok.p(127) :                                                                                  "a"
+; P/variable_test_2_ok.p(127) :                                                                          ";"
+; P/variable_test_2_ok.p(128) :                                                              "}"
+; P/variable_test_2_ok.p(130) :                                                              ElseStatement
+; P/variable_test_2_ok.p(130) :                                                      Statement
+; P/variable_test_2_ok.p(130) :                                                          IfStatement
+; P/variable_test_2_ok.p(130) :                                                              "if"
+; P/variable_test_2_ok.p(130) :                                                              SmallerExpression
+; P/variable_test_2_ok.p(130) :                                                                  VariableExpression
+; P/variable_test_2_ok.p(130) :                                                                      VariableName
+; P/variable_test_2_ok.p(130) :                                                                          "a"
+; P/variable_test_2_ok.p(131) :                                                                  "<"
+; P/variable_test_2_ok.p(130) :                                                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(130) :                                                                      IntegerConstant
+; P/variable_test_2_ok.p(130) :                                                                          "3"
+; P/variable_test_2_ok.p(131) :                                                              "{"
+; P/variable_test_2_ok.p(132) :                                                              StatementList
+; P/variable_test_2_ok.p(132) :                                                                  Statement
+; P/variable_test_2_ok.p(132) :                                                                      ReturnStatement
+; P/variable_test_2_ok.p(132) :                                                                          "return"
+; P/variable_test_2_ok.p(132) :                                                                          IntegerConstantExpression
+; P/variable_test_2_ok.p(132) :                                                                              IntegerConstant
+; P/variable_test_2_ok.p(132) :                                                                                  "3"
+; P/variable_test_2_ok.p(132) :                                                                          ";"
+; P/variable_test_2_ok.p(133) :                                                              "}"
+; P/variable_test_2_ok.p(134) :                                                              ElseStatement
+; P/variable_test_2_ok.p(134) :                                                  "}"
+; P/variable_test_2_ok.p(136) :                                      Statement
+; P/variable_test_2_ok.p(136) :                                          ReturnStatement
+; P/variable_test_2_ok.p(136) :                                              "return"
+; P/variable_test_2_ok.p(136) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(136) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(136) :                                                      "0"
+; P/variable_test_2_ok.p(136) :                                              ";"
+; P/variable_test_2_ok.p(137) :                                  "}"
+; P/variable_test_2_ok.p(139) :                      StatementList
+; P/variable_test_2_ok.p(139) :                          Statement
+; P/variable_test_2_ok.p(139) :                              IfStatement
+; P/variable_test_2_ok.p(139) :                                  "if"
+; P/variable_test_2_ok.p(139) :                                  BooleanConstantExpression
+; P/variable_test_2_ok.p(139) :                                      BooleanConstant
+; P/variable_test_2_ok.p(139) :                                          "true"
+; P/variable_test_2_ok.p(140) :                                  "{"
+; P/variable_test_2_ok.p(141) :                                  StatementList
+; P/variable_test_2_ok.p(141) :                                      Statement
+; P/variable_test_2_ok.p(141) :                                          ReturnStatement
+; P/variable_test_2_ok.p(141) :                                              "return"
+; P/variable_test_2_ok.p(141) :                                              FunctionCallExpression
+; P/variable_test_2_ok.p(141) :                                                  FunctionCall
+; P/variable_test_2_ok.p(141) :                                                      FunctionName
+; P/variable_test_2_ok.p(141) :                                                          "i"
+; P/variable_test_2_ok.p(141) :                                                      "("
+; P/variable_test_2_ok.p(141) :                                                      FunctionArgumentList
+; P/variable_test_2_ok.p(141) :                                                          FunctionArgument
+; P/variable_test_2_ok.p(141) :                                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(141) :                                                                  IntegerConstant
+; P/variable_test_2_ok.p(141) :                                                                      "1"
+; P/variable_test_2_ok.p(141) :                                                      ")"
+; P/variable_test_2_ok.p(141) :                                              ";"
+; P/variable_test_2_ok.p(142) :                                  "}"
+; P/variable_test_2_ok.p(144) :                                  ElseStatement
+; P/variable_test_2_ok.p(144) :                          Statement
+; P/variable_test_2_ok.p(144) :                              ReturnStatement
+; P/variable_test_2_ok.p(144) :                                  "return"
+; P/variable_test_2_ok.p(144) :                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(144) :                                      IntegerConstant
+; P/variable_test_2_ok.p(144) :                                          "0"
+; P/variable_test_2_ok.p(144) :                                  ";"
+; P/variable_test_2_ok.p(145) :                      "}"
+; P/variable_test_2_ok.p(147) :              LocalDeclaration
+; P/variable_test_2_ok.p(147) :                  FunctionDeclaration
+; P/variable_test_2_ok.p(147) :                      "func"
+; P/variable_test_2_ok.p(147) :                      FunctionName
+; P/variable_test_2_ok.p(147) :                          "j"
+; P/variable_test_2_ok.p(147) :                      "("
+; P/variable_test_2_ok.p(148) :                      FunctionParameterList
+; P/variable_test_2_ok.p(148) :                          FunctionParameter
+; P/variable_test_2_ok.p(148) :                              VariableName
+; P/variable_test_2_ok.p(148) :                                  "a"
+; P/variable_test_2_ok.p(148) :                              ":"
+; P/variable_test_2_ok.p(148) :                              VariableType
+; P/variable_test_2_ok.p(148) :                                  "int"
+; P/variable_test_2_ok.p(149) :                      ")"
+; P/variable_test_2_ok.p(149) :                      ":"
+; P/variable_test_2_ok.p(149) :                      FunctionType
+; P/variable_test_2_ok.p(149) :                          "int"
+; P/variable_test_2_ok.p(150) :                      "{"
+; P/variable_test_2_ok.p(151) :                      LocalDeclarationList
+; P/variable_test_2_ok.p(151) :                          LocalDeclaration
+; P/variable_test_2_ok.p(151) :                              FunctionDeclaration
+; P/variable_test_2_ok.p(151) :                                  "func"
+; P/variable_test_2_ok.p(151) :                                  FunctionName
+; P/variable_test_2_ok.p(151) :                                      "j"
+; P/variable_test_2_ok.p(151) :                                  "("
+; P/variable_test_2_ok.p(152) :                                  FunctionParameterList
+; P/variable_test_2_ok.p(152) :                                      FunctionParameter
+; P/variable_test_2_ok.p(152) :                                          VariableName
+; P/variable_test_2_ok.p(152) :                                              "b"
+; P/variable_test_2_ok.p(152) :                                          ":"
+; P/variable_test_2_ok.p(152) :                                          VariableType
+; P/variable_test_2_ok.p(152) :                                              "int"
+; P/variable_test_2_ok.p(153) :                                  ")"
+; P/variable_test_2_ok.p(153) :                                  ":"
+; P/variable_test_2_ok.p(153) :                                  FunctionType
+; P/variable_test_2_ok.p(153) :                                      "int"
+; P/variable_test_2_ok.p(154) :                                  "{"
+; P/variable_test_2_ok.p(155) :                                  LocalDeclarationList
+; P/variable_test_2_ok.p(155) :                                  StatementList
+; P/variable_test_2_ok.p(155) :                                      Statement
+; P/variable_test_2_ok.p(155) :                                          IfStatement
+; P/variable_test_2_ok.p(155) :                                              "if"
+; P/variable_test_2_ok.p(155) :                                              BooleanConstantExpression
+; P/variable_test_2_ok.p(155) :                                                  BooleanConstant
+; P/variable_test_2_ok.p(155) :                                                      "true"
+; P/variable_test_2_ok.p(156) :                                              "{"
+; P/variable_test_2_ok.p(157) :                                              StatementList
+; P/variable_test_2_ok.p(157) :                                                  Statement
+; P/variable_test_2_ok.p(157) :                                                      AssignmentStatement
+; P/variable_test_2_ok.p(157) :                                                          VariableExpression
+; P/variable_test_2_ok.p(157) :                                                              VariableName
+; P/variable_test_2_ok.p(157) :                                                                  "a"
+; P/variable_test_2_ok.p(157) :                                                          "="
+; P/variable_test_2_ok.p(157) :                                                          VariableExpression
+; P/variable_test_2_ok.p(157) :                                                              VariableName
+; P/variable_test_2_ok.p(157) :                                                                  "b"
+; P/variable_test_2_ok.p(157) :                                                          ";"
+; P/variable_test_2_ok.p(158) :                                              "}"
+; P/variable_test_2_ok.p(159) :                                              ElseStatement
+; P/variable_test_2_ok.p(159) :                                                  "else"
+; P/variable_test_2_ok.p(160) :                                                  "{"
+; P/variable_test_2_ok.p(161) :                                                  StatementList
+; P/variable_test_2_ok.p(161) :                                                      Statement
+; P/variable_test_2_ok.p(161) :                                                          IfStatement
+; P/variable_test_2_ok.p(161) :                                                              "if"
+; P/variable_test_2_ok.p(161) :                                                              SmallerExpression
+; P/variable_test_2_ok.p(161) :                                                                  VariableExpression
+; P/variable_test_2_ok.p(161) :                                                                      VariableName
+; P/variable_test_2_ok.p(161) :                                                                          "b"
+; P/variable_test_2_ok.p(162) :                                                                  "<"
+; P/variable_test_2_ok.p(161) :                                                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(161) :                                                                      IntegerConstant
+; P/variable_test_2_ok.p(161) :                                                                          "2"
+; P/variable_test_2_ok.p(162) :                                                              "{"
+; P/variable_test_2_ok.p(163) :                                                              StatementList
+; P/variable_test_2_ok.p(163) :                                                                  Statement
+; P/variable_test_2_ok.p(163) :                                                                      ReturnStatement
+; P/variable_test_2_ok.p(163) :                                                                          "return"
+; P/variable_test_2_ok.p(163) :                                                                          VariableExpression
+; P/variable_test_2_ok.p(163) :                                                                              VariableName
+; P/variable_test_2_ok.p(163) :                                                                                  "a"
+; P/variable_test_2_ok.p(163) :                                                                          ";"
+; P/variable_test_2_ok.p(164) :                                                              "}"
+; P/variable_test_2_ok.p(166) :                                                              ElseStatement
+; P/variable_test_2_ok.p(166) :                                                      Statement
+; P/variable_test_2_ok.p(166) :                                                          IfStatement
+; P/variable_test_2_ok.p(166) :                                                              "if"
+; P/variable_test_2_ok.p(166) :                                                              SmallerExpression
+; P/variable_test_2_ok.p(166) :                                                                  VariableExpression
+; P/variable_test_2_ok.p(166) :                                                                      VariableName
+; P/variable_test_2_ok.p(166) :                                                                          "a"
+; P/variable_test_2_ok.p(167) :                                                                  "<"
+; P/variable_test_2_ok.p(166) :                                                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(166) :                                                                      IntegerConstant
+; P/variable_test_2_ok.p(166) :                                                                          "3"
+; P/variable_test_2_ok.p(167) :                                                              "{"
+; P/variable_test_2_ok.p(168) :                                                              StatementList
+; P/variable_test_2_ok.p(168) :                                                                  Statement
+; P/variable_test_2_ok.p(168) :                                                                      ReturnStatement
+; P/variable_test_2_ok.p(168) :                                                                          "return"
+; P/variable_test_2_ok.p(168) :                                                                          IntegerConstantExpression
+; P/variable_test_2_ok.p(168) :                                                                              IntegerConstant
+; P/variable_test_2_ok.p(168) :                                                                                  "3"
+; P/variable_test_2_ok.p(168) :                                                                          ";"
+; P/variable_test_2_ok.p(169) :                                                              "}"
+; P/variable_test_2_ok.p(170) :                                                              ElseStatement
+; P/variable_test_2_ok.p(170) :                                                  "}"
+; P/variable_test_2_ok.p(172) :                                      Statement
+; P/variable_test_2_ok.p(172) :                                          ReturnStatement
+; P/variable_test_2_ok.p(172) :                                              "return"
+; P/variable_test_2_ok.p(172) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(172) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(172) :                                                      "0"
+; P/variable_test_2_ok.p(172) :                                              ";"
+; P/variable_test_2_ok.p(173) :                                  "}"
+; P/variable_test_2_ok.p(175) :                      StatementList
+; P/variable_test_2_ok.p(175) :                          Statement
+; P/variable_test_2_ok.p(175) :                              IfStatement
+; P/variable_test_2_ok.p(175) :                                  "if"
+; P/variable_test_2_ok.p(175) :                                  BooleanConstantExpression
+; P/variable_test_2_ok.p(175) :                                      BooleanConstant
+; P/variable_test_2_ok.p(175) :                                          "true"
+; P/variable_test_2_ok.p(176) :                                  "{"
+; P/variable_test_2_ok.p(177) :                                  StatementList
+; P/variable_test_2_ok.p(177) :                                      Statement
+; P/variable_test_2_ok.p(177) :                                          ReturnStatement
+; P/variable_test_2_ok.p(177) :                                              "return"
+; P/variable_test_2_ok.p(177) :                                              FunctionCallExpression
+; P/variable_test_2_ok.p(177) :                                                  FunctionCall
+; P/variable_test_2_ok.p(177) :                                                      FunctionName
+; P/variable_test_2_ok.p(177) :                                                          "j"
+; P/variable_test_2_ok.p(177) :                                                      "("
+; P/variable_test_2_ok.p(177) :                                                      FunctionArgumentList
+; P/variable_test_2_ok.p(177) :                                                          FunctionArgument
+; P/variable_test_2_ok.p(177) :                                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(177) :                                                                  IntegerConstant
+; P/variable_test_2_ok.p(177) :                                                                      "1"
+; P/variable_test_2_ok.p(177) :                                                      ")"
+; P/variable_test_2_ok.p(177) :                                              ";"
+; P/variable_test_2_ok.p(178) :                                  "}"
+; P/variable_test_2_ok.p(180) :                                  ElseStatement
+; P/variable_test_2_ok.p(180) :                          Statement
+; P/variable_test_2_ok.p(180) :                              AssignmentStatement
+; P/variable_test_2_ok.p(180) :                                  VariableExpression
+; P/variable_test_2_ok.p(180) :                                      VariableName
+; P/variable_test_2_ok.p(180) :                                          "a"
+; P/variable_test_2_ok.p(180) :                                  "="
+; P/variable_test_2_ok.p(180) :                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(180) :                                      IntegerConstant
+; P/variable_test_2_ok.p(180) :                                          "0"
+; P/variable_test_2_ok.p(180) :                                  ";"
+; P/variable_test_2_ok.p(182) :                          Statement
+; P/variable_test_2_ok.p(182) :                              ReturnStatement
+; P/variable_test_2_ok.p(182) :                                  "return"
+; P/variable_test_2_ok.p(182) :                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(182) :                                      IntegerConstant
+; P/variable_test_2_ok.p(182) :                                          "0"
+; P/variable_test_2_ok.p(182) :                                  ";"
+; P/variable_test_2_ok.p(183) :                      "}"
+; P/variable_test_2_ok.p(185) :              LocalDeclaration
+; P/variable_test_2_ok.p(185) :                  FunctionDeclaration
+; P/variable_test_2_ok.p(185) :                      "func"
+; P/variable_test_2_ok.p(185) :                      FunctionName
+; P/variable_test_2_ok.p(185) :                          "k"
+; P/variable_test_2_ok.p(185) :                      "("
+; P/variable_test_2_ok.p(186) :                      FunctionParameterList
+; P/variable_test_2_ok.p(186) :                          FunctionParameter
+; P/variable_test_2_ok.p(186) :                              VariableName
+; P/variable_test_2_ok.p(186) :                                  "a"
+; P/variable_test_2_ok.p(186) :                              ":"
+; P/variable_test_2_ok.p(186) :                              VariableType
+; P/variable_test_2_ok.p(186) :                                  "int"
+; P/variable_test_2_ok.p(187) :                      ")"
+; P/variable_test_2_ok.p(187) :                      ":"
+; P/variable_test_2_ok.p(187) :                      FunctionType
+; P/variable_test_2_ok.p(187) :                          "int"
+; P/variable_test_2_ok.p(188) :                      "{"
+; P/variable_test_2_ok.p(189) :                      LocalDeclarationList
+; P/variable_test_2_ok.p(189) :                          LocalDeclaration
+; P/variable_test_2_ok.p(189) :                              FunctionDeclaration
+; P/variable_test_2_ok.p(189) :                                  "func"
+; P/variable_test_2_ok.p(189) :                                  FunctionName
+; P/variable_test_2_ok.p(189) :                                      "k"
+; P/variable_test_2_ok.p(189) :                                  "("
+; P/variable_test_2_ok.p(190) :                                  FunctionParameterList
+; P/variable_test_2_ok.p(190) :                                      FunctionParameter
+; P/variable_test_2_ok.p(190) :                                          VariableName
+; P/variable_test_2_ok.p(190) :                                              "b"
+; P/variable_test_2_ok.p(190) :                                          ":"
+; P/variable_test_2_ok.p(190) :                                          VariableType
+; P/variable_test_2_ok.p(190) :                                              "int"
+; P/variable_test_2_ok.p(191) :                                  ")"
+; P/variable_test_2_ok.p(191) :                                  ":"
+; P/variable_test_2_ok.p(191) :                                  FunctionType
+; P/variable_test_2_ok.p(191) :                                      "int"
+; P/variable_test_2_ok.p(192) :                                  "{"
+; P/variable_test_2_ok.p(193) :                                  LocalDeclarationList
+; P/variable_test_2_ok.p(193) :                                  StatementList
+; P/variable_test_2_ok.p(193) :                                      Statement
+; P/variable_test_2_ok.p(193) :                                          IfStatement
+; P/variable_test_2_ok.p(193) :                                              "if"
+; P/variable_test_2_ok.p(193) :                                              BooleanConstantExpression
+; P/variable_test_2_ok.p(193) :                                                  BooleanConstant
+; P/variable_test_2_ok.p(193) :                                                      "true"
+; P/variable_test_2_ok.p(194) :                                              "{"
+; P/variable_test_2_ok.p(195) :                                              StatementList
+; P/variable_test_2_ok.p(195) :                                                  Statement
+; P/variable_test_2_ok.p(195) :                                                      ReturnStatement
+; P/variable_test_2_ok.p(195) :                                                          "return"
+; P/variable_test_2_ok.p(195) :                                                          VariableExpression
+; P/variable_test_2_ok.p(195) :                                                              VariableName
+; P/variable_test_2_ok.p(195) :                                                                  "b"
+; P/variable_test_2_ok.p(195) :                                                          ";"
+; P/variable_test_2_ok.p(196) :                                              "}"
+; P/variable_test_2_ok.p(197) :                                              ElseStatement
+; P/variable_test_2_ok.p(197) :                                                  "else"
+; P/variable_test_2_ok.p(198) :                                                  "{"
+; P/variable_test_2_ok.p(199) :                                                  StatementList
+; P/variable_test_2_ok.p(199) :                                                      Statement
+; P/variable_test_2_ok.p(199) :                                                          IfStatement
+; P/variable_test_2_ok.p(199) :                                                              "if"
+; P/variable_test_2_ok.p(199) :                                                              BooleanConstantExpression
+; P/variable_test_2_ok.p(199) :                                                                  BooleanConstant
+; P/variable_test_2_ok.p(199) :                                                                      "true"
+; P/variable_test_2_ok.p(200) :                                                              "{"
+; P/variable_test_2_ok.p(201) :                                                              StatementList
+; P/variable_test_2_ok.p(201) :                                                                  Statement
+; P/variable_test_2_ok.p(201) :                                                                      ReturnStatement
+; P/variable_test_2_ok.p(201) :                                                                          "return"
+; P/variable_test_2_ok.p(201) :                                                                          VariableExpression
+; P/variable_test_2_ok.p(201) :                                                                              VariableName
+; P/variable_test_2_ok.p(201) :                                                                                  "b"
+; P/variable_test_2_ok.p(201) :                                                                          ";"
+; P/variable_test_2_ok.p(202) :                                                              "}"
+; P/variable_test_2_ok.p(204) :                                                              ElseStatement
+; P/variable_test_2_ok.p(204) :                                                      Statement
+; P/variable_test_2_ok.p(204) :                                                          IfStatement
+; P/variable_test_2_ok.p(204) :                                                              "if"
+; P/variable_test_2_ok.p(204) :                                                              SmallerExpression
+; P/variable_test_2_ok.p(204) :                                                                  VariableExpression
+; P/variable_test_2_ok.p(204) :                                                                      VariableName
+; P/variable_test_2_ok.p(204) :                                                                          "a"
+; P/variable_test_2_ok.p(205) :                                                                  "<"
+; P/variable_test_2_ok.p(204) :                                                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(204) :                                                                      IntegerConstant
+; P/variable_test_2_ok.p(204) :                                                                          "3"
+; P/variable_test_2_ok.p(205) :                                                              "{"
+; P/variable_test_2_ok.p(206) :                                                              StatementList
+; P/variable_test_2_ok.p(206) :                                                                  Statement
+; P/variable_test_2_ok.p(206) :                                                                      ReturnStatement
+; P/variable_test_2_ok.p(206) :                                                                          "return"
+; P/variable_test_2_ok.p(206) :                                                                          IntegerConstantExpression
+; P/variable_test_2_ok.p(206) :                                                                              IntegerConstant
+; P/variable_test_2_ok.p(206) :                                                                                  "3"
+; P/variable_test_2_ok.p(206) :                                                                          ";"
+; P/variable_test_2_ok.p(207) :                                                              "}"
+; P/variable_test_2_ok.p(208) :                                                              ElseStatement
+; P/variable_test_2_ok.p(208) :                                                  "}"
+; P/variable_test_2_ok.p(210) :                                      Statement
+; P/variable_test_2_ok.p(210) :                                          AssignmentStatement
+; P/variable_test_2_ok.p(210) :                                              VariableExpression
+; P/variable_test_2_ok.p(210) :                                                  VariableName
+; P/variable_test_2_ok.p(210) :                                                      "b"
+; P/variable_test_2_ok.p(210) :                                              "="
+; P/variable_test_2_ok.p(210) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(210) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(210) :                                                      "0"
+; P/variable_test_2_ok.p(210) :                                              ";"
+; P/variable_test_2_ok.p(212) :                                      Statement
+; P/variable_test_2_ok.p(212) :                                          ReturnStatement
+; P/variable_test_2_ok.p(212) :                                              "return"
+; P/variable_test_2_ok.p(212) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(212) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(212) :                                                      "0"
+; P/variable_test_2_ok.p(212) :                                              ";"
+; P/variable_test_2_ok.p(213) :                                  "}"
+; P/variable_test_2_ok.p(215) :                      StatementList
+; P/variable_test_2_ok.p(215) :                          Statement
+; P/variable_test_2_ok.p(215) :                              IfStatement
+; P/variable_test_2_ok.p(215) :                                  "if"
+; P/variable_test_2_ok.p(215) :                                  EqualExpression
+; P/variable_test_2_ok.p(215) :                                      FunctionCallExpression
+; P/variable_test_2_ok.p(215) :                                          FunctionCall
+; P/variable_test_2_ok.p(215) :                                              FunctionName
+; P/variable_test_2_ok.p(215) :                                                  "k"
+; P/variable_test_2_ok.p(215) :                                              "("
+; P/variable_test_2_ok.p(215) :                                              FunctionArgumentList
+; P/variable_test_2_ok.p(215) :                                                  FunctionArgument
+; P/variable_test_2_ok.p(215) :                                                      IntegerConstantExpression
+; P/variable_test_2_ok.p(215) :                                                          IntegerConstant
+; P/variable_test_2_ok.p(215) :                                                              "1"
+; P/variable_test_2_ok.p(215) :                                              ")"
+; P/variable_test_2_ok.p(216) :                                      "=="
+; P/variable_test_2_ok.p(215) :                                      IntegerConstantExpression
+; P/variable_test_2_ok.p(215) :                                          IntegerConstant
+; P/variable_test_2_ok.p(215) :                                              "1"
+; P/variable_test_2_ok.p(216) :                                  "{"
+; P/variable_test_2_ok.p(217) :                                  StatementList
+; P/variable_test_2_ok.p(217) :                                      Statement
+; P/variable_test_2_ok.p(217) :                                          ReturnStatement
+; P/variable_test_2_ok.p(217) :                                              "return"
+; P/variable_test_2_ok.p(217) :                                              IntegerConstantExpression
+; P/variable_test_2_ok.p(217) :                                                  IntegerConstant
+; P/variable_test_2_ok.p(217) :                                                      "1"
+; P/variable_test_2_ok.p(217) :                                              ";"
+; P/variable_test_2_ok.p(218) :                                  "}"
+; P/variable_test_2_ok.p(220) :                                  ElseStatement
+; P/variable_test_2_ok.p(220) :                          Statement
+; P/variable_test_2_ok.p(220) :                              ReturnStatement
+; P/variable_test_2_ok.p(220) :                                  "return"
+; P/variable_test_2_ok.p(220) :                                  IntegerConstantExpression
+; P/variable_test_2_ok.p(220) :                                      IntegerConstant
+; P/variable_test_2_ok.p(220) :                                          "0"
+; P/variable_test_2_ok.p(220) :                                  ";"
+; P/variable_test_2_ok.p(221) :                      "}"
+; P/variable_test_2_ok.p(223) :              LocalDeclaration
+; P/variable_test_2_ok.p(223) :                  VariableDeclaration
+; P/variable_test_2_ok.p(223) :                      "var"
+; P/variable_test_2_ok.p(224) :                      Variable
+; P/variable_test_2_ok.p(224) :                          VariableName
+; P/variable_test_2_ok.p(224) :                              "x"
+; P/variable_test_2_ok.p(224) :                          ":"
+; P/variable_test_2_ok.p(224) :                          VariableType
+; P/variable_test_2_ok.p(224) :                              "int"
+; P/variable_test_2_ok.p(224) :                      ","
+; P/variable_test_2_ok.p(225) :                      Variable
+; P/variable_test_2_ok.p(225) :                          VariableName
+; P/variable_test_2_ok.p(225) :                              "y"
+; P/variable_test_2_ok.p(225) :                          ":"
+; P/variable_test_2_ok.p(225) :                          VariableType
+; P/variable_test_2_ok.p(225) :                              "int"
+; P/variable_test_2_ok.p(225) :                      ";"
+; P/variable_test_2_ok.p(227) :          StatementList
+; P/variable_test_2_ok.p(227) :              Statement
+; P/variable_test_2_ok.p(227) :                  AssignmentStatement
+; P/variable_test_2_ok.p(227) :                      VariableExpression
+; P/variable_test_2_ok.p(227) :                          VariableName
+; P/variable_test_2_ok.p(227) :                              "x"
+; P/variable_test_2_ok.p(227) :                      "="
+; P/variable_test_2_ok.p(227) :                      FunctionCallExpression
+; P/variable_test_2_ok.p(227) :                          FunctionCall
+; P/variable_test_2_ok.p(227) :                              FunctionName
+; P/variable_test_2_ok.p(227) :                                  "f"
+; P/variable_test_2_ok.p(227) :                              "("
+; P/variable_test_2_ok.p(227) :                              FunctionArgumentList
+; P/variable_test_2_ok.p(227) :                                  FunctionArgument
+; P/variable_test_2_ok.p(227) :                                      PlusExpression
+; P/variable_test_2_ok.p(227) :                                          VariableExpression
+; P/variable_test_2_ok.p(227) :                                              VariableName
+; P/variable_test_2_ok.p(227) :                                                  "x"
+; P/variable_test_2_ok.p(227) :                                          "+"
+; P/variable_test_2_ok.p(227) :                                          IntegerConstantExpression
+; P/variable_test_2_ok.p(227) :                                              IntegerConstant
+; P/variable_test_2_ok.p(227) :                                                  "2"
+; P/variable_test_2_ok.p(227) :                              ")"
+; P/variable_test_2_ok.p(227) :                      ";"
+; P/variable_test_2_ok.p(228) :          "}"

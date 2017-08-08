@@ -1,0 +1,173 @@
+ssp 0
+ujp @program
+define @function_void_main
+ssp 9
+; P/assignment_test_ok.p(10) : b = true ;
+; b of void_main
+lda b 0 5
+; true
+ldc b 1
+; P/assignment_test_ok.p(10) : :=
+sto b
+; P/assignment_test_ok.p(11) : i = 1 ;
+; i of void_main
+lda i 0 6
+; 1
+ldc i 1
+; P/assignment_test_ok.p(11) : :=
+sto i
+; P/assignment_test_ok.p(12) : j = i ;
+; j of void_main
+lda i 0 7
+; i of void_main
+lda i 0 6
+ind i
+; P/assignment_test_ok.p(12) : :=
+sto i
+; P/assignment_test_ok.p(13) : k = j + 1 ;
+; k of void_main
+lda i 0 8
+; j of void_main
+lda i 0 7
+ind i
+; 1
+ldc i 1
+; P/assignment_test_ok.p(13) : +
+add i
+; P/assignment_test_ok.p(13) : :=
+sto i
+; P/assignment_test_ok.p(14) : write i ;
+; i of void_main
+lda i 0 6
+ind i
+; P/assignment_test_ok.p(14) : write
+prin
+; P/assignment_test_ok.p(15) : write j ;
+; j of void_main
+lda i 0 7
+ind i
+; P/assignment_test_ok.p(15) : write
+prin
+; P/assignment_test_ok.p(16) : write k ;
+; k of void_main
+lda i 0 8
+ind i
+; P/assignment_test_ok.p(16) : write
+prin
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; P/assignment_test_ok.p(1) :    Program
+; P/assignment_test_ok.p(1) :        FunctionDeclaration
+; P/assignment_test_ok.p(1) :            "func"
+; P/assignment_test_ok.p(1) :            FunctionName
+; P/assignment_test_ok.p(1) :                "main"
+; P/assignment_test_ok.p(1) :            "("
+; P/assignment_test_ok.p(2) :            FunctionParameterList
+; P/assignment_test_ok.p(2) :            ")"
+; P/assignment_test_ok.p(2) :            ":"
+; P/assignment_test_ok.p(2) :            FunctionType
+; P/assignment_test_ok.p(2) :                "void"
+; P/assignment_test_ok.p(3) :            "{"
+; P/assignment_test_ok.p(4) :            LocalDeclarationList
+; P/assignment_test_ok.p(4) :                LocalDeclaration
+; P/assignment_test_ok.p(4) :                    VariableDeclaration
+; P/assignment_test_ok.p(4) :                        "var"
+; P/assignment_test_ok.p(5) :                        Variable
+; P/assignment_test_ok.p(5) :                            VariableName
+; P/assignment_test_ok.p(5) :                                "b"
+; P/assignment_test_ok.p(5) :                            ":"
+; P/assignment_test_ok.p(5) :                            VariableType
+; P/assignment_test_ok.p(5) :                                "bool"
+; P/assignment_test_ok.p(5) :                        ","
+; P/assignment_test_ok.p(6) :                        Variable
+; P/assignment_test_ok.p(6) :                            VariableName
+; P/assignment_test_ok.p(6) :                                "i"
+; P/assignment_test_ok.p(6) :                            ":"
+; P/assignment_test_ok.p(6) :                            VariableType
+; P/assignment_test_ok.p(6) :                                "int"
+; P/assignment_test_ok.p(6) :                        ","
+; P/assignment_test_ok.p(7) :                        Variable
+; P/assignment_test_ok.p(7) :                            VariableName
+; P/assignment_test_ok.p(7) :                                "j"
+; P/assignment_test_ok.p(7) :                            ":"
+; P/assignment_test_ok.p(7) :                            VariableType
+; P/assignment_test_ok.p(7) :                                "int"
+; P/assignment_test_ok.p(7) :                        ","
+; P/assignment_test_ok.p(8) :                        Variable
+; P/assignment_test_ok.p(8) :                            VariableName
+; P/assignment_test_ok.p(8) :                                "k"
+; P/assignment_test_ok.p(8) :                            ":"
+; P/assignment_test_ok.p(8) :                            VariableType
+; P/assignment_test_ok.p(8) :                                "int"
+; P/assignment_test_ok.p(8) :                        ";"
+; P/assignment_test_ok.p(10) :           StatementList
+; P/assignment_test_ok.p(10) :               Statement
+; P/assignment_test_ok.p(10) :                   AssignmentStatement
+; P/assignment_test_ok.p(10) :                       VariableExpression
+; P/assignment_test_ok.p(10) :                           VariableName
+; P/assignment_test_ok.p(10) :                               "b"
+; P/assignment_test_ok.p(10) :                       "="
+; P/assignment_test_ok.p(10) :                       BooleanConstantExpression
+; P/assignment_test_ok.p(10) :                           BooleanConstant
+; P/assignment_test_ok.p(10) :                               "true"
+; P/assignment_test_ok.p(10) :                       ";"
+; P/assignment_test_ok.p(11) :               Statement
+; P/assignment_test_ok.p(11) :                   AssignmentStatement
+; P/assignment_test_ok.p(11) :                       VariableExpression
+; P/assignment_test_ok.p(11) :                           VariableName
+; P/assignment_test_ok.p(11) :                               "i"
+; P/assignment_test_ok.p(11) :                       "="
+; P/assignment_test_ok.p(11) :                       IntegerConstantExpression
+; P/assignment_test_ok.p(11) :                           IntegerConstant
+; P/assignment_test_ok.p(11) :                               "1"
+; P/assignment_test_ok.p(11) :                       ";"
+; P/assignment_test_ok.p(12) :               Statement
+; P/assignment_test_ok.p(12) :                   AssignmentStatement
+; P/assignment_test_ok.p(12) :                       VariableExpression
+; P/assignment_test_ok.p(12) :                           VariableName
+; P/assignment_test_ok.p(12) :                               "j"
+; P/assignment_test_ok.p(12) :                       "="
+; P/assignment_test_ok.p(12) :                       VariableExpression
+; P/assignment_test_ok.p(12) :                           VariableName
+; P/assignment_test_ok.p(12) :                               "i"
+; P/assignment_test_ok.p(12) :                       ";"
+; P/assignment_test_ok.p(13) :               Statement
+; P/assignment_test_ok.p(13) :                   AssignmentStatement
+; P/assignment_test_ok.p(13) :                       VariableExpression
+; P/assignment_test_ok.p(13) :                           VariableName
+; P/assignment_test_ok.p(13) :                               "k"
+; P/assignment_test_ok.p(13) :                       "="
+; P/assignment_test_ok.p(13) :                       PlusExpression
+; P/assignment_test_ok.p(13) :                           VariableExpression
+; P/assignment_test_ok.p(13) :                               VariableName
+; P/assignment_test_ok.p(13) :                                   "j"
+; P/assignment_test_ok.p(13) :                           "+"
+; P/assignment_test_ok.p(13) :                           IntegerConstantExpression
+; P/assignment_test_ok.p(13) :                               IntegerConstant
+; P/assignment_test_ok.p(13) :                                   "1"
+; P/assignment_test_ok.p(13) :                       ";"
+; P/assignment_test_ok.p(14) :               Statement
+; P/assignment_test_ok.p(14) :                   WriteStatement
+; P/assignment_test_ok.p(14) :                       "write"
+; P/assignment_test_ok.p(14) :                       VariableExpression
+; P/assignment_test_ok.p(14) :                           VariableName
+; P/assignment_test_ok.p(14) :                               "i"
+; P/assignment_test_ok.p(14) :                       ";"
+; P/assignment_test_ok.p(15) :               Statement
+; P/assignment_test_ok.p(15) :                   WriteStatement
+; P/assignment_test_ok.p(15) :                       "write"
+; P/assignment_test_ok.p(15) :                       VariableExpression
+; P/assignment_test_ok.p(15) :                           VariableName
+; P/assignment_test_ok.p(15) :                               "j"
+; P/assignment_test_ok.p(15) :                       ";"
+; P/assignment_test_ok.p(16) :               Statement
+; P/assignment_test_ok.p(16) :                   WriteStatement
+; P/assignment_test_ok.p(16) :                       "write"
+; P/assignment_test_ok.p(16) :                       VariableExpression
+; P/assignment_test_ok.p(16) :                           VariableName
+; P/assignment_test_ok.p(16) :                               "k"
+; P/assignment_test_ok.p(16) :                       ";"
+; P/assignment_test_ok.p(17) :           "}"

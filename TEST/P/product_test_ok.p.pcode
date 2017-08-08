@@ -1,0 +1,360 @@
+ssp 0
+ujp @program
+define @function_void_print_of_void_main
+ssp 8
+; P/product_test_ok.p(16) : read a ;
+; a of void_print_of_void_main
+lda i 0 5
+; P/product_test_ok.p(16) : read
+read
+sto i
+; P/product_test_ok.p(17) : read b ;
+; b of void_print_of_void_main
+lda i 0 6
+; P/product_test_ok.p(17) : read
+read
+sto i
+; P/product_test_ok.p(18) : c = mul ( a , b ) ;
+; c of void_print_of_void_main
+lda i 0 7
+mst 1
+; a of void_print_of_void_main
+lda i 0 5
+ind i
+; b of void_print_of_void_main
+lda i 0 6
+ind i
+cup 2 @function_int_mul_int_int_of_void_main
+; P/product_test_ok.p(18) : :=
+sto i
+; P/product_test_ok.p(19) : write c ;
+; c of void_print_of_void_main
+lda i 0 7
+ind i
+; P/product_test_ok.p(19) : write
+prin
+retp
+define @function_int_mul_int_int_of_void_main
+ssp 9
+; P/product_test_ok.p(31) : x = i ;
+; x of int_mul_int_int_of_void_main
+lda i 0 7
+; i of int_mul_int_int_of_void_main
+lda i 0 5
+ind i
+; P/product_test_ok.p(31) : :=
+sto i
+; P/product_test_ok.p(32) : y = 0 ;
+; y of int_mul_int_int_of_void_main
+lda i 0 8
+; 0
+ldc i 0
+; P/product_test_ok.p(32) : :=
+sto i
+; P/product_test_ok.p(34) : while ( 0 < x )
+define @while_1
+; 0
+ldc i 0
+; x of int_mul_int_int_of_void_main
+lda i 0 7
+ind i
+; P/product_test_ok.p(34) : <
+les i
+fjp @while_end_1
+; P/product_test_ok.p(36) : y = y + j ;
+; y of int_mul_int_int_of_void_main
+lda i 0 8
+; y of int_mul_int_int_of_void_main
+lda i 0 8
+ind i
+; j of int_mul_int_int_of_void_main
+lda i 0 6
+ind i
+; P/product_test_ok.p(36) : +
+add i
+; P/product_test_ok.p(36) : :=
+sto i
+; P/product_test_ok.p(37) : x = x - 1 ;
+; x of int_mul_int_int_of_void_main
+lda i 0 7
+; x of int_mul_int_int_of_void_main
+lda i 0 7
+ind i
+; 1
+ldc i 1
+; P/product_test_ok.p(37) : -
+sub i
+; P/product_test_ok.p(37) : :=
+sto i
+ujp @while_1
+define @while_end_1
+; P/product_test_ok.p(40) : return y ;
+lda i 0 0
+; y of int_mul_int_int_of_void_main
+lda i 0 8
+ind i
+sto i
+retf
+retf
+define @function_void_main
+ssp 5
+; P/product_test_ok.p(43) : print ( ) ;
+mst 0
+cup 0 @function_void_print_of_void_main
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; P/product_test_ok.p(1) :    Program
+; P/product_test_ok.p(1) :        FunctionDeclaration
+; P/product_test_ok.p(1) :            "func"
+; P/product_test_ok.p(1) :            FunctionName
+; P/product_test_ok.p(1) :                "main"
+; P/product_test_ok.p(1) :            "("
+; P/product_test_ok.p(2) :            FunctionParameterList
+; P/product_test_ok.p(2) :            ")"
+; P/product_test_ok.p(2) :            ":"
+; P/product_test_ok.p(2) :            FunctionType
+; P/product_test_ok.p(2) :                "void"
+; P/product_test_ok.p(3) :            "{"
+; P/product_test_ok.p(4) :            LocalDeclarationList
+; P/product_test_ok.p(4) :                LocalDeclaration
+; P/product_test_ok.p(4) :                    FunctionDeclaration
+; P/product_test_ok.p(4) :                        "func"
+; P/product_test_ok.p(4) :                        FunctionName
+; P/product_test_ok.p(4) :                            "mul"
+; P/product_test_ok.p(4) :                        "("
+; P/product_test_ok.p(5) :                        FunctionParameterList
+; P/product_test_ok.p(5) :                            FunctionParameter
+; P/product_test_ok.p(5) :                                VariableName
+; P/product_test_ok.p(5) :                                    "i"
+; P/product_test_ok.p(5) :                                ":"
+; P/product_test_ok.p(5) :                                VariableType
+; P/product_test_ok.p(5) :                                    "int"
+; P/product_test_ok.p(5) :                            ","
+; P/product_test_ok.p(6) :                            FunctionParameter
+; P/product_test_ok.p(6) :                                VariableName
+; P/product_test_ok.p(6) :                                    "j"
+; P/product_test_ok.p(6) :                                ":"
+; P/product_test_ok.p(6) :                                VariableType
+; P/product_test_ok.p(6) :                                    "int"
+; P/product_test_ok.p(7) :                        ")"
+; P/product_test_ok.p(7) :                        ":"
+; P/product_test_ok.p(7) :                        FunctionType
+; P/product_test_ok.p(7) :                            "int"
+; P/product_test_ok.p(7) :                        ";"
+; P/product_test_ok.p(9) :                LocalDeclaration
+; P/product_test_ok.p(9) :                    FunctionDeclaration
+; P/product_test_ok.p(9) :                        "func"
+; P/product_test_ok.p(9) :                        FunctionName
+; P/product_test_ok.p(9) :                            "print"
+; P/product_test_ok.p(9) :                        "("
+; P/product_test_ok.p(9) :                        FunctionParameterList
+; P/product_test_ok.p(9) :                        ")"
+; P/product_test_ok.p(9) :                        ":"
+; P/product_test_ok.p(9) :                        FunctionType
+; P/product_test_ok.p(9) :                            "void"
+; P/product_test_ok.p(10) :                       "{"
+; P/product_test_ok.p(11) :                       LocalDeclarationList
+; P/product_test_ok.p(11) :                           LocalDeclaration
+; P/product_test_ok.p(11) :                               VariableDeclaration
+; P/product_test_ok.p(11) :                                   "var"
+; P/product_test_ok.p(12) :                                   Variable
+; P/product_test_ok.p(12) :                                       VariableName
+; P/product_test_ok.p(12) :                                           "a"
+; P/product_test_ok.p(12) :                                       ":"
+; P/product_test_ok.p(12) :                                       VariableType
+; P/product_test_ok.p(12) :                                           "int"
+; P/product_test_ok.p(12) :                                   ","
+; P/product_test_ok.p(13) :                                   Variable
+; P/product_test_ok.p(13) :                                       VariableName
+; P/product_test_ok.p(13) :                                           "b"
+; P/product_test_ok.p(13) :                                       ":"
+; P/product_test_ok.p(13) :                                       VariableType
+; P/product_test_ok.p(13) :                                           "int"
+; P/product_test_ok.p(13) :                                   ","
+; P/product_test_ok.p(14) :                                   Variable
+; P/product_test_ok.p(14) :                                       VariableName
+; P/product_test_ok.p(14) :                                           "c"
+; P/product_test_ok.p(14) :                                       ":"
+; P/product_test_ok.p(14) :                                       VariableType
+; P/product_test_ok.p(14) :                                           "int"
+; P/product_test_ok.p(14) :                                   ";"
+; P/product_test_ok.p(16) :                       StatementList
+; P/product_test_ok.p(16) :                           Statement
+; P/product_test_ok.p(16) :                               ReadStatement
+; P/product_test_ok.p(16) :                                   "read"
+; P/product_test_ok.p(16) :                                   VariableExpression
+; P/product_test_ok.p(16) :                                       VariableName
+; P/product_test_ok.p(16) :                                           "a"
+; P/product_test_ok.p(16) :                                   ";"
+; P/product_test_ok.p(17) :                           Statement
+; P/product_test_ok.p(17) :                               ReadStatement
+; P/product_test_ok.p(17) :                                   "read"
+; P/product_test_ok.p(17) :                                   VariableExpression
+; P/product_test_ok.p(17) :                                       VariableName
+; P/product_test_ok.p(17) :                                           "b"
+; P/product_test_ok.p(17) :                                   ";"
+; P/product_test_ok.p(18) :                           Statement
+; P/product_test_ok.p(18) :                               AssignmentStatement
+; P/product_test_ok.p(18) :                                   VariableExpression
+; P/product_test_ok.p(18) :                                       VariableName
+; P/product_test_ok.p(18) :                                           "c"
+; P/product_test_ok.p(18) :                                   "="
+; P/product_test_ok.p(18) :                                   FunctionCallExpression
+; P/product_test_ok.p(18) :                                       FunctionCall
+; P/product_test_ok.p(18) :                                           FunctionName
+; P/product_test_ok.p(18) :                                               "mul"
+; P/product_test_ok.p(18) :                                           "("
+; P/product_test_ok.p(18) :                                           FunctionArgumentList
+; P/product_test_ok.p(18) :                                               FunctionArgument
+; P/product_test_ok.p(18) :                                                   VariableExpression
+; P/product_test_ok.p(18) :                                                       VariableName
+; P/product_test_ok.p(18) :                                                           "a"
+; P/product_test_ok.p(18) :                                               ","
+; P/product_test_ok.p(18) :                                               FunctionArgument
+; P/product_test_ok.p(18) :                                                   VariableExpression
+; P/product_test_ok.p(18) :                                                       VariableName
+; P/product_test_ok.p(18) :                                                           "b"
+; P/product_test_ok.p(18) :                                           ")"
+; P/product_test_ok.p(18) :                                   ";"
+; P/product_test_ok.p(19) :                           Statement
+; P/product_test_ok.p(19) :                               WriteStatement
+; P/product_test_ok.p(19) :                                   "write"
+; P/product_test_ok.p(19) :                                   VariableExpression
+; P/product_test_ok.p(19) :                                       VariableName
+; P/product_test_ok.p(19) :                                           "c"
+; P/product_test_ok.p(19) :                                   ";"
+; P/product_test_ok.p(20) :                       "}"
+; P/product_test_ok.p(22) :               LocalDeclaration
+; P/product_test_ok.p(22) :                   FunctionDeclaration
+; P/product_test_ok.p(22) :                       "func"
+; P/product_test_ok.p(22) :                       FunctionName
+; P/product_test_ok.p(22) :                           "mul"
+; P/product_test_ok.p(22) :                       "("
+; P/product_test_ok.p(23) :                       FunctionParameterList
+; P/product_test_ok.p(23) :                           FunctionParameter
+; P/product_test_ok.p(23) :                               VariableName
+; P/product_test_ok.p(23) :                                   "i"
+; P/product_test_ok.p(23) :                               ":"
+; P/product_test_ok.p(23) :                               VariableType
+; P/product_test_ok.p(23) :                                   "int"
+; P/product_test_ok.p(23) :                           ","
+; P/product_test_ok.p(24) :                           FunctionParameter
+; P/product_test_ok.p(24) :                               VariableName
+; P/product_test_ok.p(24) :                                   "j"
+; P/product_test_ok.p(24) :                               ":"
+; P/product_test_ok.p(24) :                               VariableType
+; P/product_test_ok.p(24) :                                   "int"
+; P/product_test_ok.p(25) :                       ")"
+; P/product_test_ok.p(25) :                       ":"
+; P/product_test_ok.p(25) :                       FunctionType
+; P/product_test_ok.p(25) :                           "int"
+; P/product_test_ok.p(26) :                       "{"
+; P/product_test_ok.p(27) :                       LocalDeclarationList
+; P/product_test_ok.p(27) :                           LocalDeclaration
+; P/product_test_ok.p(27) :                               VariableDeclaration
+; P/product_test_ok.p(27) :                                   "var"
+; P/product_test_ok.p(28) :                                   Variable
+; P/product_test_ok.p(28) :                                       VariableName
+; P/product_test_ok.p(28) :                                           "x"
+; P/product_test_ok.p(28) :                                       ":"
+; P/product_test_ok.p(28) :                                       VariableType
+; P/product_test_ok.p(28) :                                           "int"
+; P/product_test_ok.p(28) :                                   ","
+; P/product_test_ok.p(29) :                                   Variable
+; P/product_test_ok.p(29) :                                       VariableName
+; P/product_test_ok.p(29) :                                           "y"
+; P/product_test_ok.p(29) :                                       ":"
+; P/product_test_ok.p(29) :                                       VariableType
+; P/product_test_ok.p(29) :                                           "int"
+; P/product_test_ok.p(29) :                                   ";"
+; P/product_test_ok.p(31) :                       StatementList
+; P/product_test_ok.p(31) :                           Statement
+; P/product_test_ok.p(31) :                               AssignmentStatement
+; P/product_test_ok.p(31) :                                   VariableExpression
+; P/product_test_ok.p(31) :                                       VariableName
+; P/product_test_ok.p(31) :                                           "x"
+; P/product_test_ok.p(31) :                                   "="
+; P/product_test_ok.p(31) :                                   VariableExpression
+; P/product_test_ok.p(31) :                                       VariableName
+; P/product_test_ok.p(31) :                                           "i"
+; P/product_test_ok.p(31) :                                   ";"
+; P/product_test_ok.p(32) :                           Statement
+; P/product_test_ok.p(32) :                               AssignmentStatement
+; P/product_test_ok.p(32) :                                   VariableExpression
+; P/product_test_ok.p(32) :                                       VariableName
+; P/product_test_ok.p(32) :                                           "y"
+; P/product_test_ok.p(32) :                                   "="
+; P/product_test_ok.p(32) :                                   IntegerConstantExpression
+; P/product_test_ok.p(32) :                                       IntegerConstant
+; P/product_test_ok.p(32) :                                           "0"
+; P/product_test_ok.p(32) :                                   ";"
+; P/product_test_ok.p(34) :                           Statement
+; P/product_test_ok.p(34) :                               WhileStatement
+; P/product_test_ok.p(34) :                                   "while"
+; P/product_test_ok.p(34) :                                   ParenthesisExpression
+; P/product_test_ok.p(34) :                                       "("
+; P/product_test_ok.p(34) :                                       SmallerExpression
+; P/product_test_ok.p(34) :                                           IntegerConstantExpression
+; P/product_test_ok.p(34) :                                               IntegerConstant
+; P/product_test_ok.p(34) :                                                   "0"
+; P/product_test_ok.p(34) :                                           "<"
+; P/product_test_ok.p(34) :                                           VariableExpression
+; P/product_test_ok.p(34) :                                               VariableName
+; P/product_test_ok.p(34) :                                                   "x"
+; P/product_test_ok.p(34) :                                       ")"
+; P/product_test_ok.p(35) :                                   "{"
+; P/product_test_ok.p(36) :                                   StatementList
+; P/product_test_ok.p(36) :                                       Statement
+; P/product_test_ok.p(36) :                                           AssignmentStatement
+; P/product_test_ok.p(36) :                                               VariableExpression
+; P/product_test_ok.p(36) :                                                   VariableName
+; P/product_test_ok.p(36) :                                                       "y"
+; P/product_test_ok.p(36) :                                               "="
+; P/product_test_ok.p(36) :                                               PlusExpression
+; P/product_test_ok.p(36) :                                                   VariableExpression
+; P/product_test_ok.p(36) :                                                       VariableName
+; P/product_test_ok.p(36) :                                                           "y"
+; P/product_test_ok.p(36) :                                                   "+"
+; P/product_test_ok.p(36) :                                                   VariableExpression
+; P/product_test_ok.p(36) :                                                       VariableName
+; P/product_test_ok.p(36) :                                                           "j"
+; P/product_test_ok.p(36) :                                               ";"
+; P/product_test_ok.p(37) :                                       Statement
+; P/product_test_ok.p(37) :                                           AssignmentStatement
+; P/product_test_ok.p(37) :                                               VariableExpression
+; P/product_test_ok.p(37) :                                                   VariableName
+; P/product_test_ok.p(37) :                                                       "x"
+; P/product_test_ok.p(37) :                                               "="
+; P/product_test_ok.p(37) :                                               MinusExpression
+; P/product_test_ok.p(37) :                                                   VariableExpression
+; P/product_test_ok.p(37) :                                                       VariableName
+; P/product_test_ok.p(37) :                                                           "x"
+; P/product_test_ok.p(37) :                                                   "-"
+; P/product_test_ok.p(37) :                                                   IntegerConstantExpression
+; P/product_test_ok.p(37) :                                                       IntegerConstant
+; P/product_test_ok.p(37) :                                                           "1"
+; P/product_test_ok.p(37) :                                               ";"
+; P/product_test_ok.p(38) :                                   "}"
+; P/product_test_ok.p(40) :                           Statement
+; P/product_test_ok.p(40) :                               ReturnStatement
+; P/product_test_ok.p(40) :                                   "return"
+; P/product_test_ok.p(40) :                                   VariableExpression
+; P/product_test_ok.p(40) :                                       VariableName
+; P/product_test_ok.p(40) :                                           "y"
+; P/product_test_ok.p(40) :                                   ";"
+; P/product_test_ok.p(41) :                       "}"
+; P/product_test_ok.p(43) :           StatementList
+; P/product_test_ok.p(43) :               Statement
+; P/product_test_ok.p(43) :                   ExpressionStatement
+; P/product_test_ok.p(43) :                       FunctionCallExpression
+; P/product_test_ok.p(43) :                           FunctionCall
+; P/product_test_ok.p(43) :                               FunctionName
+; P/product_test_ok.p(43) :                                   "print"
+; P/product_test_ok.p(43) :                               "("
+; P/product_test_ok.p(43) :                               FunctionArgumentList
+; P/product_test_ok.p(43) :                               ")"
+; P/product_test_ok.p(43) :                       ";"
+; P/product_test_ok.p(44) :           "}"

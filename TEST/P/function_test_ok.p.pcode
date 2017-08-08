@@ -1,0 +1,1276 @@
+ssp 0
+ujp @program
+define @function_int_square_int_of_void_main
+ssp 7
+; P/function_test_ok.p(15) : square = integer * integer ;
+; square of int_square_int_of_void_main
+lda i 0 6
+; integer of int_square_int_of_void_main
+lda i 0 5
+ind i
+; integer of int_square_int_of_void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(15) : *
+mul i
+; P/function_test_ok.p(15) : :=
+sto i
+; P/function_test_ok.p(16) : write integer ;
+; integer of int_square_int_of_void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(16) : write
+prin
+; P/function_test_ok.p(17) : write square ;
+; square of int_square_int_of_void_main
+lda i 0 6
+ind i
+; P/function_test_ok.p(17) : write
+prin
+; P/function_test_ok.p(19) : return square ;
+lda i 0 0
+; square of int_square_int_of_void_main
+lda i 0 6
+ind i
+sto i
+retf
+retf
+define @function_void_square_int_int_of_void_main
+ssp 7
+; P/function_test_ok.p(27) : square = square ( integer ) ;
+; square of void_square_int_int_of_void_main
+lod a 0 5
+mst 1
+; integer of void_square_int_int_of_void_main
+lda i 0 6
+ind i
+cup 1 @function_int_square_int_of_void_main
+; P/function_test_ok.p(27) : :=
+sto i
+retp
+define @function_void_write1_of_void_main
+ssp 5
+; P/function_test_ok.p(33) : write -11 ;
+; -11
+ldc i -11
+; P/function_test_ok.p(33) : write
+prin
+; P/function_test_ok.p(34) : write scope1 ;
+; scope1 of void_main
+lda i 1 7
+ind i
+; P/function_test_ok.p(34) : write
+prin
+; P/function_test_ok.p(35) : write -11 ;
+; -11
+ldc i -11
+; P/function_test_ok.p(35) : write
+prin
+retp
+define @function_void_write2_of_void_scope2_int_of_void_main
+ssp 5
+; P/function_test_ok.p(45) : write1 ( ) ;
+mst 2
+cup 0 @function_void_write1_of_void_main
+; P/function_test_ok.p(47) : write -22 ;
+; -22
+ldc i -22
+; P/function_test_ok.p(47) : write
+prin
+; P/function_test_ok.p(48) : write scope1 ;
+; scope1 of void_main
+lda i 2 7
+ind i
+; P/function_test_ok.p(48) : write
+prin
+; P/function_test_ok.p(49) : write scope2 ;
+; scope2 of void_scope2_int_of_void_main
+lda i 1 5
+ind i
+; P/function_test_ok.p(49) : write
+prin
+; P/function_test_ok.p(50) : write -22 ;
+; -22
+ldc i -22
+; P/function_test_ok.p(50) : write
+prin
+retp
+define @function_void_write3_of_void_scope3_int_of_void_scope2_int_of_void_main
+ssp 5
+; P/function_test_ok.p(60) : write1 ( ) ;
+mst 3
+cup 0 @function_void_write1_of_void_main
+; P/function_test_ok.p(61) : write2 ( ) ;
+mst 2
+cup 0 @function_void_write2_of_void_scope2_int_of_void_main
+; P/function_test_ok.p(63) : write -33 ;
+; -33
+ldc i -33
+; P/function_test_ok.p(63) : write
+prin
+; P/function_test_ok.p(64) : write scope1 ;
+; scope1 of void_main
+lda i 3 7
+ind i
+; P/function_test_ok.p(64) : write
+prin
+; P/function_test_ok.p(65) : write scope2 ;
+; scope2 of void_scope2_int_of_void_main
+lda i 2 5
+ind i
+; P/function_test_ok.p(65) : write
+prin
+; P/function_test_ok.p(66) : write scope3 ;
+; scope3 of void_scope3_int_of_void_scope2_int_of_void_main
+lda i 1 5
+ind i
+; P/function_test_ok.p(66) : write
+prin
+; P/function_test_ok.p(67) : write -33 ;
+; -33
+ldc i -33
+; P/function_test_ok.p(67) : write
+prin
+retp
+define @function_void_scope4_int_of_void_scope3_int_of_void_scope2_int_of_void_main
+ssp 6
+; P/function_test_ok.p(74) : write -4 ;
+; -4
+ldc i -4
+; P/function_test_ok.p(74) : write
+prin
+; P/function_test_ok.p(75) : write scope1 ;
+; scope1 of void_main
+lda i 3 7
+ind i
+; P/function_test_ok.p(75) : write
+prin
+; P/function_test_ok.p(76) : write scope2 ;
+; scope2 of void_scope2_int_of_void_main
+lda i 2 5
+ind i
+; P/function_test_ok.p(76) : write
+prin
+; P/function_test_ok.p(77) : write scope3 ;
+; scope3 of void_scope3_int_of_void_scope2_int_of_void_main
+lda i 1 5
+ind i
+; P/function_test_ok.p(77) : write
+prin
+; P/function_test_ok.p(78) : write scope4 ;
+; scope4 of void_scope4_int_of_void_scope3_int_of_void_scope2_int_of_void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(78) : write
+prin
+; P/function_test_ok.p(79) : write -4 ;
+; -4
+ldc i -4
+; P/function_test_ok.p(79) : write
+prin
+; P/function_test_ok.p(81) : write1 ( ) ;
+mst 3
+cup 0 @function_void_write1_of_void_main
+; P/function_test_ok.p(82) : write2 ( ) ;
+mst 2
+cup 0 @function_void_write2_of_void_scope2_int_of_void_main
+; P/function_test_ok.p(83) : write3 ( ) ;
+mst 1
+cup 0 @function_void_write3_of_void_scope3_int_of_void_scope2_int_of_void_main
+retp
+define @function_void_scope3_int_of_void_scope2_int_of_void_main
+ssp 6
+; P/function_test_ok.p(86) : write -3 ;
+; -3
+ldc i -3
+; P/function_test_ok.p(86) : write
+prin
+; P/function_test_ok.p(87) : write scope1 ;
+; scope1 of void_main
+lda i 2 7
+ind i
+; P/function_test_ok.p(87) : write
+prin
+; P/function_test_ok.p(88) : write scope2 ;
+; scope2 of void_scope2_int_of_void_main
+lda i 1 5
+ind i
+; P/function_test_ok.p(88) : write
+prin
+; P/function_test_ok.p(89) : write scope3 ;
+; scope3 of void_scope3_int_of_void_scope2_int_of_void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(89) : write
+prin
+; P/function_test_ok.p(90) : write -3 ;
+; -3
+ldc i -3
+; P/function_test_ok.p(90) : write
+prin
+; P/function_test_ok.p(92) : write1 ( ) ;
+mst 2
+cup 0 @function_void_write1_of_void_main
+; P/function_test_ok.p(93) : write2 ( ) ;
+mst 1
+cup 0 @function_void_write2_of_void_scope2_int_of_void_main
+; P/function_test_ok.p(94) : write3 ( ) ;
+mst 0
+cup 0 @function_void_write3_of_void_scope3_int_of_void_scope2_int_of_void_main
+; P/function_test_ok.p(95) : scope4 ( 444 ) ;
+mst 0
+; 444
+ldc i 444
+cup 1 @function_void_scope4_int_of_void_scope3_int_of_void_scope2_int_of_void_main
+retp
+define @function_void_scope2_int_of_void_main
+ssp 6
+; P/function_test_ok.p(98) : write -2 ;
+; -2
+ldc i -2
+; P/function_test_ok.p(98) : write
+prin
+; P/function_test_ok.p(99) : write scope1 ;
+; scope1 of void_main
+lda i 1 7
+ind i
+; P/function_test_ok.p(99) : write
+prin
+; P/function_test_ok.p(100) : write scope2 ;
+; scope2 of void_scope2_int_of_void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(100) : write
+prin
+; P/function_test_ok.p(101) : write -2 ;
+; -2
+ldc i -2
+; P/function_test_ok.p(101) : write
+prin
+; P/function_test_ok.p(103) : write1 ( ) ;
+mst 1
+cup 0 @function_void_write1_of_void_main
+; P/function_test_ok.p(104) : write2 ( ) ;
+mst 0
+cup 0 @function_void_write2_of_void_scope2_int_of_void_main
+; P/function_test_ok.p(105) : scope3 ( 333 ) ;
+mst 0
+; 333
+ldc i 333
+cup 1 @function_void_scope3_int_of_void_scope2_int_of_void_main
+retp
+define @function_void_main
+ssp 8
+; P/function_test_ok.p(108) : integer = 5 ;
+; integer of void_main
+lda i 0 5
+; 5
+ldc i 5
+; P/function_test_ok.p(108) : :=
+sto i
+; P/function_test_ok.p(110) : square = 0 ;
+; square of void_main
+lda i 0 6
+; 0
+ldc i 0
+; P/function_test_ok.p(110) : :=
+sto i
+; P/function_test_ok.p(111) : square = square ( integer ) ;
+; square of void_main
+lda i 0 6
+mst 0
+; integer of void_main
+lda i 0 5
+ind i
+cup 1 @function_int_square_int_of_void_main
+; P/function_test_ok.p(111) : :=
+sto i
+; P/function_test_ok.p(112) : write integer ;
+; integer of void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(112) : write
+prin
+; P/function_test_ok.p(113) : write square ;
+; square of void_main
+lda i 0 6
+ind i
+; P/function_test_ok.p(113) : write
+prin
+; P/function_test_ok.p(115) : square = 0 ;
+; square of void_main
+lda i 0 6
+; 0
+ldc i 0
+; P/function_test_ok.p(115) : :=
+sto i
+; P/function_test_ok.p(116) : square = square ( 2 + 3 ) ;
+; square of void_main
+lda i 0 6
+mst 0
+; 2
+ldc i 2
+; 3
+ldc i 3
+; P/function_test_ok.p(116) : +
+add i
+cup 1 @function_int_square_int_of_void_main
+; P/function_test_ok.p(116) : :=
+sto i
+; P/function_test_ok.p(117) : write 2 + 3 ;
+; 2
+ldc i 2
+; 3
+ldc i 3
+; P/function_test_ok.p(117) : +
+add i
+; P/function_test_ok.p(117) : write
+prin
+; P/function_test_ok.p(118) : write square ;
+; square of void_main
+lda i 0 6
+ind i
+; P/function_test_ok.p(118) : write
+prin
+; P/function_test_ok.p(120) : square = 0 ;
+; square of void_main
+lda i 0 6
+; 0
+ldc i 0
+; P/function_test_ok.p(120) : :=
+sto i
+; P/function_test_ok.p(121) : square ( square , integer ) ;
+mst 0
+; square of void_main
+lda i 0 6
+; integer of void_main
+lda i 0 5
+ind i
+cup 2 @function_void_square_int_int_of_void_main
+; P/function_test_ok.p(122) : write integer ;
+; integer of void_main
+lda i 0 5
+ind i
+; P/function_test_ok.p(122) : write
+prin
+; P/function_test_ok.p(123) : write square ;
+; square of void_main
+lda i 0 6
+ind i
+; P/function_test_ok.p(123) : write
+prin
+; P/function_test_ok.p(125) : square = 0 ;
+; square of void_main
+lda i 0 6
+; 0
+ldc i 0
+; P/function_test_ok.p(125) : :=
+sto i
+; P/function_test_ok.p(126) : square ( ( square ) , 2 + 3 ) ;
+mst 0
+; square of void_main
+lda i 0 6
+; 2
+ldc i 2
+; 3
+ldc i 3
+; P/function_test_ok.p(126) : +
+add i
+cup 2 @function_void_square_int_int_of_void_main
+; P/function_test_ok.p(127) : write 2 + 3 ;
+; 2
+ldc i 2
+; 3
+ldc i 3
+; P/function_test_ok.p(127) : +
+add i
+; P/function_test_ok.p(127) : write
+prin
+; P/function_test_ok.p(128) : write square ;
+; square of void_main
+lda i 0 6
+ind i
+; P/function_test_ok.p(128) : write
+prin
+; P/function_test_ok.p(130) : scope1 = 111 ;
+; scope1 of void_main
+lda i 0 7
+; 111
+ldc i 111
+; P/function_test_ok.p(130) : :=
+sto i
+; P/function_test_ok.p(132) : write -1 ;
+; -1
+ldc i -1
+; P/function_test_ok.p(132) : write
+prin
+; P/function_test_ok.p(133) : write scope1 ;
+; scope1 of void_main
+lda i 0 7
+ind i
+; P/function_test_ok.p(133) : write
+prin
+; P/function_test_ok.p(134) : write -1 ;
+; -1
+ldc i -1
+; P/function_test_ok.p(134) : write
+prin
+; P/function_test_ok.p(136) : write1 ( ) ;
+mst 0
+cup 0 @function_void_write1_of_void_main
+; P/function_test_ok.p(137) : scope2 ( 222 ) ;
+mst 0
+; 222
+ldc i 222
+cup 1 @function_void_scope2_int_of_void_main
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; P/function_test_ok.p(1) :    Program
+; P/function_test_ok.p(1) :        FunctionDeclaration
+; P/function_test_ok.p(1) :            "func"
+; P/function_test_ok.p(1) :            FunctionName
+; P/function_test_ok.p(1) :                "main"
+; P/function_test_ok.p(1) :            "("
+; P/function_test_ok.p(1) :            FunctionParameterList
+; P/function_test_ok.p(1) :            ")"
+; P/function_test_ok.p(1) :            ":"
+; P/function_test_ok.p(1) :            FunctionType
+; P/function_test_ok.p(1) :                "void"
+; P/function_test_ok.p(2) :            "{"
+; P/function_test_ok.p(3) :            LocalDeclarationList
+; P/function_test_ok.p(3) :                LocalDeclaration
+; P/function_test_ok.p(3) :                    VariableDeclaration
+; P/function_test_ok.p(3) :                        "var"
+; P/function_test_ok.p(4) :                        Variable
+; P/function_test_ok.p(4) :                            VariableName
+; P/function_test_ok.p(4) :                                "integer"
+; P/function_test_ok.p(4) :                            ":"
+; P/function_test_ok.p(4) :                            VariableType
+; P/function_test_ok.p(4) :                                "int"
+; P/function_test_ok.p(4) :                        ","
+; P/function_test_ok.p(5) :                        Variable
+; P/function_test_ok.p(5) :                            VariableName
+; P/function_test_ok.p(5) :                                "square"
+; P/function_test_ok.p(5) :                            ":"
+; P/function_test_ok.p(5) :                            VariableType
+; P/function_test_ok.p(5) :                                "int"
+; P/function_test_ok.p(5) :                        ","
+; P/function_test_ok.p(6) :                        Variable
+; P/function_test_ok.p(6) :                            VariableName
+; P/function_test_ok.p(6) :                                "scope1"
+; P/function_test_ok.p(6) :                            ":"
+; P/function_test_ok.p(6) :                            VariableType
+; P/function_test_ok.p(6) :                                "int"
+; P/function_test_ok.p(6) :                        ";"
+; P/function_test_ok.p(8) :                LocalDeclaration
+; P/function_test_ok.p(8) :                    FunctionDeclaration
+; P/function_test_ok.p(8) :                        "func"
+; P/function_test_ok.p(8) :                        FunctionName
+; P/function_test_ok.p(8) :                            "square"
+; P/function_test_ok.p(8) :                        "("
+; P/function_test_ok.p(9) :                        FunctionParameterList
+; P/function_test_ok.p(9) :                            FunctionParameter
+; P/function_test_ok.p(9) :                                VariableName
+; P/function_test_ok.p(9) :                                    "integer"
+; P/function_test_ok.p(9) :                                ":"
+; P/function_test_ok.p(9) :                                VariableType
+; P/function_test_ok.p(9) :                                    "int"
+; P/function_test_ok.p(10) :                       ")"
+; P/function_test_ok.p(10) :                       ":"
+; P/function_test_ok.p(10) :                       FunctionType
+; P/function_test_ok.p(10) :                           "int"
+; P/function_test_ok.p(11) :                       "{"
+; P/function_test_ok.p(12) :                       LocalDeclarationList
+; P/function_test_ok.p(12) :                           LocalDeclaration
+; P/function_test_ok.p(12) :                               VariableDeclaration
+; P/function_test_ok.p(12) :                                   "var"
+; P/function_test_ok.p(13) :                                   Variable
+; P/function_test_ok.p(13) :                                       VariableName
+; P/function_test_ok.p(13) :                                           "square"
+; P/function_test_ok.p(13) :                                       ":"
+; P/function_test_ok.p(13) :                                       VariableType
+; P/function_test_ok.p(13) :                                           "int"
+; P/function_test_ok.p(13) :                                   ";"
+; P/function_test_ok.p(15) :                       StatementList
+; P/function_test_ok.p(15) :                           Statement
+; P/function_test_ok.p(15) :                               AssignmentStatement
+; P/function_test_ok.p(15) :                                   VariableExpression
+; P/function_test_ok.p(15) :                                       VariableName
+; P/function_test_ok.p(15) :                                           "square"
+; P/function_test_ok.p(15) :                                   "="
+; P/function_test_ok.p(15) :                                   StarExpression
+; P/function_test_ok.p(15) :                                       VariableExpression
+; P/function_test_ok.p(15) :                                           VariableName
+; P/function_test_ok.p(15) :                                               "integer"
+; P/function_test_ok.p(15) :                                       "*"
+; P/function_test_ok.p(15) :                                       VariableExpression
+; P/function_test_ok.p(15) :                                           VariableName
+; P/function_test_ok.p(15) :                                               "integer"
+; P/function_test_ok.p(15) :                                   ";"
+; P/function_test_ok.p(16) :                           Statement
+; P/function_test_ok.p(16) :                               WriteStatement
+; P/function_test_ok.p(16) :                                   "write"
+; P/function_test_ok.p(16) :                                   VariableExpression
+; P/function_test_ok.p(16) :                                       VariableName
+; P/function_test_ok.p(16) :                                           "integer"
+; P/function_test_ok.p(16) :                                   ";"
+; P/function_test_ok.p(17) :                           Statement
+; P/function_test_ok.p(17) :                               WriteStatement
+; P/function_test_ok.p(17) :                                   "write"
+; P/function_test_ok.p(17) :                                   VariableExpression
+; P/function_test_ok.p(17) :                                       VariableName
+; P/function_test_ok.p(17) :                                           "square"
+; P/function_test_ok.p(17) :                                   ";"
+; P/function_test_ok.p(19) :                           Statement
+; P/function_test_ok.p(19) :                               ReturnStatement
+; P/function_test_ok.p(19) :                                   "return"
+; P/function_test_ok.p(19) :                                   VariableExpression
+; P/function_test_ok.p(19) :                                       VariableName
+; P/function_test_ok.p(19) :                                           "square"
+; P/function_test_ok.p(19) :                                   ";"
+; P/function_test_ok.p(20) :                       "}"
+; P/function_test_ok.p(22) :               LocalDeclaration
+; P/function_test_ok.p(22) :                   FunctionDeclaration
+; P/function_test_ok.p(22) :                       "func"
+; P/function_test_ok.p(22) :                       FunctionName
+; P/function_test_ok.p(22) :                           "square"
+; P/function_test_ok.p(22) :                       "("
+; P/function_test_ok.p(23) :                       FunctionParameterList
+; P/function_test_ok.p(23) :                           FunctionParameter
+; P/function_test_ok.p(23) :                               "ref"
+; P/function_test_ok.p(23) :                               VariableName
+; P/function_test_ok.p(23) :                                   "square"
+; P/function_test_ok.p(23) :                               ":"
+; P/function_test_ok.p(23) :                               VariableType
+; P/function_test_ok.p(23) :                                   "int"
+; P/function_test_ok.p(23) :                           ","
+; P/function_test_ok.p(24) :                           FunctionParameter
+; P/function_test_ok.p(24) :                               VariableName
+; P/function_test_ok.p(24) :                                   "integer"
+; P/function_test_ok.p(24) :                               ":"
+; P/function_test_ok.p(24) :                               VariableType
+; P/function_test_ok.p(24) :                                   "int"
+; P/function_test_ok.p(25) :                       ")"
+; P/function_test_ok.p(25) :                       ":"
+; P/function_test_ok.p(25) :                       FunctionType
+; P/function_test_ok.p(25) :                           "void"
+; P/function_test_ok.p(26) :                       "{"
+; P/function_test_ok.p(27) :                       LocalDeclarationList
+; P/function_test_ok.p(27) :                       StatementList
+; P/function_test_ok.p(27) :                           Statement
+; P/function_test_ok.p(27) :                               AssignmentStatement
+; P/function_test_ok.p(27) :                                   VariableExpression
+; P/function_test_ok.p(27) :                                       VariableName
+; P/function_test_ok.p(27) :                                           "square"
+; P/function_test_ok.p(27) :                                   "="
+; P/function_test_ok.p(27) :                                   FunctionCallExpression
+; P/function_test_ok.p(27) :                                       FunctionCall
+; P/function_test_ok.p(27) :                                           FunctionName
+; P/function_test_ok.p(27) :                                               "square"
+; P/function_test_ok.p(27) :                                           "("
+; P/function_test_ok.p(27) :                                           FunctionArgumentList
+; P/function_test_ok.p(27) :                                               FunctionArgument
+; P/function_test_ok.p(27) :                                                   VariableExpression
+; P/function_test_ok.p(27) :                                                       VariableName
+; P/function_test_ok.p(27) :                                                           "integer"
+; P/function_test_ok.p(27) :                                           ")"
+; P/function_test_ok.p(27) :                                   ";"
+; P/function_test_ok.p(28) :                       "}"
+; P/function_test_ok.p(30) :               LocalDeclaration
+; P/function_test_ok.p(30) :                   FunctionDeclaration
+; P/function_test_ok.p(30) :                       "func"
+; P/function_test_ok.p(30) :                       FunctionName
+; P/function_test_ok.p(30) :                           "write1"
+; P/function_test_ok.p(30) :                       "("
+; P/function_test_ok.p(31) :                       FunctionParameterList
+; P/function_test_ok.p(31) :                       ")"
+; P/function_test_ok.p(31) :                       ":"
+; P/function_test_ok.p(31) :                       FunctionType
+; P/function_test_ok.p(31) :                           "void"
+; P/function_test_ok.p(32) :                       "{"
+; P/function_test_ok.p(33) :                       LocalDeclarationList
+; P/function_test_ok.p(33) :                       StatementList
+; P/function_test_ok.p(33) :                           Statement
+; P/function_test_ok.p(33) :                               WriteStatement
+; P/function_test_ok.p(33) :                                   "write"
+; P/function_test_ok.p(33) :                                   IntegerConstantExpression
+; P/function_test_ok.p(33) :                                       IntegerConstant
+; P/function_test_ok.p(33) :                                           "-11"
+; P/function_test_ok.p(33) :                                   ";"
+; P/function_test_ok.p(34) :                           Statement
+; P/function_test_ok.p(34) :                               WriteStatement
+; P/function_test_ok.p(34) :                                   "write"
+; P/function_test_ok.p(34) :                                   VariableExpression
+; P/function_test_ok.p(34) :                                       VariableName
+; P/function_test_ok.p(34) :                                           "scope1"
+; P/function_test_ok.p(34) :                                   ";"
+; P/function_test_ok.p(35) :                           Statement
+; P/function_test_ok.p(35) :                               WriteStatement
+; P/function_test_ok.p(35) :                                   "write"
+; P/function_test_ok.p(35) :                                   IntegerConstantExpression
+; P/function_test_ok.p(35) :                                       IntegerConstant
+; P/function_test_ok.p(35) :                                           "-11"
+; P/function_test_ok.p(35) :                                   ";"
+; P/function_test_ok.p(36) :                       "}"
+; P/function_test_ok.p(38) :               LocalDeclaration
+; P/function_test_ok.p(38) :                   FunctionDeclaration
+; P/function_test_ok.p(38) :                       "func"
+; P/function_test_ok.p(38) :                       FunctionName
+; P/function_test_ok.p(38) :                           "scope2"
+; P/function_test_ok.p(38) :                       "("
+; P/function_test_ok.p(39) :                       FunctionParameterList
+; P/function_test_ok.p(39) :                           FunctionParameter
+; P/function_test_ok.p(39) :                               VariableName
+; P/function_test_ok.p(39) :                                   "scope2"
+; P/function_test_ok.p(39) :                               ":"
+; P/function_test_ok.p(39) :                               VariableType
+; P/function_test_ok.p(39) :                                   "int"
+; P/function_test_ok.p(40) :                       ")"
+; P/function_test_ok.p(40) :                       ":"
+; P/function_test_ok.p(40) :                       FunctionType
+; P/function_test_ok.p(40) :                           "void"
+; P/function_test_ok.p(41) :                       "{"
+; P/function_test_ok.p(42) :                       LocalDeclarationList
+; P/function_test_ok.p(42) :                           LocalDeclaration
+; P/function_test_ok.p(42) :                               FunctionDeclaration
+; P/function_test_ok.p(42) :                                   "func"
+; P/function_test_ok.p(42) :                                   FunctionName
+; P/function_test_ok.p(42) :                                       "write2"
+; P/function_test_ok.p(42) :                                   "("
+; P/function_test_ok.p(43) :                                   FunctionParameterList
+; P/function_test_ok.p(43) :                                   ")"
+; P/function_test_ok.p(43) :                                   ":"
+; P/function_test_ok.p(43) :                                   FunctionType
+; P/function_test_ok.p(43) :                                       "void"
+; P/function_test_ok.p(44) :                                   "{"
+; P/function_test_ok.p(45) :                                   LocalDeclarationList
+; P/function_test_ok.p(45) :                                   StatementList
+; P/function_test_ok.p(45) :                                       Statement
+; P/function_test_ok.p(45) :                                           ExpressionStatement
+; P/function_test_ok.p(45) :                                               FunctionCallExpression
+; P/function_test_ok.p(45) :                                                   FunctionCall
+; P/function_test_ok.p(45) :                                                       FunctionName
+; P/function_test_ok.p(45) :                                                           "write1"
+; P/function_test_ok.p(45) :                                                       "("
+; P/function_test_ok.p(45) :                                                       FunctionArgumentList
+; P/function_test_ok.p(45) :                                                       ")"
+; P/function_test_ok.p(45) :                                               ";"
+; P/function_test_ok.p(47) :                                       Statement
+; P/function_test_ok.p(47) :                                           WriteStatement
+; P/function_test_ok.p(47) :                                               "write"
+; P/function_test_ok.p(47) :                                               IntegerConstantExpression
+; P/function_test_ok.p(47) :                                                   IntegerConstant
+; P/function_test_ok.p(47) :                                                       "-22"
+; P/function_test_ok.p(47) :                                               ";"
+; P/function_test_ok.p(48) :                                       Statement
+; P/function_test_ok.p(48) :                                           WriteStatement
+; P/function_test_ok.p(48) :                                               "write"
+; P/function_test_ok.p(48) :                                               VariableExpression
+; P/function_test_ok.p(48) :                                                   VariableName
+; P/function_test_ok.p(48) :                                                       "scope1"
+; P/function_test_ok.p(48) :                                               ";"
+; P/function_test_ok.p(49) :                                       Statement
+; P/function_test_ok.p(49) :                                           WriteStatement
+; P/function_test_ok.p(49) :                                               "write"
+; P/function_test_ok.p(49) :                                               VariableExpression
+; P/function_test_ok.p(49) :                                                   VariableName
+; P/function_test_ok.p(49) :                                                       "scope2"
+; P/function_test_ok.p(49) :                                               ";"
+; P/function_test_ok.p(50) :                                       Statement
+; P/function_test_ok.p(50) :                                           WriteStatement
+; P/function_test_ok.p(50) :                                               "write"
+; P/function_test_ok.p(50) :                                               IntegerConstantExpression
+; P/function_test_ok.p(50) :                                                   IntegerConstant
+; P/function_test_ok.p(50) :                                                       "-22"
+; P/function_test_ok.p(50) :                                               ";"
+; P/function_test_ok.p(51) :                                   "}"
+; P/function_test_ok.p(53) :                           LocalDeclaration
+; P/function_test_ok.p(53) :                               FunctionDeclaration
+; P/function_test_ok.p(53) :                                   "func"
+; P/function_test_ok.p(53) :                                   FunctionName
+; P/function_test_ok.p(53) :                                       "scope3"
+; P/function_test_ok.p(53) :                                   "("
+; P/function_test_ok.p(54) :                                   FunctionParameterList
+; P/function_test_ok.p(54) :                                       FunctionParameter
+; P/function_test_ok.p(54) :                                           VariableName
+; P/function_test_ok.p(54) :                                               "scope3"
+; P/function_test_ok.p(54) :                                           ":"
+; P/function_test_ok.p(54) :                                           VariableType
+; P/function_test_ok.p(54) :                                               "int"
+; P/function_test_ok.p(55) :                                   ")"
+; P/function_test_ok.p(55) :                                   ":"
+; P/function_test_ok.p(55) :                                   FunctionType
+; P/function_test_ok.p(55) :                                       "void"
+; P/function_test_ok.p(56) :                                   "{"
+; P/function_test_ok.p(57) :                                   LocalDeclarationList
+; P/function_test_ok.p(57) :                                       LocalDeclaration
+; P/function_test_ok.p(57) :                                           FunctionDeclaration
+; P/function_test_ok.p(57) :                                               "func"
+; P/function_test_ok.p(57) :                                               FunctionName
+; P/function_test_ok.p(57) :                                                   "write3"
+; P/function_test_ok.p(57) :                                               "("
+; P/function_test_ok.p(58) :                                               FunctionParameterList
+; P/function_test_ok.p(58) :                                               ")"
+; P/function_test_ok.p(58) :                                               ":"
+; P/function_test_ok.p(58) :                                               FunctionType
+; P/function_test_ok.p(58) :                                                   "void"
+; P/function_test_ok.p(59) :                                               "{"
+; P/function_test_ok.p(60) :                                               LocalDeclarationList
+; P/function_test_ok.p(60) :                                               StatementList
+; P/function_test_ok.p(60) :                                                   Statement
+; P/function_test_ok.p(60) :                                                       ExpressionStatement
+; P/function_test_ok.p(60) :                                                           FunctionCallExpression
+; P/function_test_ok.p(60) :                                                               FunctionCall
+; P/function_test_ok.p(60) :                                                                   FunctionName
+; P/function_test_ok.p(60) :                                                                       "write1"
+; P/function_test_ok.p(60) :                                                                   "("
+; P/function_test_ok.p(60) :                                                                   FunctionArgumentList
+; P/function_test_ok.p(60) :                                                                   ")"
+; P/function_test_ok.p(60) :                                                           ";"
+; P/function_test_ok.p(61) :                                                   Statement
+; P/function_test_ok.p(61) :                                                       ExpressionStatement
+; P/function_test_ok.p(61) :                                                           FunctionCallExpression
+; P/function_test_ok.p(61) :                                                               FunctionCall
+; P/function_test_ok.p(61) :                                                                   FunctionName
+; P/function_test_ok.p(61) :                                                                       "write2"
+; P/function_test_ok.p(61) :                                                                   "("
+; P/function_test_ok.p(61) :                                                                   FunctionArgumentList
+; P/function_test_ok.p(61) :                                                                   ")"
+; P/function_test_ok.p(61) :                                                           ";"
+; P/function_test_ok.p(63) :                                                   Statement
+; P/function_test_ok.p(63) :                                                       WriteStatement
+; P/function_test_ok.p(63) :                                                           "write"
+; P/function_test_ok.p(63) :                                                           IntegerConstantExpression
+; P/function_test_ok.p(63) :                                                               IntegerConstant
+; P/function_test_ok.p(63) :                                                                   "-33"
+; P/function_test_ok.p(63) :                                                           ";"
+; P/function_test_ok.p(64) :                                                   Statement
+; P/function_test_ok.p(64) :                                                       WriteStatement
+; P/function_test_ok.p(64) :                                                           "write"
+; P/function_test_ok.p(64) :                                                           VariableExpression
+; P/function_test_ok.p(64) :                                                               VariableName
+; P/function_test_ok.p(64) :                                                                   "scope1"
+; P/function_test_ok.p(64) :                                                           ";"
+; P/function_test_ok.p(65) :                                                   Statement
+; P/function_test_ok.p(65) :                                                       WriteStatement
+; P/function_test_ok.p(65) :                                                           "write"
+; P/function_test_ok.p(65) :                                                           VariableExpression
+; P/function_test_ok.p(65) :                                                               VariableName
+; P/function_test_ok.p(65) :                                                                   "scope2"
+; P/function_test_ok.p(65) :                                                           ";"
+; P/function_test_ok.p(66) :                                                   Statement
+; P/function_test_ok.p(66) :                                                       WriteStatement
+; P/function_test_ok.p(66) :                                                           "write"
+; P/function_test_ok.p(66) :                                                           VariableExpression
+; P/function_test_ok.p(66) :                                                               VariableName
+; P/function_test_ok.p(66) :                                                                   "scope3"
+; P/function_test_ok.p(66) :                                                           ";"
+; P/function_test_ok.p(67) :                                                   Statement
+; P/function_test_ok.p(67) :                                                       WriteStatement
+; P/function_test_ok.p(67) :                                                           "write"
+; P/function_test_ok.p(67) :                                                           IntegerConstantExpression
+; P/function_test_ok.p(67) :                                                               IntegerConstant
+; P/function_test_ok.p(67) :                                                                   "-33"
+; P/function_test_ok.p(67) :                                                           ";"
+; P/function_test_ok.p(68) :                                               "}"
+; P/function_test_ok.p(70) :                                       LocalDeclaration
+; P/function_test_ok.p(70) :                                           FunctionDeclaration
+; P/function_test_ok.p(70) :                                               "func"
+; P/function_test_ok.p(70) :                                               FunctionName
+; P/function_test_ok.p(70) :                                                   "scope4"
+; P/function_test_ok.p(70) :                                               "("
+; P/function_test_ok.p(71) :                                               FunctionParameterList
+; P/function_test_ok.p(71) :                                                   FunctionParameter
+; P/function_test_ok.p(71) :                                                       VariableName
+; P/function_test_ok.p(71) :                                                           "scope4"
+; P/function_test_ok.p(71) :                                                       ":"
+; P/function_test_ok.p(71) :                                                       VariableType
+; P/function_test_ok.p(71) :                                                           "int"
+; P/function_test_ok.p(72) :                                               ")"
+; P/function_test_ok.p(72) :                                               ":"
+; P/function_test_ok.p(72) :                                               FunctionType
+; P/function_test_ok.p(72) :                                                   "void"
+; P/function_test_ok.p(73) :                                               "{"
+; P/function_test_ok.p(74) :                                               LocalDeclarationList
+; P/function_test_ok.p(74) :                                               StatementList
+; P/function_test_ok.p(74) :                                                   Statement
+; P/function_test_ok.p(74) :                                                       WriteStatement
+; P/function_test_ok.p(74) :                                                           "write"
+; P/function_test_ok.p(74) :                                                           IntegerConstantExpression
+; P/function_test_ok.p(74) :                                                               IntegerConstant
+; P/function_test_ok.p(74) :                                                                   "-4"
+; P/function_test_ok.p(74) :                                                           ";"
+; P/function_test_ok.p(75) :                                                   Statement
+; P/function_test_ok.p(75) :                                                       WriteStatement
+; P/function_test_ok.p(75) :                                                           "write"
+; P/function_test_ok.p(75) :                                                           VariableExpression
+; P/function_test_ok.p(75) :                                                               VariableName
+; P/function_test_ok.p(75) :                                                                   "scope1"
+; P/function_test_ok.p(75) :                                                           ";"
+; P/function_test_ok.p(76) :                                                   Statement
+; P/function_test_ok.p(76) :                                                       WriteStatement
+; P/function_test_ok.p(76) :                                                           "write"
+; P/function_test_ok.p(76) :                                                           VariableExpression
+; P/function_test_ok.p(76) :                                                               VariableName
+; P/function_test_ok.p(76) :                                                                   "scope2"
+; P/function_test_ok.p(76) :                                                           ";"
+; P/function_test_ok.p(77) :                                                   Statement
+; P/function_test_ok.p(77) :                                                       WriteStatement
+; P/function_test_ok.p(77) :                                                           "write"
+; P/function_test_ok.p(77) :                                                           VariableExpression
+; P/function_test_ok.p(77) :                                                               VariableName
+; P/function_test_ok.p(77) :                                                                   "scope3"
+; P/function_test_ok.p(77) :                                                           ";"
+; P/function_test_ok.p(78) :                                                   Statement
+; P/function_test_ok.p(78) :                                                       WriteStatement
+; P/function_test_ok.p(78) :                                                           "write"
+; P/function_test_ok.p(78) :                                                           VariableExpression
+; P/function_test_ok.p(78) :                                                               VariableName
+; P/function_test_ok.p(78) :                                                                   "scope4"
+; P/function_test_ok.p(78) :                                                           ";"
+; P/function_test_ok.p(79) :                                                   Statement
+; P/function_test_ok.p(79) :                                                       WriteStatement
+; P/function_test_ok.p(79) :                                                           "write"
+; P/function_test_ok.p(79) :                                                           IntegerConstantExpression
+; P/function_test_ok.p(79) :                                                               IntegerConstant
+; P/function_test_ok.p(79) :                                                                   "-4"
+; P/function_test_ok.p(79) :                                                           ";"
+; P/function_test_ok.p(81) :                                                   Statement
+; P/function_test_ok.p(81) :                                                       ExpressionStatement
+; P/function_test_ok.p(81) :                                                           FunctionCallExpression
+; P/function_test_ok.p(81) :                                                               FunctionCall
+; P/function_test_ok.p(81) :                                                                   FunctionName
+; P/function_test_ok.p(81) :                                                                       "write1"
+; P/function_test_ok.p(81) :                                                                   "("
+; P/function_test_ok.p(81) :                                                                   FunctionArgumentList
+; P/function_test_ok.p(81) :                                                                   ")"
+; P/function_test_ok.p(81) :                                                           ";"
+; P/function_test_ok.p(82) :                                                   Statement
+; P/function_test_ok.p(82) :                                                       ExpressionStatement
+; P/function_test_ok.p(82) :                                                           FunctionCallExpression
+; P/function_test_ok.p(82) :                                                               FunctionCall
+; P/function_test_ok.p(82) :                                                                   FunctionName
+; P/function_test_ok.p(82) :                                                                       "write2"
+; P/function_test_ok.p(82) :                                                                   "("
+; P/function_test_ok.p(82) :                                                                   FunctionArgumentList
+; P/function_test_ok.p(82) :                                                                   ")"
+; P/function_test_ok.p(82) :                                                           ";"
+; P/function_test_ok.p(83) :                                                   Statement
+; P/function_test_ok.p(83) :                                                       ExpressionStatement
+; P/function_test_ok.p(83) :                                                           FunctionCallExpression
+; P/function_test_ok.p(83) :                                                               FunctionCall
+; P/function_test_ok.p(83) :                                                                   FunctionName
+; P/function_test_ok.p(83) :                                                                       "write3"
+; P/function_test_ok.p(83) :                                                                   "("
+; P/function_test_ok.p(83) :                                                                   FunctionArgumentList
+; P/function_test_ok.p(83) :                                                                   ")"
+; P/function_test_ok.p(83) :                                                           ";"
+; P/function_test_ok.p(84) :                                               "}"
+; P/function_test_ok.p(86) :                                   StatementList
+; P/function_test_ok.p(86) :                                       Statement
+; P/function_test_ok.p(86) :                                           WriteStatement
+; P/function_test_ok.p(86) :                                               "write"
+; P/function_test_ok.p(86) :                                               IntegerConstantExpression
+; P/function_test_ok.p(86) :                                                   IntegerConstant
+; P/function_test_ok.p(86) :                                                       "-3"
+; P/function_test_ok.p(86) :                                               ";"
+; P/function_test_ok.p(87) :                                       Statement
+; P/function_test_ok.p(87) :                                           WriteStatement
+; P/function_test_ok.p(87) :                                               "write"
+; P/function_test_ok.p(87) :                                               VariableExpression
+; P/function_test_ok.p(87) :                                                   VariableName
+; P/function_test_ok.p(87) :                                                       "scope1"
+; P/function_test_ok.p(87) :                                               ";"
+; P/function_test_ok.p(88) :                                       Statement
+; P/function_test_ok.p(88) :                                           WriteStatement
+; P/function_test_ok.p(88) :                                               "write"
+; P/function_test_ok.p(88) :                                               VariableExpression
+; P/function_test_ok.p(88) :                                                   VariableName
+; P/function_test_ok.p(88) :                                                       "scope2"
+; P/function_test_ok.p(88) :                                               ";"
+; P/function_test_ok.p(89) :                                       Statement
+; P/function_test_ok.p(89) :                                           WriteStatement
+; P/function_test_ok.p(89) :                                               "write"
+; P/function_test_ok.p(89) :                                               VariableExpression
+; P/function_test_ok.p(89) :                                                   VariableName
+; P/function_test_ok.p(89) :                                                       "scope3"
+; P/function_test_ok.p(89) :                                               ";"
+; P/function_test_ok.p(90) :                                       Statement
+; P/function_test_ok.p(90) :                                           WriteStatement
+; P/function_test_ok.p(90) :                                               "write"
+; P/function_test_ok.p(90) :                                               IntegerConstantExpression
+; P/function_test_ok.p(90) :                                                   IntegerConstant
+; P/function_test_ok.p(90) :                                                       "-3"
+; P/function_test_ok.p(90) :                                               ";"
+; P/function_test_ok.p(92) :                                       Statement
+; P/function_test_ok.p(92) :                                           ExpressionStatement
+; P/function_test_ok.p(92) :                                               FunctionCallExpression
+; P/function_test_ok.p(92) :                                                   FunctionCall
+; P/function_test_ok.p(92) :                                                       FunctionName
+; P/function_test_ok.p(92) :                                                           "write1"
+; P/function_test_ok.p(92) :                                                       "("
+; P/function_test_ok.p(92) :                                                       FunctionArgumentList
+; P/function_test_ok.p(92) :                                                       ")"
+; P/function_test_ok.p(92) :                                               ";"
+; P/function_test_ok.p(93) :                                       Statement
+; P/function_test_ok.p(93) :                                           ExpressionStatement
+; P/function_test_ok.p(93) :                                               FunctionCallExpression
+; P/function_test_ok.p(93) :                                                   FunctionCall
+; P/function_test_ok.p(93) :                                                       FunctionName
+; P/function_test_ok.p(93) :                                                           "write2"
+; P/function_test_ok.p(93) :                                                       "("
+; P/function_test_ok.p(93) :                                                       FunctionArgumentList
+; P/function_test_ok.p(93) :                                                       ")"
+; P/function_test_ok.p(93) :                                               ";"
+; P/function_test_ok.p(94) :                                       Statement
+; P/function_test_ok.p(94) :                                           ExpressionStatement
+; P/function_test_ok.p(94) :                                               FunctionCallExpression
+; P/function_test_ok.p(94) :                                                   FunctionCall
+; P/function_test_ok.p(94) :                                                       FunctionName
+; P/function_test_ok.p(94) :                                                           "write3"
+; P/function_test_ok.p(94) :                                                       "("
+; P/function_test_ok.p(94) :                                                       FunctionArgumentList
+; P/function_test_ok.p(94) :                                                       ")"
+; P/function_test_ok.p(94) :                                               ";"
+; P/function_test_ok.p(95) :                                       Statement
+; P/function_test_ok.p(95) :                                           ExpressionStatement
+; P/function_test_ok.p(95) :                                               FunctionCallExpression
+; P/function_test_ok.p(95) :                                                   FunctionCall
+; P/function_test_ok.p(95) :                                                       FunctionName
+; P/function_test_ok.p(95) :                                                           "scope4"
+; P/function_test_ok.p(95) :                                                       "("
+; P/function_test_ok.p(95) :                                                       FunctionArgumentList
+; P/function_test_ok.p(95) :                                                           FunctionArgument
+; P/function_test_ok.p(95) :                                                               IntegerConstantExpression
+; P/function_test_ok.p(95) :                                                                   IntegerConstant
+; P/function_test_ok.p(95) :                                                                       "444"
+; P/function_test_ok.p(95) :                                                       ")"
+; P/function_test_ok.p(95) :                                               ";"
+; P/function_test_ok.p(96) :                                   "}"
+; P/function_test_ok.p(98) :                       StatementList
+; P/function_test_ok.p(98) :                           Statement
+; P/function_test_ok.p(98) :                               WriteStatement
+; P/function_test_ok.p(98) :                                   "write"
+; P/function_test_ok.p(98) :                                   IntegerConstantExpression
+; P/function_test_ok.p(98) :                                       IntegerConstant
+; P/function_test_ok.p(98) :                                           "-2"
+; P/function_test_ok.p(98) :                                   ";"
+; P/function_test_ok.p(99) :                           Statement
+; P/function_test_ok.p(99) :                               WriteStatement
+; P/function_test_ok.p(99) :                                   "write"
+; P/function_test_ok.p(99) :                                   VariableExpression
+; P/function_test_ok.p(99) :                                       VariableName
+; P/function_test_ok.p(99) :                                           "scope1"
+; P/function_test_ok.p(99) :                                   ";"
+; P/function_test_ok.p(100) :                          Statement
+; P/function_test_ok.p(100) :                              WriteStatement
+; P/function_test_ok.p(100) :                                  "write"
+; P/function_test_ok.p(100) :                                  VariableExpression
+; P/function_test_ok.p(100) :                                      VariableName
+; P/function_test_ok.p(100) :                                          "scope2"
+; P/function_test_ok.p(100) :                                  ";"
+; P/function_test_ok.p(101) :                          Statement
+; P/function_test_ok.p(101) :                              WriteStatement
+; P/function_test_ok.p(101) :                                  "write"
+; P/function_test_ok.p(101) :                                  IntegerConstantExpression
+; P/function_test_ok.p(101) :                                      IntegerConstant
+; P/function_test_ok.p(101) :                                          "-2"
+; P/function_test_ok.p(101) :                                  ";"
+; P/function_test_ok.p(103) :                          Statement
+; P/function_test_ok.p(103) :                              ExpressionStatement
+; P/function_test_ok.p(103) :                                  FunctionCallExpression
+; P/function_test_ok.p(103) :                                      FunctionCall
+; P/function_test_ok.p(103) :                                          FunctionName
+; P/function_test_ok.p(103) :                                              "write1"
+; P/function_test_ok.p(103) :                                          "("
+; P/function_test_ok.p(103) :                                          FunctionArgumentList
+; P/function_test_ok.p(103) :                                          ")"
+; P/function_test_ok.p(103) :                                  ";"
+; P/function_test_ok.p(104) :                          Statement
+; P/function_test_ok.p(104) :                              ExpressionStatement
+; P/function_test_ok.p(104) :                                  FunctionCallExpression
+; P/function_test_ok.p(104) :                                      FunctionCall
+; P/function_test_ok.p(104) :                                          FunctionName
+; P/function_test_ok.p(104) :                                              "write2"
+; P/function_test_ok.p(104) :                                          "("
+; P/function_test_ok.p(104) :                                          FunctionArgumentList
+; P/function_test_ok.p(104) :                                          ")"
+; P/function_test_ok.p(104) :                                  ";"
+; P/function_test_ok.p(105) :                          Statement
+; P/function_test_ok.p(105) :                              ExpressionStatement
+; P/function_test_ok.p(105) :                                  FunctionCallExpression
+; P/function_test_ok.p(105) :                                      FunctionCall
+; P/function_test_ok.p(105) :                                          FunctionName
+; P/function_test_ok.p(105) :                                              "scope3"
+; P/function_test_ok.p(105) :                                          "("
+; P/function_test_ok.p(105) :                                          FunctionArgumentList
+; P/function_test_ok.p(105) :                                              FunctionArgument
+; P/function_test_ok.p(105) :                                                  IntegerConstantExpression
+; P/function_test_ok.p(105) :                                                      IntegerConstant
+; P/function_test_ok.p(105) :                                                          "333"
+; P/function_test_ok.p(105) :                                          ")"
+; P/function_test_ok.p(105) :                                  ";"
+; P/function_test_ok.p(106) :                      "}"
+; P/function_test_ok.p(108) :          StatementList
+; P/function_test_ok.p(108) :              Statement
+; P/function_test_ok.p(108) :                  AssignmentStatement
+; P/function_test_ok.p(108) :                      VariableExpression
+; P/function_test_ok.p(108) :                          VariableName
+; P/function_test_ok.p(108) :                              "integer"
+; P/function_test_ok.p(108) :                      "="
+; P/function_test_ok.p(108) :                      IntegerConstantExpression
+; P/function_test_ok.p(108) :                          IntegerConstant
+; P/function_test_ok.p(108) :                              "5"
+; P/function_test_ok.p(108) :                      ";"
+; P/function_test_ok.p(110) :              Statement
+; P/function_test_ok.p(110) :                  AssignmentStatement
+; P/function_test_ok.p(110) :                      VariableExpression
+; P/function_test_ok.p(110) :                          VariableName
+; P/function_test_ok.p(110) :                              "square"
+; P/function_test_ok.p(110) :                      "="
+; P/function_test_ok.p(110) :                      IntegerConstantExpression
+; P/function_test_ok.p(110) :                          IntegerConstant
+; P/function_test_ok.p(110) :                              "0"
+; P/function_test_ok.p(110) :                      ";"
+; P/function_test_ok.p(111) :              Statement
+; P/function_test_ok.p(111) :                  AssignmentStatement
+; P/function_test_ok.p(111) :                      VariableExpression
+; P/function_test_ok.p(111) :                          VariableName
+; P/function_test_ok.p(111) :                              "square"
+; P/function_test_ok.p(111) :                      "="
+; P/function_test_ok.p(111) :                      FunctionCallExpression
+; P/function_test_ok.p(111) :                          FunctionCall
+; P/function_test_ok.p(111) :                              FunctionName
+; P/function_test_ok.p(111) :                                  "square"
+; P/function_test_ok.p(111) :                              "("
+; P/function_test_ok.p(111) :                              FunctionArgumentList
+; P/function_test_ok.p(111) :                                  FunctionArgument
+; P/function_test_ok.p(111) :                                      VariableExpression
+; P/function_test_ok.p(111) :                                          VariableName
+; P/function_test_ok.p(111) :                                              "integer"
+; P/function_test_ok.p(111) :                              ")"
+; P/function_test_ok.p(111) :                      ";"
+; P/function_test_ok.p(112) :              Statement
+; P/function_test_ok.p(112) :                  WriteStatement
+; P/function_test_ok.p(112) :                      "write"
+; P/function_test_ok.p(112) :                      VariableExpression
+; P/function_test_ok.p(112) :                          VariableName
+; P/function_test_ok.p(112) :                              "integer"
+; P/function_test_ok.p(112) :                      ";"
+; P/function_test_ok.p(113) :              Statement
+; P/function_test_ok.p(113) :                  WriteStatement
+; P/function_test_ok.p(113) :                      "write"
+; P/function_test_ok.p(113) :                      VariableExpression
+; P/function_test_ok.p(113) :                          VariableName
+; P/function_test_ok.p(113) :                              "square"
+; P/function_test_ok.p(113) :                      ";"
+; P/function_test_ok.p(115) :              Statement
+; P/function_test_ok.p(115) :                  AssignmentStatement
+; P/function_test_ok.p(115) :                      VariableExpression
+; P/function_test_ok.p(115) :                          VariableName
+; P/function_test_ok.p(115) :                              "square"
+; P/function_test_ok.p(115) :                      "="
+; P/function_test_ok.p(115) :                      IntegerConstantExpression
+; P/function_test_ok.p(115) :                          IntegerConstant
+; P/function_test_ok.p(115) :                              "0"
+; P/function_test_ok.p(115) :                      ";"
+; P/function_test_ok.p(116) :              Statement
+; P/function_test_ok.p(116) :                  AssignmentStatement
+; P/function_test_ok.p(116) :                      VariableExpression
+; P/function_test_ok.p(116) :                          VariableName
+; P/function_test_ok.p(116) :                              "square"
+; P/function_test_ok.p(116) :                      "="
+; P/function_test_ok.p(116) :                      FunctionCallExpression
+; P/function_test_ok.p(116) :                          FunctionCall
+; P/function_test_ok.p(116) :                              FunctionName
+; P/function_test_ok.p(116) :                                  "square"
+; P/function_test_ok.p(116) :                              "("
+; P/function_test_ok.p(116) :                              FunctionArgumentList
+; P/function_test_ok.p(116) :                                  FunctionArgument
+; P/function_test_ok.p(116) :                                      PlusExpression
+; P/function_test_ok.p(116) :                                          IntegerConstantExpression
+; P/function_test_ok.p(116) :                                              IntegerConstant
+; P/function_test_ok.p(116) :                                                  "2"
+; P/function_test_ok.p(116) :                                          "+"
+; P/function_test_ok.p(116) :                                          IntegerConstantExpression
+; P/function_test_ok.p(116) :                                              IntegerConstant
+; P/function_test_ok.p(116) :                                                  "3"
+; P/function_test_ok.p(116) :                              ")"
+; P/function_test_ok.p(116) :                      ";"
+; P/function_test_ok.p(117) :              Statement
+; P/function_test_ok.p(117) :                  WriteStatement
+; P/function_test_ok.p(117) :                      "write"
+; P/function_test_ok.p(117) :                      PlusExpression
+; P/function_test_ok.p(117) :                          IntegerConstantExpression
+; P/function_test_ok.p(117) :                              IntegerConstant
+; P/function_test_ok.p(117) :                                  "2"
+; P/function_test_ok.p(117) :                          "+"
+; P/function_test_ok.p(117) :                          IntegerConstantExpression
+; P/function_test_ok.p(117) :                              IntegerConstant
+; P/function_test_ok.p(117) :                                  "3"
+; P/function_test_ok.p(117) :                      ";"
+; P/function_test_ok.p(118) :              Statement
+; P/function_test_ok.p(118) :                  WriteStatement
+; P/function_test_ok.p(118) :                      "write"
+; P/function_test_ok.p(118) :                      VariableExpression
+; P/function_test_ok.p(118) :                          VariableName
+; P/function_test_ok.p(118) :                              "square"
+; P/function_test_ok.p(118) :                      ";"
+; P/function_test_ok.p(120) :              Statement
+; P/function_test_ok.p(120) :                  AssignmentStatement
+; P/function_test_ok.p(120) :                      VariableExpression
+; P/function_test_ok.p(120) :                          VariableName
+; P/function_test_ok.p(120) :                              "square"
+; P/function_test_ok.p(120) :                      "="
+; P/function_test_ok.p(120) :                      IntegerConstantExpression
+; P/function_test_ok.p(120) :                          IntegerConstant
+; P/function_test_ok.p(120) :                              "0"
+; P/function_test_ok.p(120) :                      ";"
+; P/function_test_ok.p(121) :              Statement
+; P/function_test_ok.p(121) :                  ExpressionStatement
+; P/function_test_ok.p(121) :                      FunctionCallExpression
+; P/function_test_ok.p(121) :                          FunctionCall
+; P/function_test_ok.p(121) :                              FunctionName
+; P/function_test_ok.p(121) :                                  "square"
+; P/function_test_ok.p(121) :                              "("
+; P/function_test_ok.p(121) :                              FunctionArgumentList
+; P/function_test_ok.p(121) :                                  FunctionArgument
+; P/function_test_ok.p(121) :                                      VariableExpression
+; P/function_test_ok.p(121) :                                          VariableName
+; P/function_test_ok.p(121) :                                              "square"
+; P/function_test_ok.p(121) :                                  ","
+; P/function_test_ok.p(121) :                                  FunctionArgument
+; P/function_test_ok.p(121) :                                      VariableExpression
+; P/function_test_ok.p(121) :                                          VariableName
+; P/function_test_ok.p(121) :                                              "integer"
+; P/function_test_ok.p(121) :                              ")"
+; P/function_test_ok.p(121) :                      ";"
+; P/function_test_ok.p(122) :              Statement
+; P/function_test_ok.p(122) :                  WriteStatement
+; P/function_test_ok.p(122) :                      "write"
+; P/function_test_ok.p(122) :                      VariableExpression
+; P/function_test_ok.p(122) :                          VariableName
+; P/function_test_ok.p(122) :                              "integer"
+; P/function_test_ok.p(122) :                      ";"
+; P/function_test_ok.p(123) :              Statement
+; P/function_test_ok.p(123) :                  WriteStatement
+; P/function_test_ok.p(123) :                      "write"
+; P/function_test_ok.p(123) :                      VariableExpression
+; P/function_test_ok.p(123) :                          VariableName
+; P/function_test_ok.p(123) :                              "square"
+; P/function_test_ok.p(123) :                      ";"
+; P/function_test_ok.p(125) :              Statement
+; P/function_test_ok.p(125) :                  AssignmentStatement
+; P/function_test_ok.p(125) :                      VariableExpression
+; P/function_test_ok.p(125) :                          VariableName
+; P/function_test_ok.p(125) :                              "square"
+; P/function_test_ok.p(125) :                      "="
+; P/function_test_ok.p(125) :                      IntegerConstantExpression
+; P/function_test_ok.p(125) :                          IntegerConstant
+; P/function_test_ok.p(125) :                              "0"
+; P/function_test_ok.p(125) :                      ";"
+; P/function_test_ok.p(126) :              Statement
+; P/function_test_ok.p(126) :                  ExpressionStatement
+; P/function_test_ok.p(126) :                      FunctionCallExpression
+; P/function_test_ok.p(126) :                          FunctionCall
+; P/function_test_ok.p(126) :                              FunctionName
+; P/function_test_ok.p(126) :                                  "square"
+; P/function_test_ok.p(126) :                              "("
+; P/function_test_ok.p(126) :                              FunctionArgumentList
+; P/function_test_ok.p(126) :                                  FunctionArgument
+; P/function_test_ok.p(126) :                                      ParenthesisExpression
+; P/function_test_ok.p(126) :                                          "("
+; P/function_test_ok.p(126) :                                          VariableExpression
+; P/function_test_ok.p(126) :                                              VariableName
+; P/function_test_ok.p(126) :                                                  "square"
+; P/function_test_ok.p(126) :                                          ")"
+; P/function_test_ok.p(126) :                                  ","
+; P/function_test_ok.p(126) :                                  FunctionArgument
+; P/function_test_ok.p(126) :                                      PlusExpression
+; P/function_test_ok.p(126) :                                          IntegerConstantExpression
+; P/function_test_ok.p(126) :                                              IntegerConstant
+; P/function_test_ok.p(126) :                                                  "2"
+; P/function_test_ok.p(126) :                                          "+"
+; P/function_test_ok.p(126) :                                          IntegerConstantExpression
+; P/function_test_ok.p(126) :                                              IntegerConstant
+; P/function_test_ok.p(126) :                                                  "3"
+; P/function_test_ok.p(126) :                              ")"
+; P/function_test_ok.p(126) :                      ";"
+; P/function_test_ok.p(127) :              Statement
+; P/function_test_ok.p(127) :                  WriteStatement
+; P/function_test_ok.p(127) :                      "write"
+; P/function_test_ok.p(127) :                      PlusExpression
+; P/function_test_ok.p(127) :                          IntegerConstantExpression
+; P/function_test_ok.p(127) :                              IntegerConstant
+; P/function_test_ok.p(127) :                                  "2"
+; P/function_test_ok.p(127) :                          "+"
+; P/function_test_ok.p(127) :                          IntegerConstantExpression
+; P/function_test_ok.p(127) :                              IntegerConstant
+; P/function_test_ok.p(127) :                                  "3"
+; P/function_test_ok.p(127) :                      ";"
+; P/function_test_ok.p(128) :              Statement
+; P/function_test_ok.p(128) :                  WriteStatement
+; P/function_test_ok.p(128) :                      "write"
+; P/function_test_ok.p(128) :                      VariableExpression
+; P/function_test_ok.p(128) :                          VariableName
+; P/function_test_ok.p(128) :                              "square"
+; P/function_test_ok.p(128) :                      ";"
+; P/function_test_ok.p(130) :              Statement
+; P/function_test_ok.p(130) :                  AssignmentStatement
+; P/function_test_ok.p(130) :                      VariableExpression
+; P/function_test_ok.p(130) :                          VariableName
+; P/function_test_ok.p(130) :                              "scope1"
+; P/function_test_ok.p(130) :                      "="
+; P/function_test_ok.p(130) :                      IntegerConstantExpression
+; P/function_test_ok.p(130) :                          IntegerConstant
+; P/function_test_ok.p(130) :                              "111"
+; P/function_test_ok.p(130) :                      ";"
+; P/function_test_ok.p(132) :              Statement
+; P/function_test_ok.p(132) :                  WriteStatement
+; P/function_test_ok.p(132) :                      "write"
+; P/function_test_ok.p(132) :                      IntegerConstantExpression
+; P/function_test_ok.p(132) :                          IntegerConstant
+; P/function_test_ok.p(132) :                              "-1"
+; P/function_test_ok.p(132) :                      ";"
+; P/function_test_ok.p(133) :              Statement
+; P/function_test_ok.p(133) :                  WriteStatement
+; P/function_test_ok.p(133) :                      "write"
+; P/function_test_ok.p(133) :                      VariableExpression
+; P/function_test_ok.p(133) :                          VariableName
+; P/function_test_ok.p(133) :                              "scope1"
+; P/function_test_ok.p(133) :                      ";"
+; P/function_test_ok.p(134) :              Statement
+; P/function_test_ok.p(134) :                  WriteStatement
+; P/function_test_ok.p(134) :                      "write"
+; P/function_test_ok.p(134) :                      IntegerConstantExpression
+; P/function_test_ok.p(134) :                          IntegerConstant
+; P/function_test_ok.p(134) :                              "-1"
+; P/function_test_ok.p(134) :                      ";"
+; P/function_test_ok.p(136) :              Statement
+; P/function_test_ok.p(136) :                  ExpressionStatement
+; P/function_test_ok.p(136) :                      FunctionCallExpression
+; P/function_test_ok.p(136) :                          FunctionCall
+; P/function_test_ok.p(136) :                              FunctionName
+; P/function_test_ok.p(136) :                                  "write1"
+; P/function_test_ok.p(136) :                              "("
+; P/function_test_ok.p(136) :                              FunctionArgumentList
+; P/function_test_ok.p(136) :                              ")"
+; P/function_test_ok.p(136) :                      ";"
+; P/function_test_ok.p(137) :              Statement
+; P/function_test_ok.p(137) :                  ExpressionStatement
+; P/function_test_ok.p(137) :                      FunctionCallExpression
+; P/function_test_ok.p(137) :                          FunctionCall
+; P/function_test_ok.p(137) :                              FunctionName
+; P/function_test_ok.p(137) :                                  "scope2"
+; P/function_test_ok.p(137) :                              "("
+; P/function_test_ok.p(137) :                              FunctionArgumentList
+; P/function_test_ok.p(137) :                                  FunctionArgument
+; P/function_test_ok.p(137) :                                      IntegerConstantExpression
+; P/function_test_ok.p(137) :                                          IntegerConstant
+; P/function_test_ok.p(137) :                                              "222"
+; P/function_test_ok.p(137) :                              ")"
+; P/function_test_ok.p(137) :                      ";"
+; P/function_test_ok.p(138) :          "}"
