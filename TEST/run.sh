@@ -1,7 +1,6 @@
 #!/bin/sh
 set -x
 
-for f in P/*.p;
-    do
-        ../pc $f >$f.pcode
-    done;
+for file_path in *.p; do	
+    ../pc "$file_path" >"${file_path%.*}.pcode"
+done

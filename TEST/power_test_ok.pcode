@@ -1,0 +1,1011 @@
+ssp 0
+ujp @program
+define @function_int_GetRecursivePower_int_int_of_void_main
+ssp 8
+; power_test_ok.p(16) : if ( exponent == 0 )
+; exponent of int_GetRecursivePower_int_int_of_void_main
+lda i 0 6
+ind i
+; 0
+ldc i 0
+; power_test_ok.p(16) : =
+equ i
+fjp @if_else_1
+; power_test_ok.p(18) : power = 1 ;
+; power of int_GetRecursivePower_int_int_of_void_main
+lda i 0 7
+; 1
+ldc i 1
+; power_test_ok.p(18) : :=
+sto i
+ujp @if_end_1
+define @if_else_1
+; power_test_ok.p(20) : else
+; power_test_ok.p(22) : power = basis * GetRecursivePower ( basis , exponent - 1 ) ;
+; power of int_GetRecursivePower_int_int_of_void_main
+lda i 0 7
+; basis of int_GetRecursivePower_int_int_of_void_main
+lda i 0 5
+ind i
+mst 1
+; basis of int_GetRecursivePower_int_int_of_void_main
+lda i 0 5
+ind i
+; exponent of int_GetRecursivePower_int_int_of_void_main
+lda i 0 6
+ind i
+; 1
+ldc i 1
+; power_test_ok.p(22) : -
+sub i
+cup 2 @function_int_GetRecursivePower_int_int_of_void_main
+; power_test_ok.p(22) : *
+mul i
+; power_test_ok.p(22) : :=
+sto i
+define @if_end_1
+; power_test_ok.p(25) : return power ;
+lda i 0 0
+; power of int_GetRecursivePower_int_int_of_void_main
+lda i 0 7
+ind i
+sto i
+retf
+retf
+define @function_void_SetRecursivePower_int_int_int_of_void_main
+ssp 8
+; power_test_ok.p(34) : if ( exponent == 0 )
+; exponent of void_SetRecursivePower_int_int_int_of_void_main
+lda i 0 7
+ind i
+; 0
+ldc i 0
+; power_test_ok.p(34) : =
+equ i
+fjp @if_else_2
+; power_test_ok.p(36) : power = 1 ;
+; power of void_SetRecursivePower_int_int_int_of_void_main
+lod a 0 5
+; 1
+ldc i 1
+; power_test_ok.p(36) : :=
+sto i
+ujp @if_end_2
+define @if_else_2
+; power_test_ok.p(38) : else
+; power_test_ok.p(40) : SetRecursivePower ( power , basis , exponent - 1 ) ;
+mst 1
+; power of void_SetRecursivePower_int_int_int_of_void_main
+lod a 0 5
+; basis of void_SetRecursivePower_int_int_int_of_void_main
+lda i 0 6
+ind i
+; exponent of void_SetRecursivePower_int_int_int_of_void_main
+lda i 0 7
+ind i
+; 1
+ldc i 1
+; power_test_ok.p(40) : -
+sub i
+cup 3 @function_void_SetRecursivePower_int_int_int_of_void_main
+; power_test_ok.p(41) : power = power * basis ;
+; power of void_SetRecursivePower_int_int_int_of_void_main
+lod a 0 5
+; power of void_SetRecursivePower_int_int_int_of_void_main
+lod a 0 5
+ind i
+; basis of void_SetRecursivePower_int_int_int_of_void_main
+lda i 0 6
+ind i
+; power_test_ok.p(41) : *
+mul i
+; power_test_ok.p(41) : :=
+sto i
+define @if_end_2
+retp
+define @function_int_GetPower_int_int_of_void_main
+ssp 8
+; power_test_ok.p(51) : power = 1 ;
+; power of int_GetPower_int_int_of_void_main
+lda i 0 7
+; 1
+ldc i 1
+; power_test_ok.p(51) : :=
+sto i
+; power_test_ok.p(53) : while ( 0 < exponent )
+define @while_3
+; 0
+ldc i 0
+; exponent of int_GetPower_int_int_of_void_main
+lda i 0 6
+ind i
+; power_test_ok.p(53) : <
+les i
+fjp @while_end_3
+; power_test_ok.p(55) : power = power * basis ;
+; power of int_GetPower_int_int_of_void_main
+lda i 0 7
+; power of int_GetPower_int_int_of_void_main
+lda i 0 7
+ind i
+; basis of int_GetPower_int_int_of_void_main
+lda i 0 5
+ind i
+; power_test_ok.p(55) : *
+mul i
+; power_test_ok.p(55) : :=
+sto i
+; power_test_ok.p(56) : exponent = exponent - 1 ;
+; exponent of int_GetPower_int_int_of_void_main
+lda i 0 6
+; exponent of int_GetPower_int_int_of_void_main
+lda i 0 6
+ind i
+; 1
+ldc i 1
+; power_test_ok.p(56) : -
+sub i
+; power_test_ok.p(56) : :=
+sto i
+ujp @while_3
+define @while_end_3
+; power_test_ok.p(59) : return power ;
+lda i 0 0
+; power of int_GetPower_int_int_of_void_main
+lda i 0 7
+ind i
+sto i
+retf
+retf
+define @function_void_SetPower_int_int_int_of_void_main
+ssp 8
+; power_test_ok.p(68) : power = GetPower ( basis , exponent ) ;
+; power of void_SetPower_int_int_int_of_void_main
+lod a 0 5
+mst 1
+; basis of void_SetPower_int_int_int_of_void_main
+lda i 0 6
+ind i
+; exponent of void_SetPower_int_int_int_of_void_main
+lda i 0 7
+ind i
+cup 2 @function_int_GetPower_int_int_of_void_main
+; power_test_ok.p(68) : :=
+sto i
+retp
+define @function_int_GetSquare_int_of_void_main
+ssp 7
+; power_test_ok.p(78) : square = GetPower ( basis , 2 ) ;
+; square of int_GetSquare_int_of_void_main
+lda i 0 6
+mst 1
+; basis of int_GetSquare_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+cup 2 @function_int_GetPower_int_int_of_void_main
+; power_test_ok.p(78) : :=
+sto i
+; power_test_ok.p(80) : return square ;
+lda i 0 0
+; square of int_GetSquare_int_of_void_main
+lda i 0 6
+ind i
+sto i
+retf
+retf
+define @function_void_SetSquare_int_int_of_void_main
+ssp 7
+; power_test_ok.p(88) : SetPower ( square , basis , 2 ) ;
+mst 1
+; square of void_SetSquare_int_int_of_void_main
+lod a 0 5
+; basis of void_SetSquare_int_int_of_void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+cup 3 @function_void_SetPower_int_int_int_of_void_main
+retp
+define @function_void_main
+ssp 7
+; power_test_ok.p(91) : power = GetRecursivePower ( 5 , 2 ) ;
+; power of void_main
+lda i 0 5
+mst 0
+; 5
+ldc i 5
+; 2
+ldc i 2
+cup 2 @function_int_GetRecursivePower_int_int_of_void_main
+; power_test_ok.p(91) : :=
+sto i
+; power_test_ok.p(92) : write power ;
+; power of void_main
+lda i 0 5
+ind i
+; power_test_ok.p(92) : write
+prin
+; power_test_ok.p(94) : SetRecursivePower ( power , 5 , 2 ) ;
+mst 0
+; power of void_main
+lda i 0 5
+; 5
+ldc i 5
+; 2
+ldc i 2
+cup 3 @function_void_SetRecursivePower_int_int_int_of_void_main
+; power_test_ok.p(95) : write power ;
+; power of void_main
+lda i 0 5
+ind i
+; power_test_ok.p(95) : write
+prin
+; power_test_ok.p(97) : power = GetPower ( 5 , 2 ) ;
+; power of void_main
+lda i 0 5
+mst 0
+; 5
+ldc i 5
+; 2
+ldc i 2
+cup 2 @function_int_GetPower_int_int_of_void_main
+; power_test_ok.p(97) : :=
+sto i
+; power_test_ok.p(98) : write power ;
+; power of void_main
+lda i 0 5
+ind i
+; power_test_ok.p(98) : write
+prin
+; power_test_ok.p(100) : SetPower ( power , 5 , 2 ) ;
+mst 0
+; power of void_main
+lda i 0 5
+; 5
+ldc i 5
+; 2
+ldc i 2
+cup 3 @function_void_SetPower_int_int_int_of_void_main
+; power_test_ok.p(101) : write power ;
+; power of void_main
+lda i 0 5
+ind i
+; power_test_ok.p(101) : write
+prin
+; power_test_ok.p(103) : square = GetSquare ( 5 ) ;
+; square of void_main
+lda i 0 6
+mst 0
+; 5
+ldc i 5
+cup 1 @function_int_GetSquare_int_of_void_main
+; power_test_ok.p(103) : :=
+sto i
+; power_test_ok.p(104) : write square ;
+; square of void_main
+lda i 0 6
+ind i
+; power_test_ok.p(104) : write
+prin
+; power_test_ok.p(106) : SetSquare ( square , 5 ) ;
+mst 0
+; square of void_main
+lda i 0 6
+; 5
+ldc i 5
+cup 2 @function_void_SetSquare_int_int_of_void_main
+; power_test_ok.p(107) : write square ;
+; square of void_main
+lda i 0 6
+ind i
+; power_test_ok.p(107) : write
+prin
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; power_test_ok.p(1) :    Program
+; power_test_ok.p(1) :        FunctionDeclaration
+; power_test_ok.p(1) :            "func"
+; power_test_ok.p(1) :            FunctionName
+; power_test_ok.p(1) :                "main"
+; power_test_ok.p(1) :            "("
+; power_test_ok.p(2) :            FunctionParameterList
+; power_test_ok.p(2) :            ")"
+; power_test_ok.p(2) :            ":"
+; power_test_ok.p(2) :            FunctionType
+; power_test_ok.p(2) :                "void"
+; power_test_ok.p(3) :            "{"
+; power_test_ok.p(4) :            LocalDeclarationList
+; power_test_ok.p(4) :                LocalDeclaration
+; power_test_ok.p(4) :                    VariableDeclaration
+; power_test_ok.p(4) :                        "var"
+; power_test_ok.p(5) :                        Variable
+; power_test_ok.p(5) :                            VariableName
+; power_test_ok.p(5) :                                "power"
+; power_test_ok.p(5) :                            ":"
+; power_test_ok.p(5) :                            VariableType
+; power_test_ok.p(5) :                                "int"
+; power_test_ok.p(5) :                        ","
+; power_test_ok.p(6) :                        Variable
+; power_test_ok.p(6) :                            VariableName
+; power_test_ok.p(6) :                                "square"
+; power_test_ok.p(6) :                            ":"
+; power_test_ok.p(6) :                            VariableType
+; power_test_ok.p(6) :                                "int"
+; power_test_ok.p(6) :                        ";"
+; power_test_ok.p(8) :                LocalDeclaration
+; power_test_ok.p(8) :                    FunctionDeclaration
+; power_test_ok.p(8) :                        "func"
+; power_test_ok.p(8) :                        FunctionName
+; power_test_ok.p(8) :                            "GetRecursivePower"
+; power_test_ok.p(8) :                        "("
+; power_test_ok.p(9) :                        FunctionParameterList
+; power_test_ok.p(9) :                            FunctionParameter
+; power_test_ok.p(9) :                                VariableName
+; power_test_ok.p(9) :                                    "basis"
+; power_test_ok.p(9) :                                ":"
+; power_test_ok.p(9) :                                VariableType
+; power_test_ok.p(9) :                                    "int"
+; power_test_ok.p(9) :                            ","
+; power_test_ok.p(10) :                           FunctionParameter
+; power_test_ok.p(10) :                               VariableName
+; power_test_ok.p(10) :                                   "exponent"
+; power_test_ok.p(10) :                               ":"
+; power_test_ok.p(10) :                               VariableType
+; power_test_ok.p(10) :                                   "int"
+; power_test_ok.p(11) :                       ")"
+; power_test_ok.p(11) :                       ":"
+; power_test_ok.p(11) :                       FunctionType
+; power_test_ok.p(11) :                           "int"
+; power_test_ok.p(12) :                       "{"
+; power_test_ok.p(13) :                       LocalDeclarationList
+; power_test_ok.p(13) :                           LocalDeclaration
+; power_test_ok.p(13) :                               VariableDeclaration
+; power_test_ok.p(13) :                                   "var"
+; power_test_ok.p(14) :                                   Variable
+; power_test_ok.p(14) :                                       VariableName
+; power_test_ok.p(14) :                                           "power"
+; power_test_ok.p(14) :                                       ":"
+; power_test_ok.p(14) :                                       VariableType
+; power_test_ok.p(14) :                                           "int"
+; power_test_ok.p(14) :                                   ";"
+; power_test_ok.p(16) :                       StatementList
+; power_test_ok.p(16) :                           Statement
+; power_test_ok.p(16) :                               IfStatement
+; power_test_ok.p(16) :                                   "if"
+; power_test_ok.p(16) :                                   ParenthesisExpression
+; power_test_ok.p(16) :                                       "("
+; power_test_ok.p(16) :                                       EqualExpression
+; power_test_ok.p(16) :                                           VariableExpression
+; power_test_ok.p(16) :                                               VariableName
+; power_test_ok.p(16) :                                                   "exponent"
+; power_test_ok.p(16) :                                           "=="
+; power_test_ok.p(16) :                                           IntegerConstantExpression
+; power_test_ok.p(16) :                                               IntegerConstant
+; power_test_ok.p(16) :                                                   "0"
+; power_test_ok.p(16) :                                       ")"
+; power_test_ok.p(17) :                                   "{"
+; power_test_ok.p(18) :                                   StatementList
+; power_test_ok.p(18) :                                       Statement
+; power_test_ok.p(18) :                                           AssignmentStatement
+; power_test_ok.p(18) :                                               VariableExpression
+; power_test_ok.p(18) :                                                   VariableName
+; power_test_ok.p(18) :                                                       "power"
+; power_test_ok.p(18) :                                               "="
+; power_test_ok.p(18) :                                               IntegerConstantExpression
+; power_test_ok.p(18) :                                                   IntegerConstant
+; power_test_ok.p(18) :                                                       "1"
+; power_test_ok.p(18) :                                               ";"
+; power_test_ok.p(19) :                                   "}"
+; power_test_ok.p(20) :                                   ElseStatement
+; power_test_ok.p(20) :                                       "else"
+; power_test_ok.p(21) :                                       "{"
+; power_test_ok.p(22) :                                       StatementList
+; power_test_ok.p(22) :                                           Statement
+; power_test_ok.p(22) :                                               AssignmentStatement
+; power_test_ok.p(22) :                                                   VariableExpression
+; power_test_ok.p(22) :                                                       VariableName
+; power_test_ok.p(22) :                                                           "power"
+; power_test_ok.p(22) :                                                   "="
+; power_test_ok.p(22) :                                                   StarExpression
+; power_test_ok.p(22) :                                                       VariableExpression
+; power_test_ok.p(22) :                                                           VariableName
+; power_test_ok.p(22) :                                                               "basis"
+; power_test_ok.p(22) :                                                       "*"
+; power_test_ok.p(22) :                                                       FunctionCallExpression
+; power_test_ok.p(22) :                                                           FunctionCall
+; power_test_ok.p(22) :                                                               FunctionName
+; power_test_ok.p(22) :                                                                   "GetRecursivePower"
+; power_test_ok.p(22) :                                                               "("
+; power_test_ok.p(22) :                                                               FunctionArgumentList
+; power_test_ok.p(22) :                                                                   FunctionArgument
+; power_test_ok.p(22) :                                                                       VariableExpression
+; power_test_ok.p(22) :                                                                           VariableName
+; power_test_ok.p(22) :                                                                               "basis"
+; power_test_ok.p(22) :                                                                   ","
+; power_test_ok.p(22) :                                                                   FunctionArgument
+; power_test_ok.p(22) :                                                                       MinusExpression
+; power_test_ok.p(22) :                                                                           VariableExpression
+; power_test_ok.p(22) :                                                                               VariableName
+; power_test_ok.p(22) :                                                                                   "exponent"
+; power_test_ok.p(22) :                                                                           "-"
+; power_test_ok.p(22) :                                                                           IntegerConstantExpression
+; power_test_ok.p(22) :                                                                               IntegerConstant
+; power_test_ok.p(22) :                                                                                   "1"
+; power_test_ok.p(22) :                                                               ")"
+; power_test_ok.p(22) :                                                   ";"
+; power_test_ok.p(23) :                                       "}"
+; power_test_ok.p(25) :                           Statement
+; power_test_ok.p(25) :                               ReturnStatement
+; power_test_ok.p(25) :                                   "return"
+; power_test_ok.p(25) :                                   VariableExpression
+; power_test_ok.p(25) :                                       VariableName
+; power_test_ok.p(25) :                                           "power"
+; power_test_ok.p(25) :                                   ";"
+; power_test_ok.p(26) :                       "}"
+; power_test_ok.p(28) :               LocalDeclaration
+; power_test_ok.p(28) :                   FunctionDeclaration
+; power_test_ok.p(28) :                       "func"
+; power_test_ok.p(28) :                       FunctionName
+; power_test_ok.p(28) :                           "SetRecursivePower"
+; power_test_ok.p(28) :                       "("
+; power_test_ok.p(29) :                       FunctionParameterList
+; power_test_ok.p(29) :                           FunctionParameter
+; power_test_ok.p(29) :                               "ref"
+; power_test_ok.p(29) :                               VariableName
+; power_test_ok.p(29) :                                   "power"
+; power_test_ok.p(29) :                               ":"
+; power_test_ok.p(29) :                               VariableType
+; power_test_ok.p(29) :                                   "int"
+; power_test_ok.p(29) :                           ","
+; power_test_ok.p(30) :                           FunctionParameter
+; power_test_ok.p(30) :                               VariableName
+; power_test_ok.p(30) :                                   "basis"
+; power_test_ok.p(30) :                               ":"
+; power_test_ok.p(30) :                               VariableType
+; power_test_ok.p(30) :                                   "int"
+; power_test_ok.p(30) :                           ","
+; power_test_ok.p(31) :                           FunctionParameter
+; power_test_ok.p(31) :                               VariableName
+; power_test_ok.p(31) :                                   "exponent"
+; power_test_ok.p(31) :                               ":"
+; power_test_ok.p(31) :                               VariableType
+; power_test_ok.p(31) :                                   "int"
+; power_test_ok.p(32) :                       ")"
+; power_test_ok.p(32) :                       ":"
+; power_test_ok.p(32) :                       FunctionType
+; power_test_ok.p(32) :                           "void"
+; power_test_ok.p(33) :                       "{"
+; power_test_ok.p(34) :                       LocalDeclarationList
+; power_test_ok.p(34) :                       StatementList
+; power_test_ok.p(34) :                           Statement
+; power_test_ok.p(34) :                               IfStatement
+; power_test_ok.p(34) :                                   "if"
+; power_test_ok.p(34) :                                   ParenthesisExpression
+; power_test_ok.p(34) :                                       "("
+; power_test_ok.p(34) :                                       EqualExpression
+; power_test_ok.p(34) :                                           VariableExpression
+; power_test_ok.p(34) :                                               VariableName
+; power_test_ok.p(34) :                                                   "exponent"
+; power_test_ok.p(34) :                                           "=="
+; power_test_ok.p(34) :                                           IntegerConstantExpression
+; power_test_ok.p(34) :                                               IntegerConstant
+; power_test_ok.p(34) :                                                   "0"
+; power_test_ok.p(34) :                                       ")"
+; power_test_ok.p(35) :                                   "{"
+; power_test_ok.p(36) :                                   StatementList
+; power_test_ok.p(36) :                                       Statement
+; power_test_ok.p(36) :                                           AssignmentStatement
+; power_test_ok.p(36) :                                               VariableExpression
+; power_test_ok.p(36) :                                                   VariableName
+; power_test_ok.p(36) :                                                       "power"
+; power_test_ok.p(36) :                                               "="
+; power_test_ok.p(36) :                                               IntegerConstantExpression
+; power_test_ok.p(36) :                                                   IntegerConstant
+; power_test_ok.p(36) :                                                       "1"
+; power_test_ok.p(36) :                                               ";"
+; power_test_ok.p(37) :                                   "}"
+; power_test_ok.p(38) :                                   ElseStatement
+; power_test_ok.p(38) :                                       "else"
+; power_test_ok.p(39) :                                       "{"
+; power_test_ok.p(40) :                                       StatementList
+; power_test_ok.p(40) :                                           Statement
+; power_test_ok.p(40) :                                               ExpressionStatement
+; power_test_ok.p(40) :                                                   FunctionCallExpression
+; power_test_ok.p(40) :                                                       FunctionCall
+; power_test_ok.p(40) :                                                           FunctionName
+; power_test_ok.p(40) :                                                               "SetRecursivePower"
+; power_test_ok.p(40) :                                                           "("
+; power_test_ok.p(40) :                                                           FunctionArgumentList
+; power_test_ok.p(40) :                                                               FunctionArgument
+; power_test_ok.p(40) :                                                                   VariableExpression
+; power_test_ok.p(40) :                                                                       VariableName
+; power_test_ok.p(40) :                                                                           "power"
+; power_test_ok.p(40) :                                                               ","
+; power_test_ok.p(40) :                                                               FunctionArgument
+; power_test_ok.p(40) :                                                                   VariableExpression
+; power_test_ok.p(40) :                                                                       VariableName
+; power_test_ok.p(40) :                                                                           "basis"
+; power_test_ok.p(40) :                                                               ","
+; power_test_ok.p(40) :                                                               FunctionArgument
+; power_test_ok.p(40) :                                                                   MinusExpression
+; power_test_ok.p(40) :                                                                       VariableExpression
+; power_test_ok.p(40) :                                                                           VariableName
+; power_test_ok.p(40) :                                                                               "exponent"
+; power_test_ok.p(40) :                                                                       "-"
+; power_test_ok.p(40) :                                                                       IntegerConstantExpression
+; power_test_ok.p(40) :                                                                           IntegerConstant
+; power_test_ok.p(40) :                                                                               "1"
+; power_test_ok.p(40) :                                                           ")"
+; power_test_ok.p(40) :                                                   ";"
+; power_test_ok.p(41) :                                           Statement
+; power_test_ok.p(41) :                                               AssignmentStatement
+; power_test_ok.p(41) :                                                   VariableExpression
+; power_test_ok.p(41) :                                                       VariableName
+; power_test_ok.p(41) :                                                           "power"
+; power_test_ok.p(41) :                                                   "="
+; power_test_ok.p(41) :                                                   StarExpression
+; power_test_ok.p(41) :                                                       VariableExpression
+; power_test_ok.p(41) :                                                           VariableName
+; power_test_ok.p(41) :                                                               "power"
+; power_test_ok.p(41) :                                                       "*"
+; power_test_ok.p(41) :                                                       VariableExpression
+; power_test_ok.p(41) :                                                           VariableName
+; power_test_ok.p(41) :                                                               "basis"
+; power_test_ok.p(41) :                                                   ";"
+; power_test_ok.p(42) :                                       "}"
+; power_test_ok.p(43) :                       "}"
+; power_test_ok.p(45) :               LocalDeclaration
+; power_test_ok.p(45) :                   FunctionDeclaration
+; power_test_ok.p(45) :                       "func"
+; power_test_ok.p(45) :                       FunctionName
+; power_test_ok.p(45) :                           "GetPower"
+; power_test_ok.p(45) :                       "("
+; power_test_ok.p(46) :                       FunctionParameterList
+; power_test_ok.p(46) :                           FunctionParameter
+; power_test_ok.p(46) :                               VariableName
+; power_test_ok.p(46) :                                   "basis"
+; power_test_ok.p(46) :                               ":"
+; power_test_ok.p(46) :                               VariableType
+; power_test_ok.p(46) :                                   "int"
+; power_test_ok.p(46) :                           ","
+; power_test_ok.p(46) :                           FunctionParameter
+; power_test_ok.p(46) :                               VariableName
+; power_test_ok.p(46) :                                   "exponent"
+; power_test_ok.p(46) :                               ":"
+; power_test_ok.p(46) :                               VariableType
+; power_test_ok.p(46) :                                   "int"
+; power_test_ok.p(46) :                       ")"
+; power_test_ok.p(46) :                       ":"
+; power_test_ok.p(46) :                       FunctionType
+; power_test_ok.p(46) :                           "int"
+; power_test_ok.p(47) :                       "{"
+; power_test_ok.p(48) :                       LocalDeclarationList
+; power_test_ok.p(48) :                           LocalDeclaration
+; power_test_ok.p(48) :                               VariableDeclaration
+; power_test_ok.p(48) :                                   "var"
+; power_test_ok.p(49) :                                   Variable
+; power_test_ok.p(49) :                                       VariableName
+; power_test_ok.p(49) :                                           "power"
+; power_test_ok.p(49) :                                       ":"
+; power_test_ok.p(49) :                                       VariableType
+; power_test_ok.p(49) :                                           "int"
+; power_test_ok.p(49) :                                   ";"
+; power_test_ok.p(51) :                       StatementList
+; power_test_ok.p(51) :                           Statement
+; power_test_ok.p(51) :                               AssignmentStatement
+; power_test_ok.p(51) :                                   VariableExpression
+; power_test_ok.p(51) :                                       VariableName
+; power_test_ok.p(51) :                                           "power"
+; power_test_ok.p(51) :                                   "="
+; power_test_ok.p(51) :                                   IntegerConstantExpression
+; power_test_ok.p(51) :                                       IntegerConstant
+; power_test_ok.p(51) :                                           "1"
+; power_test_ok.p(51) :                                   ";"
+; power_test_ok.p(53) :                           Statement
+; power_test_ok.p(53) :                               WhileStatement
+; power_test_ok.p(53) :                                   "while"
+; power_test_ok.p(53) :                                   ParenthesisExpression
+; power_test_ok.p(53) :                                       "("
+; power_test_ok.p(53) :                                       SmallerExpression
+; power_test_ok.p(53) :                                           IntegerConstantExpression
+; power_test_ok.p(53) :                                               IntegerConstant
+; power_test_ok.p(53) :                                                   "0"
+; power_test_ok.p(53) :                                           "<"
+; power_test_ok.p(53) :                                           VariableExpression
+; power_test_ok.p(53) :                                               VariableName
+; power_test_ok.p(53) :                                                   "exponent"
+; power_test_ok.p(53) :                                       ")"
+; power_test_ok.p(54) :                                   "{"
+; power_test_ok.p(55) :                                   StatementList
+; power_test_ok.p(55) :                                       Statement
+; power_test_ok.p(55) :                                           AssignmentStatement
+; power_test_ok.p(55) :                                               VariableExpression
+; power_test_ok.p(55) :                                                   VariableName
+; power_test_ok.p(55) :                                                       "power"
+; power_test_ok.p(55) :                                               "="
+; power_test_ok.p(55) :                                               StarExpression
+; power_test_ok.p(55) :                                                   VariableExpression
+; power_test_ok.p(55) :                                                       VariableName
+; power_test_ok.p(55) :                                                           "power"
+; power_test_ok.p(55) :                                                   "*"
+; power_test_ok.p(55) :                                                   VariableExpression
+; power_test_ok.p(55) :                                                       VariableName
+; power_test_ok.p(55) :                                                           "basis"
+; power_test_ok.p(55) :                                               ";"
+; power_test_ok.p(56) :                                       Statement
+; power_test_ok.p(56) :                                           AssignmentStatement
+; power_test_ok.p(56) :                                               VariableExpression
+; power_test_ok.p(56) :                                                   VariableName
+; power_test_ok.p(56) :                                                       "exponent"
+; power_test_ok.p(56) :                                               "="
+; power_test_ok.p(56) :                                               MinusExpression
+; power_test_ok.p(56) :                                                   VariableExpression
+; power_test_ok.p(56) :                                                       VariableName
+; power_test_ok.p(56) :                                                           "exponent"
+; power_test_ok.p(56) :                                                   "-"
+; power_test_ok.p(56) :                                                   IntegerConstantExpression
+; power_test_ok.p(56) :                                                       IntegerConstant
+; power_test_ok.p(56) :                                                           "1"
+; power_test_ok.p(56) :                                               ";"
+; power_test_ok.p(57) :                                   "}"
+; power_test_ok.p(59) :                           Statement
+; power_test_ok.p(59) :                               ReturnStatement
+; power_test_ok.p(59) :                                   "return"
+; power_test_ok.p(59) :                                   VariableExpression
+; power_test_ok.p(59) :                                       VariableName
+; power_test_ok.p(59) :                                           "power"
+; power_test_ok.p(59) :                                   ";"
+; power_test_ok.p(60) :                       "}"
+; power_test_ok.p(62) :               LocalDeclaration
+; power_test_ok.p(62) :                   FunctionDeclaration
+; power_test_ok.p(62) :                       "func"
+; power_test_ok.p(62) :                       FunctionName
+; power_test_ok.p(62) :                           "SetPower"
+; power_test_ok.p(62) :                       "("
+; power_test_ok.p(63) :                       FunctionParameterList
+; power_test_ok.p(63) :                           FunctionParameter
+; power_test_ok.p(63) :                               "ref"
+; power_test_ok.p(63) :                               VariableName
+; power_test_ok.p(63) :                                   "power"
+; power_test_ok.p(63) :                               ":"
+; power_test_ok.p(63) :                               VariableType
+; power_test_ok.p(63) :                                   "int"
+; power_test_ok.p(63) :                           ","
+; power_test_ok.p(64) :                           FunctionParameter
+; power_test_ok.p(64) :                               VariableName
+; power_test_ok.p(64) :                                   "basis"
+; power_test_ok.p(64) :                               ":"
+; power_test_ok.p(64) :                               VariableType
+; power_test_ok.p(64) :                                   "int"
+; power_test_ok.p(64) :                           ","
+; power_test_ok.p(65) :                           FunctionParameter
+; power_test_ok.p(65) :                               VariableName
+; power_test_ok.p(65) :                                   "exponent"
+; power_test_ok.p(65) :                               ":"
+; power_test_ok.p(65) :                               VariableType
+; power_test_ok.p(65) :                                   "int"
+; power_test_ok.p(66) :                       ")"
+; power_test_ok.p(66) :                       ":"
+; power_test_ok.p(66) :                       FunctionType
+; power_test_ok.p(66) :                           "void"
+; power_test_ok.p(67) :                       "{"
+; power_test_ok.p(68) :                       LocalDeclarationList
+; power_test_ok.p(68) :                       StatementList
+; power_test_ok.p(68) :                           Statement
+; power_test_ok.p(68) :                               AssignmentStatement
+; power_test_ok.p(68) :                                   VariableExpression
+; power_test_ok.p(68) :                                       VariableName
+; power_test_ok.p(68) :                                           "power"
+; power_test_ok.p(68) :                                   "="
+; power_test_ok.p(68) :                                   FunctionCallExpression
+; power_test_ok.p(68) :                                       FunctionCall
+; power_test_ok.p(68) :                                           FunctionName
+; power_test_ok.p(68) :                                               "GetPower"
+; power_test_ok.p(68) :                                           "("
+; power_test_ok.p(68) :                                           FunctionArgumentList
+; power_test_ok.p(68) :                                               FunctionArgument
+; power_test_ok.p(68) :                                                   VariableExpression
+; power_test_ok.p(68) :                                                       VariableName
+; power_test_ok.p(68) :                                                           "basis"
+; power_test_ok.p(68) :                                               ","
+; power_test_ok.p(68) :                                               FunctionArgument
+; power_test_ok.p(68) :                                                   VariableExpression
+; power_test_ok.p(68) :                                                       VariableName
+; power_test_ok.p(68) :                                                           "exponent"
+; power_test_ok.p(68) :                                           ")"
+; power_test_ok.p(68) :                                   ";"
+; power_test_ok.p(69) :                       "}"
+; power_test_ok.p(71) :               LocalDeclaration
+; power_test_ok.p(71) :                   FunctionDeclaration
+; power_test_ok.p(71) :                       "func"
+; power_test_ok.p(71) :                       FunctionName
+; power_test_ok.p(71) :                           "GetSquare"
+; power_test_ok.p(71) :                       "("
+; power_test_ok.p(72) :                       FunctionParameterList
+; power_test_ok.p(72) :                           FunctionParameter
+; power_test_ok.p(72) :                               VariableName
+; power_test_ok.p(72) :                                   "basis"
+; power_test_ok.p(72) :                               ":"
+; power_test_ok.p(72) :                               VariableType
+; power_test_ok.p(72) :                                   "int"
+; power_test_ok.p(73) :                       ")"
+; power_test_ok.p(73) :                       ":"
+; power_test_ok.p(73) :                       FunctionType
+; power_test_ok.p(73) :                           "int"
+; power_test_ok.p(74) :                       "{"
+; power_test_ok.p(75) :                       LocalDeclarationList
+; power_test_ok.p(75) :                           LocalDeclaration
+; power_test_ok.p(75) :                               VariableDeclaration
+; power_test_ok.p(75) :                                   "var"
+; power_test_ok.p(76) :                                   Variable
+; power_test_ok.p(76) :                                       VariableName
+; power_test_ok.p(76) :                                           "square"
+; power_test_ok.p(76) :                                       ":"
+; power_test_ok.p(76) :                                       VariableType
+; power_test_ok.p(76) :                                           "int"
+; power_test_ok.p(76) :                                   ";"
+; power_test_ok.p(78) :                       StatementList
+; power_test_ok.p(78) :                           Statement
+; power_test_ok.p(78) :                               AssignmentStatement
+; power_test_ok.p(78) :                                   VariableExpression
+; power_test_ok.p(78) :                                       VariableName
+; power_test_ok.p(78) :                                           "square"
+; power_test_ok.p(78) :                                   "="
+; power_test_ok.p(78) :                                   FunctionCallExpression
+; power_test_ok.p(78) :                                       FunctionCall
+; power_test_ok.p(78) :                                           FunctionName
+; power_test_ok.p(78) :                                               "GetPower"
+; power_test_ok.p(78) :                                           "("
+; power_test_ok.p(78) :                                           FunctionArgumentList
+; power_test_ok.p(78) :                                               FunctionArgument
+; power_test_ok.p(78) :                                                   VariableExpression
+; power_test_ok.p(78) :                                                       VariableName
+; power_test_ok.p(78) :                                                           "basis"
+; power_test_ok.p(78) :                                               ","
+; power_test_ok.p(78) :                                               FunctionArgument
+; power_test_ok.p(78) :                                                   IntegerConstantExpression
+; power_test_ok.p(78) :                                                       IntegerConstant
+; power_test_ok.p(78) :                                                           "2"
+; power_test_ok.p(78) :                                           ")"
+; power_test_ok.p(78) :                                   ";"
+; power_test_ok.p(80) :                           Statement
+; power_test_ok.p(80) :                               ReturnStatement
+; power_test_ok.p(80) :                                   "return"
+; power_test_ok.p(80) :                                   VariableExpression
+; power_test_ok.p(80) :                                       VariableName
+; power_test_ok.p(80) :                                           "square"
+; power_test_ok.p(80) :                                   ";"
+; power_test_ok.p(81) :                       "}"
+; power_test_ok.p(83) :               LocalDeclaration
+; power_test_ok.p(83) :                   FunctionDeclaration
+; power_test_ok.p(83) :                       "func"
+; power_test_ok.p(83) :                       FunctionName
+; power_test_ok.p(83) :                           "SetSquare"
+; power_test_ok.p(83) :                       "("
+; power_test_ok.p(84) :                       FunctionParameterList
+; power_test_ok.p(84) :                           FunctionParameter
+; power_test_ok.p(84) :                               "ref"
+; power_test_ok.p(84) :                               VariableName
+; power_test_ok.p(84) :                                   "square"
+; power_test_ok.p(84) :                               ":"
+; power_test_ok.p(84) :                               VariableType
+; power_test_ok.p(84) :                                   "int"
+; power_test_ok.p(84) :                           ","
+; power_test_ok.p(85) :                           FunctionParameter
+; power_test_ok.p(85) :                               VariableName
+; power_test_ok.p(85) :                                   "basis"
+; power_test_ok.p(85) :                               ":"
+; power_test_ok.p(85) :                               VariableType
+; power_test_ok.p(85) :                                   "int"
+; power_test_ok.p(86) :                       ")"
+; power_test_ok.p(86) :                       ":"
+; power_test_ok.p(86) :                       FunctionType
+; power_test_ok.p(86) :                           "void"
+; power_test_ok.p(87) :                       "{"
+; power_test_ok.p(88) :                       LocalDeclarationList
+; power_test_ok.p(88) :                       StatementList
+; power_test_ok.p(88) :                           Statement
+; power_test_ok.p(88) :                               ExpressionStatement
+; power_test_ok.p(88) :                                   FunctionCallExpression
+; power_test_ok.p(88) :                                       FunctionCall
+; power_test_ok.p(88) :                                           FunctionName
+; power_test_ok.p(88) :                                               "SetPower"
+; power_test_ok.p(88) :                                           "("
+; power_test_ok.p(88) :                                           FunctionArgumentList
+; power_test_ok.p(88) :                                               FunctionArgument
+; power_test_ok.p(88) :                                                   VariableExpression
+; power_test_ok.p(88) :                                                       VariableName
+; power_test_ok.p(88) :                                                           "square"
+; power_test_ok.p(88) :                                               ","
+; power_test_ok.p(88) :                                               FunctionArgument
+; power_test_ok.p(88) :                                                   VariableExpression
+; power_test_ok.p(88) :                                                       VariableName
+; power_test_ok.p(88) :                                                           "basis"
+; power_test_ok.p(88) :                                               ","
+; power_test_ok.p(88) :                                               FunctionArgument
+; power_test_ok.p(88) :                                                   IntegerConstantExpression
+; power_test_ok.p(88) :                                                       IntegerConstant
+; power_test_ok.p(88) :                                                           "2"
+; power_test_ok.p(88) :                                           ")"
+; power_test_ok.p(88) :                                   ";"
+; power_test_ok.p(89) :                       "}"
+; power_test_ok.p(91) :           StatementList
+; power_test_ok.p(91) :               Statement
+; power_test_ok.p(91) :                   AssignmentStatement
+; power_test_ok.p(91) :                       VariableExpression
+; power_test_ok.p(91) :                           VariableName
+; power_test_ok.p(91) :                               "power"
+; power_test_ok.p(91) :                       "="
+; power_test_ok.p(91) :                       FunctionCallExpression
+; power_test_ok.p(91) :                           FunctionCall
+; power_test_ok.p(91) :                               FunctionName
+; power_test_ok.p(91) :                                   "GetRecursivePower"
+; power_test_ok.p(91) :                               "("
+; power_test_ok.p(91) :                               FunctionArgumentList
+; power_test_ok.p(91) :                                   FunctionArgument
+; power_test_ok.p(91) :                                       IntegerConstantExpression
+; power_test_ok.p(91) :                                           IntegerConstant
+; power_test_ok.p(91) :                                               "5"
+; power_test_ok.p(91) :                                   ","
+; power_test_ok.p(91) :                                   FunctionArgument
+; power_test_ok.p(91) :                                       IntegerConstantExpression
+; power_test_ok.p(91) :                                           IntegerConstant
+; power_test_ok.p(91) :                                               "2"
+; power_test_ok.p(91) :                               ")"
+; power_test_ok.p(91) :                       ";"
+; power_test_ok.p(92) :               Statement
+; power_test_ok.p(92) :                   WriteStatement
+; power_test_ok.p(92) :                       "write"
+; power_test_ok.p(92) :                       VariableExpression
+; power_test_ok.p(92) :                           VariableName
+; power_test_ok.p(92) :                               "power"
+; power_test_ok.p(92) :                       ";"
+; power_test_ok.p(94) :               Statement
+; power_test_ok.p(94) :                   ExpressionStatement
+; power_test_ok.p(94) :                       FunctionCallExpression
+; power_test_ok.p(94) :                           FunctionCall
+; power_test_ok.p(94) :                               FunctionName
+; power_test_ok.p(94) :                                   "SetRecursivePower"
+; power_test_ok.p(94) :                               "("
+; power_test_ok.p(94) :                               FunctionArgumentList
+; power_test_ok.p(94) :                                   FunctionArgument
+; power_test_ok.p(94) :                                       VariableExpression
+; power_test_ok.p(94) :                                           VariableName
+; power_test_ok.p(94) :                                               "power"
+; power_test_ok.p(94) :                                   ","
+; power_test_ok.p(94) :                                   FunctionArgument
+; power_test_ok.p(94) :                                       IntegerConstantExpression
+; power_test_ok.p(94) :                                           IntegerConstant
+; power_test_ok.p(94) :                                               "5"
+; power_test_ok.p(94) :                                   ","
+; power_test_ok.p(94) :                                   FunctionArgument
+; power_test_ok.p(94) :                                       IntegerConstantExpression
+; power_test_ok.p(94) :                                           IntegerConstant
+; power_test_ok.p(94) :                                               "2"
+; power_test_ok.p(94) :                               ")"
+; power_test_ok.p(94) :                       ";"
+; power_test_ok.p(95) :               Statement
+; power_test_ok.p(95) :                   WriteStatement
+; power_test_ok.p(95) :                       "write"
+; power_test_ok.p(95) :                       VariableExpression
+; power_test_ok.p(95) :                           VariableName
+; power_test_ok.p(95) :                               "power"
+; power_test_ok.p(95) :                       ";"
+; power_test_ok.p(97) :               Statement
+; power_test_ok.p(97) :                   AssignmentStatement
+; power_test_ok.p(97) :                       VariableExpression
+; power_test_ok.p(97) :                           VariableName
+; power_test_ok.p(97) :                               "power"
+; power_test_ok.p(97) :                       "="
+; power_test_ok.p(97) :                       FunctionCallExpression
+; power_test_ok.p(97) :                           FunctionCall
+; power_test_ok.p(97) :                               FunctionName
+; power_test_ok.p(97) :                                   "GetPower"
+; power_test_ok.p(97) :                               "("
+; power_test_ok.p(97) :                               FunctionArgumentList
+; power_test_ok.p(97) :                                   FunctionArgument
+; power_test_ok.p(97) :                                       IntegerConstantExpression
+; power_test_ok.p(97) :                                           IntegerConstant
+; power_test_ok.p(97) :                                               "5"
+; power_test_ok.p(97) :                                   ","
+; power_test_ok.p(97) :                                   FunctionArgument
+; power_test_ok.p(97) :                                       IntegerConstantExpression
+; power_test_ok.p(97) :                                           IntegerConstant
+; power_test_ok.p(97) :                                               "2"
+; power_test_ok.p(97) :                               ")"
+; power_test_ok.p(97) :                       ";"
+; power_test_ok.p(98) :               Statement
+; power_test_ok.p(98) :                   WriteStatement
+; power_test_ok.p(98) :                       "write"
+; power_test_ok.p(98) :                       VariableExpression
+; power_test_ok.p(98) :                           VariableName
+; power_test_ok.p(98) :                               "power"
+; power_test_ok.p(98) :                       ";"
+; power_test_ok.p(100) :              Statement
+; power_test_ok.p(100) :                  ExpressionStatement
+; power_test_ok.p(100) :                      FunctionCallExpression
+; power_test_ok.p(100) :                          FunctionCall
+; power_test_ok.p(100) :                              FunctionName
+; power_test_ok.p(100) :                                  "SetPower"
+; power_test_ok.p(100) :                              "("
+; power_test_ok.p(100) :                              FunctionArgumentList
+; power_test_ok.p(100) :                                  FunctionArgument
+; power_test_ok.p(100) :                                      VariableExpression
+; power_test_ok.p(100) :                                          VariableName
+; power_test_ok.p(100) :                                              "power"
+; power_test_ok.p(100) :                                  ","
+; power_test_ok.p(100) :                                  FunctionArgument
+; power_test_ok.p(100) :                                      IntegerConstantExpression
+; power_test_ok.p(100) :                                          IntegerConstant
+; power_test_ok.p(100) :                                              "5"
+; power_test_ok.p(100) :                                  ","
+; power_test_ok.p(100) :                                  FunctionArgument
+; power_test_ok.p(100) :                                      IntegerConstantExpression
+; power_test_ok.p(100) :                                          IntegerConstant
+; power_test_ok.p(100) :                                              "2"
+; power_test_ok.p(100) :                              ")"
+; power_test_ok.p(100) :                      ";"
+; power_test_ok.p(101) :              Statement
+; power_test_ok.p(101) :                  WriteStatement
+; power_test_ok.p(101) :                      "write"
+; power_test_ok.p(101) :                      VariableExpression
+; power_test_ok.p(101) :                          VariableName
+; power_test_ok.p(101) :                              "power"
+; power_test_ok.p(101) :                      ";"
+; power_test_ok.p(103) :              Statement
+; power_test_ok.p(103) :                  AssignmentStatement
+; power_test_ok.p(103) :                      VariableExpression
+; power_test_ok.p(103) :                          VariableName
+; power_test_ok.p(103) :                              "square"
+; power_test_ok.p(103) :                      "="
+; power_test_ok.p(103) :                      FunctionCallExpression
+; power_test_ok.p(103) :                          FunctionCall
+; power_test_ok.p(103) :                              FunctionName
+; power_test_ok.p(103) :                                  "GetSquare"
+; power_test_ok.p(103) :                              "("
+; power_test_ok.p(103) :                              FunctionArgumentList
+; power_test_ok.p(103) :                                  FunctionArgument
+; power_test_ok.p(103) :                                      IntegerConstantExpression
+; power_test_ok.p(103) :                                          IntegerConstant
+; power_test_ok.p(103) :                                              "5"
+; power_test_ok.p(103) :                              ")"
+; power_test_ok.p(103) :                      ";"
+; power_test_ok.p(104) :              Statement
+; power_test_ok.p(104) :                  WriteStatement
+; power_test_ok.p(104) :                      "write"
+; power_test_ok.p(104) :                      VariableExpression
+; power_test_ok.p(104) :                          VariableName
+; power_test_ok.p(104) :                              "square"
+; power_test_ok.p(104) :                      ";"
+; power_test_ok.p(106) :              Statement
+; power_test_ok.p(106) :                  ExpressionStatement
+; power_test_ok.p(106) :                      FunctionCallExpression
+; power_test_ok.p(106) :                          FunctionCall
+; power_test_ok.p(106) :                              FunctionName
+; power_test_ok.p(106) :                                  "SetSquare"
+; power_test_ok.p(106) :                              "("
+; power_test_ok.p(106) :                              FunctionArgumentList
+; power_test_ok.p(106) :                                  FunctionArgument
+; power_test_ok.p(106) :                                      VariableExpression
+; power_test_ok.p(106) :                                          VariableName
+; power_test_ok.p(106) :                                              "square"
+; power_test_ok.p(106) :                                  ","
+; power_test_ok.p(106) :                                  FunctionArgument
+; power_test_ok.p(106) :                                      IntegerConstantExpression
+; power_test_ok.p(106) :                                          IntegerConstant
+; power_test_ok.p(106) :                                              "5"
+; power_test_ok.p(106) :                              ")"
+; power_test_ok.p(106) :                      ";"
+; power_test_ok.p(107) :              Statement
+; power_test_ok.p(107) :                  WriteStatement
+; power_test_ok.p(107) :                      "write"
+; power_test_ok.p(107) :                      VariableExpression
+; power_test_ok.p(107) :                          VariableName
+; power_test_ok.p(107) :                              "square"
+; power_test_ok.p(107) :                      ";"
+; power_test_ok.p(108) :          "}"

@@ -1,0 +1,299 @@
+ssp 0
+ujp @program
+define @function_int_GetSquare_int_of_void_main
+ssp 7
+; square_test_ok.p(11) : if value < 2
+; value of int_GetSquare_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; square_test_ok.p(11) : <
+les i
+fjp @if_else_1
+; square_test_ok.p(13) : square = value ;
+; square of int_GetSquare_int_of_void_main
+lda i 0 6
+; value of int_GetSquare_int_of_void_main
+lda i 0 5
+ind i
+; square_test_ok.p(13) : :=
+sto i
+ujp @if_end_1
+define @if_else_1
+; square_test_ok.p(15) : else
+; square_test_ok.p(17) : square = value * value ;
+; square of int_GetSquare_int_of_void_main
+lda i 0 6
+; value of int_GetSquare_int_of_void_main
+lda i 0 5
+ind i
+; value of int_GetSquare_int_of_void_main
+lda i 0 5
+ind i
+; square_test_ok.p(17) : *
+mul i
+; square_test_ok.p(17) : :=
+sto i
+define @if_end_1
+; square_test_ok.p(20) : return square ;
+lda i 0 0
+; square of int_GetSquare_int_of_void_main
+lda i 0 6
+ind i
+sto i
+retf
+retf
+define @function_void_SetSquare_int_int_of_void_main
+ssp 7
+; square_test_ok.p(28) : square = GetSquare ( value ) ;
+; square of void_SetSquare_int_int_of_void_main
+lod a 0 5
+mst 1
+; value of void_SetSquare_int_int_of_void_main
+lda i 0 6
+ind i
+cup 1 @function_int_GetSquare_int_of_void_main
+; square_test_ok.p(28) : :=
+sto i
+retp
+define @function_void_main
+ssp 6
+; square_test_ok.p(34) : square = GetSquare ( 5 ) ;
+; square of void_main
+lda i 0 5
+mst 0
+; 5
+ldc i 5
+cup 1 @function_int_GetSquare_int_of_void_main
+; square_test_ok.p(34) : :=
+sto i
+; square_test_ok.p(35) : write square ;
+; square of void_main
+lda i 0 5
+ind i
+; square_test_ok.p(35) : write
+prin
+; square_test_ok.p(37) : SetSquare ( square , 5 ) ;
+mst 0
+; square of void_main
+lda i 0 5
+; 5
+ldc i 5
+cup 2 @function_void_SetSquare_int_int_of_void_main
+; square_test_ok.p(38) : write square ;
+; square of void_main
+lda i 0 5
+ind i
+; square_test_ok.p(38) : write
+prin
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; square_test_ok.p(1) :    Program
+; square_test_ok.p(1) :        FunctionDeclaration
+; square_test_ok.p(1) :            "func"
+; square_test_ok.p(1) :            FunctionName
+; square_test_ok.p(1) :                "main"
+; square_test_ok.p(1) :            "("
+; square_test_ok.p(2) :            FunctionParameterList
+; square_test_ok.p(2) :            ")"
+; square_test_ok.p(2) :            ":"
+; square_test_ok.p(2) :            FunctionType
+; square_test_ok.p(2) :                "void"
+; square_test_ok.p(3) :            "{"
+; square_test_ok.p(4) :            LocalDeclarationList
+; square_test_ok.p(4) :                LocalDeclaration
+; square_test_ok.p(4) :                    FunctionDeclaration
+; square_test_ok.p(4) :                        "func"
+; square_test_ok.p(4) :                        FunctionName
+; square_test_ok.p(4) :                            "GetSquare"
+; square_test_ok.p(4) :                        "("
+; square_test_ok.p(5) :                        FunctionParameterList
+; square_test_ok.p(5) :                            FunctionParameter
+; square_test_ok.p(5) :                                VariableName
+; square_test_ok.p(5) :                                    "value"
+; square_test_ok.p(5) :                                ":"
+; square_test_ok.p(5) :                                VariableType
+; square_test_ok.p(5) :                                    "int"
+; square_test_ok.p(6) :                        ")"
+; square_test_ok.p(6) :                        ":"
+; square_test_ok.p(6) :                        FunctionType
+; square_test_ok.p(6) :                            "int"
+; square_test_ok.p(7) :                        "{"
+; square_test_ok.p(8) :                        LocalDeclarationList
+; square_test_ok.p(8) :                            LocalDeclaration
+; square_test_ok.p(8) :                                VariableDeclaration
+; square_test_ok.p(8) :                                    "var"
+; square_test_ok.p(9) :                                    Variable
+; square_test_ok.p(9) :                                        VariableName
+; square_test_ok.p(9) :                                            "square"
+; square_test_ok.p(9) :                                        ":"
+; square_test_ok.p(9) :                                        VariableType
+; square_test_ok.p(9) :                                            "int"
+; square_test_ok.p(9) :                                    ";"
+; square_test_ok.p(11) :                       StatementList
+; square_test_ok.p(11) :                           Statement
+; square_test_ok.p(11) :                               IfStatement
+; square_test_ok.p(11) :                                   "if"
+; square_test_ok.p(11) :                                   SmallerExpression
+; square_test_ok.p(11) :                                       VariableExpression
+; square_test_ok.p(11) :                                           VariableName
+; square_test_ok.p(11) :                                               "value"
+; square_test_ok.p(12) :                                       "<"
+; square_test_ok.p(11) :                                       IntegerConstantExpression
+; square_test_ok.p(11) :                                           IntegerConstant
+; square_test_ok.p(11) :                                               "2"
+; square_test_ok.p(12) :                                   "{"
+; square_test_ok.p(13) :                                   StatementList
+; square_test_ok.p(13) :                                       Statement
+; square_test_ok.p(13) :                                           AssignmentStatement
+; square_test_ok.p(13) :                                               VariableExpression
+; square_test_ok.p(13) :                                                   VariableName
+; square_test_ok.p(13) :                                                       "square"
+; square_test_ok.p(13) :                                               "="
+; square_test_ok.p(13) :                                               VariableExpression
+; square_test_ok.p(13) :                                                   VariableName
+; square_test_ok.p(13) :                                                       "value"
+; square_test_ok.p(13) :                                               ";"
+; square_test_ok.p(14) :                                   "}"
+; square_test_ok.p(15) :                                   ElseStatement
+; square_test_ok.p(15) :                                       "else"
+; square_test_ok.p(16) :                                       "{"
+; square_test_ok.p(17) :                                       StatementList
+; square_test_ok.p(17) :                                           Statement
+; square_test_ok.p(17) :                                               AssignmentStatement
+; square_test_ok.p(17) :                                                   VariableExpression
+; square_test_ok.p(17) :                                                       VariableName
+; square_test_ok.p(17) :                                                           "square"
+; square_test_ok.p(17) :                                                   "="
+; square_test_ok.p(17) :                                                   StarExpression
+; square_test_ok.p(17) :                                                       VariableExpression
+; square_test_ok.p(17) :                                                           VariableName
+; square_test_ok.p(17) :                                                               "value"
+; square_test_ok.p(17) :                                                       "*"
+; square_test_ok.p(17) :                                                       VariableExpression
+; square_test_ok.p(17) :                                                           VariableName
+; square_test_ok.p(17) :                                                               "value"
+; square_test_ok.p(17) :                                                   ";"
+; square_test_ok.p(18) :                                       "}"
+; square_test_ok.p(20) :                           Statement
+; square_test_ok.p(20) :                               ReturnStatement
+; square_test_ok.p(20) :                                   "return"
+; square_test_ok.p(20) :                                   VariableExpression
+; square_test_ok.p(20) :                                       VariableName
+; square_test_ok.p(20) :                                           "square"
+; square_test_ok.p(20) :                                   ";"
+; square_test_ok.p(21) :                       "}"
+; square_test_ok.p(23) :               LocalDeclaration
+; square_test_ok.p(23) :                   FunctionDeclaration
+; square_test_ok.p(23) :                       "func"
+; square_test_ok.p(23) :                       FunctionName
+; square_test_ok.p(23) :                           "SetSquare"
+; square_test_ok.p(23) :                       "("
+; square_test_ok.p(24) :                       FunctionParameterList
+; square_test_ok.p(24) :                           FunctionParameter
+; square_test_ok.p(24) :                               "ref"
+; square_test_ok.p(24) :                               VariableName
+; square_test_ok.p(24) :                                   "square"
+; square_test_ok.p(24) :                               ":"
+; square_test_ok.p(24) :                               VariableType
+; square_test_ok.p(24) :                                   "int"
+; square_test_ok.p(24) :                           ","
+; square_test_ok.p(25) :                           FunctionParameter
+; square_test_ok.p(25) :                               VariableName
+; square_test_ok.p(25) :                                   "value"
+; square_test_ok.p(25) :                               ":"
+; square_test_ok.p(25) :                               VariableType
+; square_test_ok.p(25) :                                   "int"
+; square_test_ok.p(26) :                       ")"
+; square_test_ok.p(26) :                       ":"
+; square_test_ok.p(26) :                       FunctionType
+; square_test_ok.p(26) :                           "void"
+; square_test_ok.p(27) :                       "{"
+; square_test_ok.p(28) :                       LocalDeclarationList
+; square_test_ok.p(28) :                       StatementList
+; square_test_ok.p(28) :                           Statement
+; square_test_ok.p(28) :                               AssignmentStatement
+; square_test_ok.p(28) :                                   VariableExpression
+; square_test_ok.p(28) :                                       VariableName
+; square_test_ok.p(28) :                                           "square"
+; square_test_ok.p(28) :                                   "="
+; square_test_ok.p(28) :                                   FunctionCallExpression
+; square_test_ok.p(28) :                                       FunctionCall
+; square_test_ok.p(28) :                                           FunctionName
+; square_test_ok.p(28) :                                               "GetSquare"
+; square_test_ok.p(28) :                                           "("
+; square_test_ok.p(28) :                                           FunctionArgumentList
+; square_test_ok.p(28) :                                               FunctionArgument
+; square_test_ok.p(28) :                                                   VariableExpression
+; square_test_ok.p(28) :                                                       VariableName
+; square_test_ok.p(28) :                                                           "value"
+; square_test_ok.p(28) :                                           ")"
+; square_test_ok.p(28) :                                   ";"
+; square_test_ok.p(29) :                       "}"
+; square_test_ok.p(31) :               LocalDeclaration
+; square_test_ok.p(31) :                   VariableDeclaration
+; square_test_ok.p(31) :                       "var"
+; square_test_ok.p(32) :                       Variable
+; square_test_ok.p(32) :                           VariableName
+; square_test_ok.p(32) :                               "square"
+; square_test_ok.p(32) :                           ":"
+; square_test_ok.p(32) :                           VariableType
+; square_test_ok.p(32) :                               "int"
+; square_test_ok.p(32) :                       ";"
+; square_test_ok.p(34) :           StatementList
+; square_test_ok.p(34) :               Statement
+; square_test_ok.p(34) :                   AssignmentStatement
+; square_test_ok.p(34) :                       VariableExpression
+; square_test_ok.p(34) :                           VariableName
+; square_test_ok.p(34) :                               "square"
+; square_test_ok.p(34) :                       "="
+; square_test_ok.p(34) :                       FunctionCallExpression
+; square_test_ok.p(34) :                           FunctionCall
+; square_test_ok.p(34) :                               FunctionName
+; square_test_ok.p(34) :                                   "GetSquare"
+; square_test_ok.p(34) :                               "("
+; square_test_ok.p(34) :                               FunctionArgumentList
+; square_test_ok.p(34) :                                   FunctionArgument
+; square_test_ok.p(34) :                                       IntegerConstantExpression
+; square_test_ok.p(34) :                                           IntegerConstant
+; square_test_ok.p(34) :                                               "5"
+; square_test_ok.p(34) :                               ")"
+; square_test_ok.p(34) :                       ";"
+; square_test_ok.p(35) :               Statement
+; square_test_ok.p(35) :                   WriteStatement
+; square_test_ok.p(35) :                       "write"
+; square_test_ok.p(35) :                       VariableExpression
+; square_test_ok.p(35) :                           VariableName
+; square_test_ok.p(35) :                               "square"
+; square_test_ok.p(35) :                       ";"
+; square_test_ok.p(37) :               Statement
+; square_test_ok.p(37) :                   ExpressionStatement
+; square_test_ok.p(37) :                       FunctionCallExpression
+; square_test_ok.p(37) :                           FunctionCall
+; square_test_ok.p(37) :                               FunctionName
+; square_test_ok.p(37) :                                   "SetSquare"
+; square_test_ok.p(37) :                               "("
+; square_test_ok.p(37) :                               FunctionArgumentList
+; square_test_ok.p(37) :                                   FunctionArgument
+; square_test_ok.p(37) :                                       VariableExpression
+; square_test_ok.p(37) :                                           VariableName
+; square_test_ok.p(37) :                                               "square"
+; square_test_ok.p(37) :                                   ","
+; square_test_ok.p(37) :                                   FunctionArgument
+; square_test_ok.p(37) :                                       IntegerConstantExpression
+; square_test_ok.p(37) :                                           IntegerConstant
+; square_test_ok.p(37) :                                               "5"
+; square_test_ok.p(37) :                               ")"
+; square_test_ok.p(37) :                       ";"
+; square_test_ok.p(38) :               Statement
+; square_test_ok.p(38) :                   WriteStatement
+; square_test_ok.p(38) :                       "write"
+; square_test_ok.p(38) :                       VariableExpression
+; square_test_ok.p(38) :                           VariableName
+; square_test_ok.p(38) :                               "square"
+; square_test_ok.p(38) :                       ";"
+; square_test_ok.p(39) :           "}"

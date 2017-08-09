@@ -1,0 +1,208 @@
+ssp 0
+ujp @program
+define @function_void_main
+ssp 7
+; if_test_ok.p(8) : b = true ;
+; b of void_main
+lda b 0 5
+; true
+ldc b 1
+; if_test_ok.p(8) : :=
+sto b
+; if_test_ok.p(10) : if ( b )
+; b of void_main
+lda b 0 5
+ind b
+fjp @if_else_1
+; if_test_ok.p(12) : i = 1 ;
+; i of void_main
+lda i 0 6
+; 1
+ldc i 1
+; if_test_ok.p(12) : :=
+sto i
+ujp @if_end_1
+define @if_else_1
+; if_test_ok.p(14) : else
+; if_test_ok.p(16) : i = 0 ;
+; i of void_main
+lda i 0 6
+; 0
+ldc i 0
+; if_test_ok.p(16) : :=
+sto i
+define @if_end_1
+; if_test_ok.p(19) : write i ;
+; i of void_main
+lda i 0 6
+ind i
+; if_test_ok.p(19) : write
+prin
+; if_test_ok.p(21) : if ( ! b )
+; b of void_main
+lda b 0 5
+ind b
+; if_test_ok.p(21) : !
+not b
+fjp @if_else_2
+; if_test_ok.p(23) : i = 0 ;
+; i of void_main
+lda i 0 6
+; 0
+ldc i 0
+; if_test_ok.p(23) : :=
+sto i
+ujp @if_end_2
+define @if_else_2
+; if_test_ok.p(25) : else
+; if_test_ok.p(27) : i = 1 ;
+; i of void_main
+lda i 0 6
+; 1
+ldc i 1
+; if_test_ok.p(27) : :=
+sto i
+define @if_end_2
+; if_test_ok.p(30) : write i ;
+; i of void_main
+lda i 0 6
+ind i
+; if_test_ok.p(30) : write
+prin
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; if_test_ok.p(1) :    Program
+; if_test_ok.p(1) :        FunctionDeclaration
+; if_test_ok.p(1) :            "func"
+; if_test_ok.p(1) :            FunctionName
+; if_test_ok.p(1) :                "main"
+; if_test_ok.p(1) :            "("
+; if_test_ok.p(2) :            FunctionParameterList
+; if_test_ok.p(2) :            ")"
+; if_test_ok.p(2) :            ":"
+; if_test_ok.p(2) :            FunctionType
+; if_test_ok.p(2) :                "void"
+; if_test_ok.p(3) :            "{"
+; if_test_ok.p(4) :            LocalDeclarationList
+; if_test_ok.p(4) :                LocalDeclaration
+; if_test_ok.p(4) :                    VariableDeclaration
+; if_test_ok.p(4) :                        "var"
+; if_test_ok.p(5) :                        Variable
+; if_test_ok.p(5) :                            VariableName
+; if_test_ok.p(5) :                                "b"
+; if_test_ok.p(5) :                            ":"
+; if_test_ok.p(5) :                            VariableType
+; if_test_ok.p(5) :                                "bool"
+; if_test_ok.p(5) :                        ","
+; if_test_ok.p(6) :                        Variable
+; if_test_ok.p(6) :                            VariableName
+; if_test_ok.p(6) :                                "i"
+; if_test_ok.p(6) :                            ":"
+; if_test_ok.p(6) :                            VariableType
+; if_test_ok.p(6) :                                "int"
+; if_test_ok.p(6) :                        ";"
+; if_test_ok.p(8) :            StatementList
+; if_test_ok.p(8) :                Statement
+; if_test_ok.p(8) :                    AssignmentStatement
+; if_test_ok.p(8) :                        VariableExpression
+; if_test_ok.p(8) :                            VariableName
+; if_test_ok.p(8) :                                "b"
+; if_test_ok.p(8) :                        "="
+; if_test_ok.p(8) :                        BooleanConstantExpression
+; if_test_ok.p(8) :                            BooleanConstant
+; if_test_ok.p(8) :                                "true"
+; if_test_ok.p(8) :                        ";"
+; if_test_ok.p(10) :               Statement
+; if_test_ok.p(10) :                   IfStatement
+; if_test_ok.p(10) :                       "if"
+; if_test_ok.p(10) :                       ParenthesisExpression
+; if_test_ok.p(10) :                           "("
+; if_test_ok.p(10) :                           VariableExpression
+; if_test_ok.p(10) :                               VariableName
+; if_test_ok.p(10) :                                   "b"
+; if_test_ok.p(10) :                           ")"
+; if_test_ok.p(11) :                       "{"
+; if_test_ok.p(12) :                       StatementList
+; if_test_ok.p(12) :                           Statement
+; if_test_ok.p(12) :                               AssignmentStatement
+; if_test_ok.p(12) :                                   VariableExpression
+; if_test_ok.p(12) :                                       VariableName
+; if_test_ok.p(12) :                                           "i"
+; if_test_ok.p(12) :                                   "="
+; if_test_ok.p(12) :                                   IntegerConstantExpression
+; if_test_ok.p(12) :                                       IntegerConstant
+; if_test_ok.p(12) :                                           "1"
+; if_test_ok.p(12) :                                   ";"
+; if_test_ok.p(13) :                       "}"
+; if_test_ok.p(14) :                       ElseStatement
+; if_test_ok.p(14) :                           "else"
+; if_test_ok.p(15) :                           "{"
+; if_test_ok.p(16) :                           StatementList
+; if_test_ok.p(16) :                               Statement
+; if_test_ok.p(16) :                                   AssignmentStatement
+; if_test_ok.p(16) :                                       VariableExpression
+; if_test_ok.p(16) :                                           VariableName
+; if_test_ok.p(16) :                                               "i"
+; if_test_ok.p(16) :                                       "="
+; if_test_ok.p(16) :                                       IntegerConstantExpression
+; if_test_ok.p(16) :                                           IntegerConstant
+; if_test_ok.p(16) :                                               "0"
+; if_test_ok.p(16) :                                       ";"
+; if_test_ok.p(17) :                           "}"
+; if_test_ok.p(19) :               Statement
+; if_test_ok.p(19) :                   WriteStatement
+; if_test_ok.p(19) :                       "write"
+; if_test_ok.p(19) :                       VariableExpression
+; if_test_ok.p(19) :                           VariableName
+; if_test_ok.p(19) :                               "i"
+; if_test_ok.p(19) :                       ";"
+; if_test_ok.p(21) :               Statement
+; if_test_ok.p(21) :                   IfStatement
+; if_test_ok.p(21) :                       "if"
+; if_test_ok.p(21) :                       ParenthesisExpression
+; if_test_ok.p(21) :                           "("
+; if_test_ok.p(21) :                           NotExpression
+; if_test_ok.p(21) :                               "!"
+; if_test_ok.p(21) :                               VariableExpression
+; if_test_ok.p(21) :                                   VariableName
+; if_test_ok.p(21) :                                       "b"
+; if_test_ok.p(21) :                           ")"
+; if_test_ok.p(22) :                       "{"
+; if_test_ok.p(23) :                       StatementList
+; if_test_ok.p(23) :                           Statement
+; if_test_ok.p(23) :                               AssignmentStatement
+; if_test_ok.p(23) :                                   VariableExpression
+; if_test_ok.p(23) :                                       VariableName
+; if_test_ok.p(23) :                                           "i"
+; if_test_ok.p(23) :                                   "="
+; if_test_ok.p(23) :                                   IntegerConstantExpression
+; if_test_ok.p(23) :                                       IntegerConstant
+; if_test_ok.p(23) :                                           "0"
+; if_test_ok.p(23) :                                   ";"
+; if_test_ok.p(24) :                       "}"
+; if_test_ok.p(25) :                       ElseStatement
+; if_test_ok.p(25) :                           "else"
+; if_test_ok.p(26) :                           "{"
+; if_test_ok.p(27) :                           StatementList
+; if_test_ok.p(27) :                               Statement
+; if_test_ok.p(27) :                                   AssignmentStatement
+; if_test_ok.p(27) :                                       VariableExpression
+; if_test_ok.p(27) :                                           VariableName
+; if_test_ok.p(27) :                                               "i"
+; if_test_ok.p(27) :                                       "="
+; if_test_ok.p(27) :                                       IntegerConstantExpression
+; if_test_ok.p(27) :                                           IntegerConstant
+; if_test_ok.p(27) :                                               "1"
+; if_test_ok.p(27) :                                       ";"
+; if_test_ok.p(28) :                           "}"
+; if_test_ok.p(30) :               Statement
+; if_test_ok.p(30) :                   WriteStatement
+; if_test_ok.p(30) :                       "write"
+; if_test_ok.p(30) :                       VariableExpression
+; if_test_ok.p(30) :                           VariableName
+; if_test_ok.p(30) :                               "i"
+; if_test_ok.p(30) :                       ";"
+; if_test_ok.p(31) :           "}"

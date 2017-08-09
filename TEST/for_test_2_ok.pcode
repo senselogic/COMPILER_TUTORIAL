@@ -1,0 +1,158 @@
+ssp 0
+ujp @program
+define @function_void_main
+ssp 7
+; for_test_2_ok.p(8) : for i
+; i of void_main
+lda i 0 5
+; 1
+ldc i 1
+sto i
+define @for_1
+; i of void_main
+lda i 0 5
+ind i
+; 3
+ldc i 3
+leq i
+fjp @for_end_1
+; for_test_2_ok.p(10) : write i * 10 ;
+; i of void_main
+lda i 0 5
+ind i
+; 10
+ldc i 10
+; for_test_2_ok.p(10) : *
+mul i
+; for_test_2_ok.p(10) : write
+prin
+; for_test_2_ok.p(12) : for j
+; j of void_main
+lda i 0 6
+; -2
+ldc i -2
+sto i
+define @for_2
+; j of void_main
+lda i 0 6
+ind i
+; 2
+ldc i 2
+leq i
+fjp @for_end_2
+; for_test_2_ok.p(14) : write j ;
+; j of void_main
+lda i 0 6
+ind i
+; for_test_2_ok.p(14) : write
+prin
+; j of void_main
+lda i 0 6
+; j of void_main
+lda i 0 6
+ind i
+ldc i 1
+add i
+sto i
+ujp @for_2
+define @for_end_2
+; i of void_main
+lda i 0 5
+; i of void_main
+lda i 0 5
+ind i
+ldc i 1
+add i
+sto i
+ujp @for_1
+define @for_end_1
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; for_test_2_ok.p(1) :    Program
+; for_test_2_ok.p(1) :        FunctionDeclaration
+; for_test_2_ok.p(1) :            "func"
+; for_test_2_ok.p(1) :            FunctionName
+; for_test_2_ok.p(1) :                "main"
+; for_test_2_ok.p(1) :            "("
+; for_test_2_ok.p(2) :            FunctionParameterList
+; for_test_2_ok.p(2) :            ")"
+; for_test_2_ok.p(2) :            ":"
+; for_test_2_ok.p(2) :            FunctionType
+; for_test_2_ok.p(2) :                "void"
+; for_test_2_ok.p(3) :            "{"
+; for_test_2_ok.p(4) :            LocalDeclarationList
+; for_test_2_ok.p(4) :                LocalDeclaration
+; for_test_2_ok.p(4) :                    VariableDeclaration
+; for_test_2_ok.p(4) :                        "var"
+; for_test_2_ok.p(5) :                        Variable
+; for_test_2_ok.p(5) :                            VariableName
+; for_test_2_ok.p(5) :                                "i"
+; for_test_2_ok.p(5) :                            ":"
+; for_test_2_ok.p(5) :                            VariableType
+; for_test_2_ok.p(5) :                                "int"
+; for_test_2_ok.p(5) :                        ","
+; for_test_2_ok.p(6) :                        Variable
+; for_test_2_ok.p(6) :                            VariableName
+; for_test_2_ok.p(6) :                                "j"
+; for_test_2_ok.p(6) :                            ":"
+; for_test_2_ok.p(6) :                            VariableType
+; for_test_2_ok.p(6) :                                "int"
+; for_test_2_ok.p(6) :                        ";"
+; for_test_2_ok.p(8) :            StatementList
+; for_test_2_ok.p(8) :                Statement
+; for_test_2_ok.p(8) :                    ForStatement
+; for_test_2_ok.p(8) :                        "for"
+; for_test_2_ok.p(8) :                        VariableExpression
+; for_test_2_ok.p(8) :                            VariableName
+; for_test_2_ok.p(8) :                                "i"
+; for_test_2_ok.p(8) :                        "="
+; for_test_2_ok.p(8) :                        IntegerConstantExpression
+; for_test_2_ok.p(8) :                            IntegerConstant
+; for_test_2_ok.p(8) :                                "1"
+; for_test_2_ok.p(8) :                        "to"
+; for_test_2_ok.p(8) :                        IntegerConstantExpression
+; for_test_2_ok.p(8) :                            IntegerConstant
+; for_test_2_ok.p(8) :                                "3"
+; for_test_2_ok.p(9) :                        "{"
+; for_test_2_ok.p(10) :                       StatementList
+; for_test_2_ok.p(10) :                           Statement
+; for_test_2_ok.p(10) :                               WriteStatement
+; for_test_2_ok.p(10) :                                   "write"
+; for_test_2_ok.p(10) :                                   StarExpression
+; for_test_2_ok.p(10) :                                       VariableExpression
+; for_test_2_ok.p(10) :                                           VariableName
+; for_test_2_ok.p(10) :                                               "i"
+; for_test_2_ok.p(10) :                                       "*"
+; for_test_2_ok.p(10) :                                       IntegerConstantExpression
+; for_test_2_ok.p(10) :                                           IntegerConstant
+; for_test_2_ok.p(10) :                                               "10"
+; for_test_2_ok.p(10) :                                   ";"
+; for_test_2_ok.p(12) :                           Statement
+; for_test_2_ok.p(12) :                               ForStatement
+; for_test_2_ok.p(12) :                                   "for"
+; for_test_2_ok.p(12) :                                   VariableExpression
+; for_test_2_ok.p(12) :                                       VariableName
+; for_test_2_ok.p(12) :                                           "j"
+; for_test_2_ok.p(12) :                                   "="
+; for_test_2_ok.p(12) :                                   IntegerConstantExpression
+; for_test_2_ok.p(12) :                                       IntegerConstant
+; for_test_2_ok.p(12) :                                           "-2"
+; for_test_2_ok.p(12) :                                   "to"
+; for_test_2_ok.p(12) :                                   IntegerConstantExpression
+; for_test_2_ok.p(12) :                                       IntegerConstant
+; for_test_2_ok.p(12) :                                           "2"
+; for_test_2_ok.p(13) :                                   "{"
+; for_test_2_ok.p(14) :                                   StatementList
+; for_test_2_ok.p(14) :                                       Statement
+; for_test_2_ok.p(14) :                                           WriteStatement
+; for_test_2_ok.p(14) :                                               "write"
+; for_test_2_ok.p(14) :                                               VariableExpression
+; for_test_2_ok.p(14) :                                                   VariableName
+; for_test_2_ok.p(14) :                                                       "j"
+; for_test_2_ok.p(14) :                                               ";"
+; for_test_2_ok.p(15) :                                   "}"
+; for_test_2_ok.p(16) :                       "}"
+; for_test_2_ok.p(17) :           "}"

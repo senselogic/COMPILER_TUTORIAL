@@ -1,0 +1,406 @@
+ssp 0
+ujp @program
+define @function_void_square_int_int_of_void_cube_int_of_void_main
+ssp 7
+; cube_test_ok.p(16) : square = integer * integer ;
+; square of void_square_int_int_of_void_cube_int_of_void_main
+lod a 0 5
+; integer of void_square_int_int_of_void_cube_int_of_void_main
+lda i 0 6
+ind i
+; integer of void_square_int_int_of_void_cube_int_of_void_main
+lda i 0 6
+ind i
+; cube_test_ok.p(16) : *
+mul i
+; cube_test_ok.p(16) : :=
+sto i
+retp
+define @function_int_cube_int_of_void_cube_int_of_void_main
+ssp 7
+; cube_test_ok.p(26) : square ( square , integer ) ;
+mst 1
+; square of int_cube_int_of_void_cube_int_of_void_main
+lda i 0 6
+; integer of int_cube_int_of_void_cube_int_of_void_main
+lda i 0 5
+ind i
+cup 2 @function_void_square_int_int_of_void_cube_int_of_void_main
+; cube_test_ok.p(28) : return integer * square ;
+lda i 0 0
+; integer of int_cube_int_of_void_cube_int_of_void_main
+lda i 0 5
+ind i
+; square of int_cube_int_of_void_cube_int_of_void_main
+lda i 0 6
+ind i
+; cube_test_ok.p(28) : *
+mul i
+sto i
+retf
+retf
+define @function_void_cube_int_of_void_main
+ssp 6
+; cube_test_ok.p(31) : cube = cube ( integer ) ;
+; cube of void_main
+lda i 1 6
+mst 0
+; integer of void_cube_int_of_void_main
+lda i 0 5
+ind i
+cup 1 @function_int_cube_int_of_void_cube_int_of_void_main
+; cube_test_ok.p(31) : :=
+sto i
+retp
+define @function_void_main
+ssp 7
+; cube_test_ok.p(34) : integer = 1 ;
+; integer of void_main
+lda i 0 5
+; 1
+ldc i 1
+; cube_test_ok.p(34) : :=
+sto i
+; cube_test_ok.p(36) : while integer <= 4
+define @while_1
+; integer of void_main
+lda i 0 5
+ind i
+; 4
+ldc i 4
+; cube_test_ok.p(36) : <=
+leq i
+fjp @while_end_1
+; cube_test_ok.p(38) : cube ( integer ) ;
+mst 0
+; integer of void_main
+lda i 0 5
+ind i
+cup 1 @function_void_cube_int_of_void_main
+; cube_test_ok.p(40) : if cube == integer * integer * integer
+; cube of void_main
+lda i 0 6
+ind i
+; integer of void_main
+lda i 0 5
+ind i
+; integer of void_main
+lda i 0 5
+ind i
+; cube_test_ok.p(40) : *
+mul i
+; integer of void_main
+lda i 0 5
+ind i
+; cube_test_ok.p(40) : *
+mul i
+; cube_test_ok.p(40) : =
+equ i
+fjp @if_else_2
+; cube_test_ok.p(42) : write cube ;
+; cube of void_main
+lda i 0 6
+ind i
+; cube_test_ok.p(42) : write
+prin
+ujp @if_end_2
+define @if_else_2
+; cube_test_ok.p(44) : else
+; cube_test_ok.p(46) : write -1 ;
+; -1
+ldc i -1
+; cube_test_ok.p(46) : write
+prin
+define @if_end_2
+; cube_test_ok.p(49) : integer = integer + 1 ;
+; integer of void_main
+lda i 0 5
+; integer of void_main
+lda i 0 5
+ind i
+; 1
+ldc i 1
+; cube_test_ok.p(49) : +
+add i
+; cube_test_ok.p(49) : :=
+sto i
+ujp @while_1
+define @while_end_1
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; cube_test_ok.p(1) :    Program
+; cube_test_ok.p(1) :        FunctionDeclaration
+; cube_test_ok.p(1) :            "func"
+; cube_test_ok.p(1) :            FunctionName
+; cube_test_ok.p(1) :                "main"
+; cube_test_ok.p(1) :            "("
+; cube_test_ok.p(1) :            FunctionParameterList
+; cube_test_ok.p(1) :            ")"
+; cube_test_ok.p(1) :            ":"
+; cube_test_ok.p(1) :            FunctionType
+; cube_test_ok.p(1) :                "void"
+; cube_test_ok.p(2) :            "{"
+; cube_test_ok.p(3) :            LocalDeclarationList
+; cube_test_ok.p(3) :                LocalDeclaration
+; cube_test_ok.p(3) :                    VariableDeclaration
+; cube_test_ok.p(3) :                        "var"
+; cube_test_ok.p(4) :                        Variable
+; cube_test_ok.p(4) :                            VariableName
+; cube_test_ok.p(4) :                                "integer"
+; cube_test_ok.p(4) :                            ":"
+; cube_test_ok.p(4) :                            VariableType
+; cube_test_ok.p(4) :                                "int"
+; cube_test_ok.p(4) :                        ","
+; cube_test_ok.p(5) :                        Variable
+; cube_test_ok.p(5) :                            VariableName
+; cube_test_ok.p(5) :                                "cube"
+; cube_test_ok.p(5) :                            ":"
+; cube_test_ok.p(5) :                            VariableType
+; cube_test_ok.p(5) :                                "int"
+; cube_test_ok.p(5) :                        ";"
+; cube_test_ok.p(7) :                LocalDeclaration
+; cube_test_ok.p(7) :                    FunctionDeclaration
+; cube_test_ok.p(7) :                        "func"
+; cube_test_ok.p(7) :                        FunctionName
+; cube_test_ok.p(7) :                            "cube"
+; cube_test_ok.p(7) :                        "("
+; cube_test_ok.p(8) :                        FunctionParameterList
+; cube_test_ok.p(8) :                            FunctionParameter
+; cube_test_ok.p(8) :                                VariableName
+; cube_test_ok.p(8) :                                    "integer"
+; cube_test_ok.p(8) :                                ":"
+; cube_test_ok.p(8) :                                VariableType
+; cube_test_ok.p(8) :                                    "int"
+; cube_test_ok.p(9) :                        ")"
+; cube_test_ok.p(9) :                        ":"
+; cube_test_ok.p(9) :                        FunctionType
+; cube_test_ok.p(9) :                            "void"
+; cube_test_ok.p(10) :                       "{"
+; cube_test_ok.p(11) :                       LocalDeclarationList
+; cube_test_ok.p(11) :                           LocalDeclaration
+; cube_test_ok.p(11) :                               FunctionDeclaration
+; cube_test_ok.p(11) :                                   "func"
+; cube_test_ok.p(11) :                                   FunctionName
+; cube_test_ok.p(11) :                                       "square"
+; cube_test_ok.p(11) :                                   "("
+; cube_test_ok.p(12) :                                   FunctionParameterList
+; cube_test_ok.p(12) :                                       FunctionParameter
+; cube_test_ok.p(12) :                                           "ref"
+; cube_test_ok.p(12) :                                           VariableName
+; cube_test_ok.p(12) :                                               "square"
+; cube_test_ok.p(12) :                                           ":"
+; cube_test_ok.p(12) :                                           VariableType
+; cube_test_ok.p(12) :                                               "int"
+; cube_test_ok.p(12) :                                       ","
+; cube_test_ok.p(13) :                                       FunctionParameter
+; cube_test_ok.p(13) :                                           VariableName
+; cube_test_ok.p(13) :                                               "integer"
+; cube_test_ok.p(13) :                                           ":"
+; cube_test_ok.p(13) :                                           VariableType
+; cube_test_ok.p(13) :                                               "int"
+; cube_test_ok.p(14) :                                   ")"
+; cube_test_ok.p(14) :                                   ":"
+; cube_test_ok.p(14) :                                   FunctionType
+; cube_test_ok.p(14) :                                       "void"
+; cube_test_ok.p(15) :                                   "{"
+; cube_test_ok.p(16) :                                   LocalDeclarationList
+; cube_test_ok.p(16) :                                   StatementList
+; cube_test_ok.p(16) :                                       Statement
+; cube_test_ok.p(16) :                                           AssignmentStatement
+; cube_test_ok.p(16) :                                               VariableExpression
+; cube_test_ok.p(16) :                                                   VariableName
+; cube_test_ok.p(16) :                                                       "square"
+; cube_test_ok.p(16) :                                               "="
+; cube_test_ok.p(16) :                                               StarExpression
+; cube_test_ok.p(16) :                                                   VariableExpression
+; cube_test_ok.p(16) :                                                       VariableName
+; cube_test_ok.p(16) :                                                           "integer"
+; cube_test_ok.p(16) :                                                   "*"
+; cube_test_ok.p(16) :                                                   VariableExpression
+; cube_test_ok.p(16) :                                                       VariableName
+; cube_test_ok.p(16) :                                                           "integer"
+; cube_test_ok.p(16) :                                               ";"
+; cube_test_ok.p(17) :                                   "}"
+; cube_test_ok.p(19) :                           LocalDeclaration
+; cube_test_ok.p(19) :                               FunctionDeclaration
+; cube_test_ok.p(19) :                                   "func"
+; cube_test_ok.p(19) :                                   FunctionName
+; cube_test_ok.p(19) :                                       "cube"
+; cube_test_ok.p(19) :                                   "("
+; cube_test_ok.p(20) :                                   FunctionParameterList
+; cube_test_ok.p(20) :                                       FunctionParameter
+; cube_test_ok.p(20) :                                           VariableName
+; cube_test_ok.p(20) :                                               "integer"
+; cube_test_ok.p(20) :                                           ":"
+; cube_test_ok.p(20) :                                           VariableType
+; cube_test_ok.p(20) :                                               "int"
+; cube_test_ok.p(21) :                                   ")"
+; cube_test_ok.p(21) :                                   ":"
+; cube_test_ok.p(21) :                                   FunctionType
+; cube_test_ok.p(21) :                                       "int"
+; cube_test_ok.p(22) :                                   "{"
+; cube_test_ok.p(23) :                                   LocalDeclarationList
+; cube_test_ok.p(23) :                                       LocalDeclaration
+; cube_test_ok.p(23) :                                           VariableDeclaration
+; cube_test_ok.p(23) :                                               "var"
+; cube_test_ok.p(24) :                                               Variable
+; cube_test_ok.p(24) :                                                   VariableName
+; cube_test_ok.p(24) :                                                       "square"
+; cube_test_ok.p(24) :                                                   ":"
+; cube_test_ok.p(24) :                                                   VariableType
+; cube_test_ok.p(24) :                                                       "int"
+; cube_test_ok.p(24) :                                               ";"
+; cube_test_ok.p(26) :                                   StatementList
+; cube_test_ok.p(26) :                                       Statement
+; cube_test_ok.p(26) :                                           ExpressionStatement
+; cube_test_ok.p(26) :                                               FunctionCallExpression
+; cube_test_ok.p(26) :                                                   FunctionCall
+; cube_test_ok.p(26) :                                                       FunctionName
+; cube_test_ok.p(26) :                                                           "square"
+; cube_test_ok.p(26) :                                                       "("
+; cube_test_ok.p(26) :                                                       FunctionArgumentList
+; cube_test_ok.p(26) :                                                           FunctionArgument
+; cube_test_ok.p(26) :                                                               VariableExpression
+; cube_test_ok.p(26) :                                                                   VariableName
+; cube_test_ok.p(26) :                                                                       "square"
+; cube_test_ok.p(26) :                                                           ","
+; cube_test_ok.p(26) :                                                           FunctionArgument
+; cube_test_ok.p(26) :                                                               VariableExpression
+; cube_test_ok.p(26) :                                                                   VariableName
+; cube_test_ok.p(26) :                                                                       "integer"
+; cube_test_ok.p(26) :                                                       ")"
+; cube_test_ok.p(26) :                                               ";"
+; cube_test_ok.p(28) :                                       Statement
+; cube_test_ok.p(28) :                                           ReturnStatement
+; cube_test_ok.p(28) :                                               "return"
+; cube_test_ok.p(28) :                                               StarExpression
+; cube_test_ok.p(28) :                                                   VariableExpression
+; cube_test_ok.p(28) :                                                       VariableName
+; cube_test_ok.p(28) :                                                           "integer"
+; cube_test_ok.p(28) :                                                   "*"
+; cube_test_ok.p(28) :                                                   VariableExpression
+; cube_test_ok.p(28) :                                                       VariableName
+; cube_test_ok.p(28) :                                                           "square"
+; cube_test_ok.p(28) :                                               ";"
+; cube_test_ok.p(29) :                                   "}"
+; cube_test_ok.p(31) :                       StatementList
+; cube_test_ok.p(31) :                           Statement
+; cube_test_ok.p(31) :                               AssignmentStatement
+; cube_test_ok.p(31) :                                   VariableExpression
+; cube_test_ok.p(31) :                                       VariableName
+; cube_test_ok.p(31) :                                           "cube"
+; cube_test_ok.p(31) :                                   "="
+; cube_test_ok.p(31) :                                   FunctionCallExpression
+; cube_test_ok.p(31) :                                       FunctionCall
+; cube_test_ok.p(31) :                                           FunctionName
+; cube_test_ok.p(31) :                                               "cube"
+; cube_test_ok.p(31) :                                           "("
+; cube_test_ok.p(31) :                                           FunctionArgumentList
+; cube_test_ok.p(31) :                                               FunctionArgument
+; cube_test_ok.p(31) :                                                   VariableExpression
+; cube_test_ok.p(31) :                                                       VariableName
+; cube_test_ok.p(31) :                                                           "integer"
+; cube_test_ok.p(31) :                                           ")"
+; cube_test_ok.p(31) :                                   ";"
+; cube_test_ok.p(32) :                       "}"
+; cube_test_ok.p(34) :           StatementList
+; cube_test_ok.p(34) :               Statement
+; cube_test_ok.p(34) :                   AssignmentStatement
+; cube_test_ok.p(34) :                       VariableExpression
+; cube_test_ok.p(34) :                           VariableName
+; cube_test_ok.p(34) :                               "integer"
+; cube_test_ok.p(34) :                       "="
+; cube_test_ok.p(34) :                       IntegerConstantExpression
+; cube_test_ok.p(34) :                           IntegerConstant
+; cube_test_ok.p(34) :                               "1"
+; cube_test_ok.p(34) :                       ";"
+; cube_test_ok.p(36) :               Statement
+; cube_test_ok.p(36) :                   WhileStatement
+; cube_test_ok.p(36) :                       "while"
+; cube_test_ok.p(36) :                       SmallerEqualExpression
+; cube_test_ok.p(36) :                           VariableExpression
+; cube_test_ok.p(36) :                               VariableName
+; cube_test_ok.p(36) :                                   "integer"
+; cube_test_ok.p(37) :                           "<="
+; cube_test_ok.p(36) :                           IntegerConstantExpression
+; cube_test_ok.p(36) :                               IntegerConstant
+; cube_test_ok.p(36) :                                   "4"
+; cube_test_ok.p(37) :                       "{"
+; cube_test_ok.p(38) :                       StatementList
+; cube_test_ok.p(38) :                           Statement
+; cube_test_ok.p(38) :                               ExpressionStatement
+; cube_test_ok.p(38) :                                   FunctionCallExpression
+; cube_test_ok.p(38) :                                       FunctionCall
+; cube_test_ok.p(38) :                                           FunctionName
+; cube_test_ok.p(38) :                                               "cube"
+; cube_test_ok.p(38) :                                           "("
+; cube_test_ok.p(38) :                                           FunctionArgumentList
+; cube_test_ok.p(38) :                                               FunctionArgument
+; cube_test_ok.p(38) :                                                   VariableExpression
+; cube_test_ok.p(38) :                                                       VariableName
+; cube_test_ok.p(38) :                                                           "integer"
+; cube_test_ok.p(38) :                                           ")"
+; cube_test_ok.p(38) :                                   ";"
+; cube_test_ok.p(40) :                           Statement
+; cube_test_ok.p(40) :                               IfStatement
+; cube_test_ok.p(40) :                                   "if"
+; cube_test_ok.p(40) :                                   EqualExpression
+; cube_test_ok.p(40) :                                       VariableExpression
+; cube_test_ok.p(40) :                                           VariableName
+; cube_test_ok.p(40) :                                               "cube"
+; cube_test_ok.p(41) :                                       "=="
+; cube_test_ok.p(40) :                                       StarExpression
+; cube_test_ok.p(40) :                                           StarExpression
+; cube_test_ok.p(40) :                                               VariableExpression
+; cube_test_ok.p(40) :                                                   VariableName
+; cube_test_ok.p(40) :                                                       "integer"
+; cube_test_ok.p(40) :                                               "*"
+; cube_test_ok.p(40) :                                               VariableExpression
+; cube_test_ok.p(40) :                                                   VariableName
+; cube_test_ok.p(40) :                                                       "integer"
+; cube_test_ok.p(41) :                                           "*"
+; cube_test_ok.p(40) :                                           VariableExpression
+; cube_test_ok.p(40) :                                               VariableName
+; cube_test_ok.p(40) :                                                   "integer"
+; cube_test_ok.p(41) :                                   "{"
+; cube_test_ok.p(42) :                                   StatementList
+; cube_test_ok.p(42) :                                       Statement
+; cube_test_ok.p(42) :                                           WriteStatement
+; cube_test_ok.p(42) :                                               "write"
+; cube_test_ok.p(42) :                                               VariableExpression
+; cube_test_ok.p(42) :                                                   VariableName
+; cube_test_ok.p(42) :                                                       "cube"
+; cube_test_ok.p(42) :                                               ";"
+; cube_test_ok.p(43) :                                   "}"
+; cube_test_ok.p(44) :                                   ElseStatement
+; cube_test_ok.p(44) :                                       "else"
+; cube_test_ok.p(45) :                                       "{"
+; cube_test_ok.p(46) :                                       StatementList
+; cube_test_ok.p(46) :                                           Statement
+; cube_test_ok.p(46) :                                               WriteStatement
+; cube_test_ok.p(46) :                                                   "write"
+; cube_test_ok.p(46) :                                                   IntegerConstantExpression
+; cube_test_ok.p(46) :                                                       IntegerConstant
+; cube_test_ok.p(46) :                                                           "-1"
+; cube_test_ok.p(46) :                                                   ";"
+; cube_test_ok.p(47) :                                       "}"
+; cube_test_ok.p(49) :                           Statement
+; cube_test_ok.p(49) :                               AssignmentStatement
+; cube_test_ok.p(49) :                                   VariableExpression
+; cube_test_ok.p(49) :                                       VariableName
+; cube_test_ok.p(49) :                                           "integer"
+; cube_test_ok.p(49) :                                   "="
+; cube_test_ok.p(49) :                                   PlusExpression
+; cube_test_ok.p(49) :                                       VariableExpression
+; cube_test_ok.p(49) :                                           VariableName
+; cube_test_ok.p(49) :                                               "integer"
+; cube_test_ok.p(49) :                                       "+"
+; cube_test_ok.p(49) :                                       IntegerConstantExpression
+; cube_test_ok.p(49) :                                           IntegerConstant
+; cube_test_ok.p(49) :                                               "1"
+; cube_test_ok.p(49) :                                   ";"
+; cube_test_ok.p(50) :                       "}"
+; cube_test_ok.p(51) :           "}"

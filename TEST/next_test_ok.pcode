@@ -1,0 +1,148 @@
+ssp 0
+ujp @program
+define @function_int_next_int_of_void_main
+ssp 6
+; next_test_ok.p(11) : return i + 1 ;
+lda i 0 0
+; i of int_next_int_of_void_main
+lda i 0 5
+ind i
+; 1
+ldc i 1
+; next_test_ok.p(11) : +
+add i
+sto i
+retf
+retf
+define @function_void_main
+ssp 6
+; next_test_ok.p(14) : i = 0 ;
+; i of void_main
+lda i 0 5
+; 0
+ldc i 0
+; next_test_ok.p(14) : :=
+sto i
+; next_test_ok.p(16) : if i < 1
+; i of void_main
+lda i 0 5
+ind i
+; 1
+ldc i 1
+; next_test_ok.p(16) : <
+les i
+fjp @if_else_1
+; next_test_ok.p(18) : write next ( i ) ;
+mst 0
+; i of void_main
+lda i 0 5
+ind i
+cup 1 @function_int_next_int_of_void_main
+; next_test_ok.p(18) : write
+prin
+ujp @if_end_1
+define @if_else_1
+define @if_end_1
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; next_test_ok.p(1) :    Program
+; next_test_ok.p(1) :        FunctionDeclaration
+; next_test_ok.p(1) :            "func"
+; next_test_ok.p(1) :            FunctionName
+; next_test_ok.p(1) :                "main"
+; next_test_ok.p(1) :            "("
+; next_test_ok.p(2) :            FunctionParameterList
+; next_test_ok.p(2) :            ")"
+; next_test_ok.p(2) :            ":"
+; next_test_ok.p(2) :            FunctionType
+; next_test_ok.p(2) :                "void"
+; next_test_ok.p(3) :            "{"
+; next_test_ok.p(4) :            LocalDeclarationList
+; next_test_ok.p(4) :                LocalDeclaration
+; next_test_ok.p(4) :                    VariableDeclaration
+; next_test_ok.p(4) :                        "var"
+; next_test_ok.p(5) :                        Variable
+; next_test_ok.p(5) :                            VariableName
+; next_test_ok.p(5) :                                "i"
+; next_test_ok.p(5) :                            ":"
+; next_test_ok.p(5) :                            VariableType
+; next_test_ok.p(5) :                                "int"
+; next_test_ok.p(5) :                        ";"
+; next_test_ok.p(7) :                LocalDeclaration
+; next_test_ok.p(7) :                    FunctionDeclaration
+; next_test_ok.p(7) :                        "func"
+; next_test_ok.p(7) :                        FunctionName
+; next_test_ok.p(7) :                            "next"
+; next_test_ok.p(7) :                        "("
+; next_test_ok.p(8) :                        FunctionParameterList
+; next_test_ok.p(8) :                            FunctionParameter
+; next_test_ok.p(8) :                                VariableName
+; next_test_ok.p(8) :                                    "i"
+; next_test_ok.p(8) :                                ":"
+; next_test_ok.p(8) :                                VariableType
+; next_test_ok.p(8) :                                    "int"
+; next_test_ok.p(9) :                        ")"
+; next_test_ok.p(9) :                        ":"
+; next_test_ok.p(9) :                        FunctionType
+; next_test_ok.p(9) :                            "int"
+; next_test_ok.p(10) :                       "{"
+; next_test_ok.p(11) :                       LocalDeclarationList
+; next_test_ok.p(11) :                       StatementList
+; next_test_ok.p(11) :                           Statement
+; next_test_ok.p(11) :                               ReturnStatement
+; next_test_ok.p(11) :                                   "return"
+; next_test_ok.p(11) :                                   PlusExpression
+; next_test_ok.p(11) :                                       VariableExpression
+; next_test_ok.p(11) :                                           VariableName
+; next_test_ok.p(11) :                                               "i"
+; next_test_ok.p(11) :                                       "+"
+; next_test_ok.p(11) :                                       IntegerConstantExpression
+; next_test_ok.p(11) :                                           IntegerConstant
+; next_test_ok.p(11) :                                               "1"
+; next_test_ok.p(11) :                                   ";"
+; next_test_ok.p(12) :                       "}"
+; next_test_ok.p(14) :           StatementList
+; next_test_ok.p(14) :               Statement
+; next_test_ok.p(14) :                   AssignmentStatement
+; next_test_ok.p(14) :                       VariableExpression
+; next_test_ok.p(14) :                           VariableName
+; next_test_ok.p(14) :                               "i"
+; next_test_ok.p(14) :                       "="
+; next_test_ok.p(14) :                       IntegerConstantExpression
+; next_test_ok.p(14) :                           IntegerConstant
+; next_test_ok.p(14) :                               "0"
+; next_test_ok.p(14) :                       ";"
+; next_test_ok.p(16) :               Statement
+; next_test_ok.p(16) :                   IfStatement
+; next_test_ok.p(16) :                       "if"
+; next_test_ok.p(16) :                       SmallerExpression
+; next_test_ok.p(16) :                           VariableExpression
+; next_test_ok.p(16) :                               VariableName
+; next_test_ok.p(16) :                                   "i"
+; next_test_ok.p(17) :                           "<"
+; next_test_ok.p(16) :                           IntegerConstantExpression
+; next_test_ok.p(16) :                               IntegerConstant
+; next_test_ok.p(16) :                                   "1"
+; next_test_ok.p(17) :                       "{"
+; next_test_ok.p(18) :                       StatementList
+; next_test_ok.p(18) :                           Statement
+; next_test_ok.p(18) :                               WriteStatement
+; next_test_ok.p(18) :                                   "write"
+; next_test_ok.p(18) :                                   FunctionCallExpression
+; next_test_ok.p(18) :                                       FunctionCall
+; next_test_ok.p(18) :                                           FunctionName
+; next_test_ok.p(18) :                                               "next"
+; next_test_ok.p(18) :                                           "("
+; next_test_ok.p(18) :                                           FunctionArgumentList
+; next_test_ok.p(18) :                                               FunctionArgument
+; next_test_ok.p(18) :                                                   VariableExpression
+; next_test_ok.p(18) :                                                       VariableName
+; next_test_ok.p(18) :                                                           "i"
+; next_test_ok.p(18) :                                           ")"
+; next_test_ok.p(18) :                                   ";"
+; next_test_ok.p(19) :                       "}"
+; next_test_ok.p(20) :                       ElseStatement
+; next_test_ok.p(20) :           "}"

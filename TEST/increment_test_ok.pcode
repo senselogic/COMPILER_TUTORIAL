@@ -1,0 +1,406 @@
+ssp 0
+ujp @program
+define @function_int_increment_int_int_of_void_main
+ssp 8
+; increment_test_ok.p(14) : b = ! b ;
+; b of void_main
+lda b 1 5
+; b of void_main
+lda b 1 5
+ind b
+; increment_test_ok.p(14) : !
+not b
+; increment_test_ok.p(14) : :=
+sto b
+; increment_test_ok.p(15) : k = i * 2 ;
+; k of int_increment_int_int_of_void_main
+lda i 0 7
+; i of int_increment_int_int_of_void_main
+lda i 0 5
+ind i
+; 2
+ldc i 2
+; increment_test_ok.p(15) : *
+mul i
+; increment_test_ok.p(15) : :=
+sto i
+; increment_test_ok.p(17) : if b && ! j == 0
+; increment_test_ok.p(17) : &&
+; b of void_main
+lda b 1 5
+ind b
+not b
+fjp @and_true_2
+ldc b 0
+ujp @and_end_2
+define @and_true_2
+; j of int_increment_int_int_of_void_main
+lod a 0 6
+ind i
+; 0
+ldc i 0
+; increment_test_ok.p(17) : =
+equ i
+; increment_test_ok.p(17) : !
+not b
+define @and_end_2
+fjp @if_else_1
+; increment_test_ok.p(19) : j = i + k ;
+; j of int_increment_int_int_of_void_main
+lod a 0 6
+; i of int_increment_int_int_of_void_main
+lda i 0 5
+ind i
+; k of int_increment_int_int_of_void_main
+lda i 0 7
+ind i
+; increment_test_ok.p(19) : +
+add i
+; increment_test_ok.p(19) : :=
+sto i
+ujp @if_end_1
+define @if_else_1
+; increment_test_ok.p(21) : else
+; increment_test_ok.p(23) : j = i + 1 ;
+; j of int_increment_int_int_of_void_main
+lod a 0 6
+; i of int_increment_int_int_of_void_main
+lda i 0 5
+ind i
+; 1
+ldc i 1
+; increment_test_ok.p(23) : +
+add i
+; increment_test_ok.p(23) : :=
+sto i
+define @if_end_1
+; increment_test_ok.p(26) : return i + 1 ;
+lda i 0 0
+; i of int_increment_int_int_of_void_main
+lda i 0 5
+ind i
+; 1
+ldc i 1
+; increment_test_ok.p(26) : +
+add i
+sto i
+retf
+retf
+define @function_void_main
+ssp 8
+; increment_test_ok.p(33) : b = true ;
+; b of void_main
+lda b 0 5
+; true
+ldc b 1
+; increment_test_ok.p(33) : :=
+sto b
+; increment_test_ok.p(34) : i = 1 ;
+; i of void_main
+lda i 0 6
+; 1
+ldc i 1
+; increment_test_ok.p(34) : :=
+sto i
+; increment_test_ok.p(35) : j = i - 1 ;
+; j of void_main
+lda i 0 7
+; i of void_main
+lda i 0 6
+ind i
+; 1
+ldc i 1
+; increment_test_ok.p(35) : -
+sub i
+; increment_test_ok.p(35) : :=
+sto i
+; increment_test_ok.p(37) : while i < 10
+define @while_3
+; i of void_main
+lda i 0 6
+ind i
+; 10
+ldc i 10
+; increment_test_ok.p(37) : <
+les i
+fjp @while_end_3
+; increment_test_ok.p(39) : i = increment ( i , j ) ;
+; i of void_main
+lda i 0 6
+mst 0
+; i of void_main
+lda i 0 6
+ind i
+; j of void_main
+lda i 0 7
+cup 2 @function_int_increment_int_int_of_void_main
+; increment_test_ok.p(39) : :=
+sto i
+; increment_test_ok.p(40) : write j ;
+; j of void_main
+lda i 0 7
+ind i
+; increment_test_ok.p(40) : write
+prin
+ujp @while_3
+define @while_end_3
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; increment_test_ok.p(1) :    Program
+; increment_test_ok.p(1) :        FunctionDeclaration
+; increment_test_ok.p(1) :            "func"
+; increment_test_ok.p(1) :            FunctionName
+; increment_test_ok.p(1) :                "main"
+; increment_test_ok.p(1) :            "("
+; increment_test_ok.p(1) :            FunctionParameterList
+; increment_test_ok.p(1) :            ")"
+; increment_test_ok.p(1) :            ":"
+; increment_test_ok.p(1) :            FunctionType
+; increment_test_ok.p(1) :                "void"
+; increment_test_ok.p(2) :            "{"
+; increment_test_ok.p(3) :            LocalDeclarationList
+; increment_test_ok.p(3) :                LocalDeclaration
+; increment_test_ok.p(3) :                    VariableDeclaration
+; increment_test_ok.p(3) :                        "var"
+; increment_test_ok.p(4) :                        Variable
+; increment_test_ok.p(4) :                            VariableName
+; increment_test_ok.p(4) :                                "b"
+; increment_test_ok.p(4) :                            ":"
+; increment_test_ok.p(4) :                            VariableType
+; increment_test_ok.p(4) :                                "bool"
+; increment_test_ok.p(4) :                        ";"
+; increment_test_ok.p(6) :                LocalDeclaration
+; increment_test_ok.p(6) :                    FunctionDeclaration
+; increment_test_ok.p(6) :                        "func"
+; increment_test_ok.p(6) :                        FunctionName
+; increment_test_ok.p(6) :                            "increment"
+; increment_test_ok.p(6) :                        "("
+; increment_test_ok.p(7) :                        FunctionParameterList
+; increment_test_ok.p(7) :                            FunctionParameter
+; increment_test_ok.p(7) :                                VariableName
+; increment_test_ok.p(7) :                                    "i"
+; increment_test_ok.p(7) :                                ":"
+; increment_test_ok.p(7) :                                VariableType
+; increment_test_ok.p(7) :                                    "int"
+; increment_test_ok.p(7) :                            ","
+; increment_test_ok.p(8) :                            FunctionParameter
+; increment_test_ok.p(8) :                                "ref"
+; increment_test_ok.p(8) :                                VariableName
+; increment_test_ok.p(8) :                                    "j"
+; increment_test_ok.p(8) :                                ":"
+; increment_test_ok.p(8) :                                VariableType
+; increment_test_ok.p(8) :                                    "int"
+; increment_test_ok.p(9) :                        ")"
+; increment_test_ok.p(9) :                        ":"
+; increment_test_ok.p(9) :                        FunctionType
+; increment_test_ok.p(9) :                            "int"
+; increment_test_ok.p(10) :                       "{"
+; increment_test_ok.p(11) :                       LocalDeclarationList
+; increment_test_ok.p(11) :                           LocalDeclaration
+; increment_test_ok.p(11) :                               VariableDeclaration
+; increment_test_ok.p(11) :                                   "var"
+; increment_test_ok.p(12) :                                   Variable
+; increment_test_ok.p(12) :                                       VariableName
+; increment_test_ok.p(12) :                                           "k"
+; increment_test_ok.p(12) :                                       ":"
+; increment_test_ok.p(12) :                                       VariableType
+; increment_test_ok.p(12) :                                           "int"
+; increment_test_ok.p(12) :                                   ";"
+; increment_test_ok.p(14) :                       StatementList
+; increment_test_ok.p(14) :                           Statement
+; increment_test_ok.p(14) :                               AssignmentStatement
+; increment_test_ok.p(14) :                                   VariableExpression
+; increment_test_ok.p(14) :                                       VariableName
+; increment_test_ok.p(14) :                                           "b"
+; increment_test_ok.p(14) :                                   "="
+; increment_test_ok.p(14) :                                   NotExpression
+; increment_test_ok.p(14) :                                       "!"
+; increment_test_ok.p(14) :                                       VariableExpression
+; increment_test_ok.p(14) :                                           VariableName
+; increment_test_ok.p(14) :                                               "b"
+; increment_test_ok.p(14) :                                   ";"
+; increment_test_ok.p(15) :                           Statement
+; increment_test_ok.p(15) :                               AssignmentStatement
+; increment_test_ok.p(15) :                                   VariableExpression
+; increment_test_ok.p(15) :                                       VariableName
+; increment_test_ok.p(15) :                                           "k"
+; increment_test_ok.p(15) :                                   "="
+; increment_test_ok.p(15) :                                   StarExpression
+; increment_test_ok.p(15) :                                       VariableExpression
+; increment_test_ok.p(15) :                                           VariableName
+; increment_test_ok.p(15) :                                               "i"
+; increment_test_ok.p(15) :                                       "*"
+; increment_test_ok.p(15) :                                       IntegerConstantExpression
+; increment_test_ok.p(15) :                                           IntegerConstant
+; increment_test_ok.p(15) :                                               "2"
+; increment_test_ok.p(15) :                                   ";"
+; increment_test_ok.p(17) :                           Statement
+; increment_test_ok.p(17) :                               IfStatement
+; increment_test_ok.p(17) :                                   "if"
+; increment_test_ok.p(17) :                                   AndExpression
+; increment_test_ok.p(17) :                                       VariableExpression
+; increment_test_ok.p(17) :                                           VariableName
+; increment_test_ok.p(17) :                                               "b"
+; increment_test_ok.p(18) :                                       "&&"
+; increment_test_ok.p(17) :                                       NotExpression
+; increment_test_ok.p(18) :                                           "!"
+; increment_test_ok.p(17) :                                           EqualExpression
+; increment_test_ok.p(17) :                                               VariableExpression
+; increment_test_ok.p(17) :                                                   VariableName
+; increment_test_ok.p(17) :                                                       "j"
+; increment_test_ok.p(18) :                                               "=="
+; increment_test_ok.p(17) :                                               IntegerConstantExpression
+; increment_test_ok.p(17) :                                                   IntegerConstant
+; increment_test_ok.p(17) :                                                       "0"
+; increment_test_ok.p(18) :                                   "{"
+; increment_test_ok.p(19) :                                   StatementList
+; increment_test_ok.p(19) :                                       Statement
+; increment_test_ok.p(19) :                                           AssignmentStatement
+; increment_test_ok.p(19) :                                               VariableExpression
+; increment_test_ok.p(19) :                                                   VariableName
+; increment_test_ok.p(19) :                                                       "j"
+; increment_test_ok.p(19) :                                               "="
+; increment_test_ok.p(19) :                                               PlusExpression
+; increment_test_ok.p(19) :                                                   VariableExpression
+; increment_test_ok.p(19) :                                                       VariableName
+; increment_test_ok.p(19) :                                                           "i"
+; increment_test_ok.p(19) :                                                   "+"
+; increment_test_ok.p(19) :                                                   VariableExpression
+; increment_test_ok.p(19) :                                                       VariableName
+; increment_test_ok.p(19) :                                                           "k"
+; increment_test_ok.p(19) :                                               ";"
+; increment_test_ok.p(20) :                                   "}"
+; increment_test_ok.p(21) :                                   ElseStatement
+; increment_test_ok.p(21) :                                       "else"
+; increment_test_ok.p(22) :                                       "{"
+; increment_test_ok.p(23) :                                       StatementList
+; increment_test_ok.p(23) :                                           Statement
+; increment_test_ok.p(23) :                                               AssignmentStatement
+; increment_test_ok.p(23) :                                                   VariableExpression
+; increment_test_ok.p(23) :                                                       VariableName
+; increment_test_ok.p(23) :                                                           "j"
+; increment_test_ok.p(23) :                                                   "="
+; increment_test_ok.p(23) :                                                   PlusExpression
+; increment_test_ok.p(23) :                                                       VariableExpression
+; increment_test_ok.p(23) :                                                           VariableName
+; increment_test_ok.p(23) :                                                               "i"
+; increment_test_ok.p(23) :                                                       "+"
+; increment_test_ok.p(23) :                                                       IntegerConstantExpression
+; increment_test_ok.p(23) :                                                           IntegerConstant
+; increment_test_ok.p(23) :                                                               "1"
+; increment_test_ok.p(23) :                                                   ";"
+; increment_test_ok.p(24) :                                       "}"
+; increment_test_ok.p(26) :                           Statement
+; increment_test_ok.p(26) :                               ReturnStatement
+; increment_test_ok.p(26) :                                   "return"
+; increment_test_ok.p(26) :                                   PlusExpression
+; increment_test_ok.p(26) :                                       VariableExpression
+; increment_test_ok.p(26) :                                           VariableName
+; increment_test_ok.p(26) :                                               "i"
+; increment_test_ok.p(26) :                                       "+"
+; increment_test_ok.p(26) :                                       IntegerConstantExpression
+; increment_test_ok.p(26) :                                           IntegerConstant
+; increment_test_ok.p(26) :                                               "1"
+; increment_test_ok.p(26) :                                   ";"
+; increment_test_ok.p(27) :                       "}"
+; increment_test_ok.p(29) :               LocalDeclaration
+; increment_test_ok.p(29) :                   VariableDeclaration
+; increment_test_ok.p(29) :                       "var"
+; increment_test_ok.p(30) :                       Variable
+; increment_test_ok.p(30) :                           VariableName
+; increment_test_ok.p(30) :                               "i"
+; increment_test_ok.p(30) :                           ":"
+; increment_test_ok.p(30) :                           VariableType
+; increment_test_ok.p(30) :                               "int"
+; increment_test_ok.p(30) :                       ","
+; increment_test_ok.p(31) :                       Variable
+; increment_test_ok.p(31) :                           VariableName
+; increment_test_ok.p(31) :                               "j"
+; increment_test_ok.p(31) :                           ":"
+; increment_test_ok.p(31) :                           VariableType
+; increment_test_ok.p(31) :                               "int"
+; increment_test_ok.p(31) :                       ";"
+; increment_test_ok.p(33) :           StatementList
+; increment_test_ok.p(33) :               Statement
+; increment_test_ok.p(33) :                   AssignmentStatement
+; increment_test_ok.p(33) :                       VariableExpression
+; increment_test_ok.p(33) :                           VariableName
+; increment_test_ok.p(33) :                               "b"
+; increment_test_ok.p(33) :                       "="
+; increment_test_ok.p(33) :                       BooleanConstantExpression
+; increment_test_ok.p(33) :                           BooleanConstant
+; increment_test_ok.p(33) :                               "true"
+; increment_test_ok.p(33) :                       ";"
+; increment_test_ok.p(34) :               Statement
+; increment_test_ok.p(34) :                   AssignmentStatement
+; increment_test_ok.p(34) :                       VariableExpression
+; increment_test_ok.p(34) :                           VariableName
+; increment_test_ok.p(34) :                               "i"
+; increment_test_ok.p(34) :                       "="
+; increment_test_ok.p(34) :                       IntegerConstantExpression
+; increment_test_ok.p(34) :                           IntegerConstant
+; increment_test_ok.p(34) :                               "1"
+; increment_test_ok.p(34) :                       ";"
+; increment_test_ok.p(35) :               Statement
+; increment_test_ok.p(35) :                   AssignmentStatement
+; increment_test_ok.p(35) :                       VariableExpression
+; increment_test_ok.p(35) :                           VariableName
+; increment_test_ok.p(35) :                               "j"
+; increment_test_ok.p(35) :                       "="
+; increment_test_ok.p(35) :                       MinusExpression
+; increment_test_ok.p(35) :                           VariableExpression
+; increment_test_ok.p(35) :                               VariableName
+; increment_test_ok.p(35) :                                   "i"
+; increment_test_ok.p(35) :                           "-"
+; increment_test_ok.p(35) :                           IntegerConstantExpression
+; increment_test_ok.p(35) :                               IntegerConstant
+; increment_test_ok.p(35) :                                   "1"
+; increment_test_ok.p(35) :                       ";"
+; increment_test_ok.p(37) :               Statement
+; increment_test_ok.p(37) :                   WhileStatement
+; increment_test_ok.p(37) :                       "while"
+; increment_test_ok.p(37) :                       SmallerExpression
+; increment_test_ok.p(37) :                           VariableExpression
+; increment_test_ok.p(37) :                               VariableName
+; increment_test_ok.p(37) :                                   "i"
+; increment_test_ok.p(38) :                           "<"
+; increment_test_ok.p(37) :                           IntegerConstantExpression
+; increment_test_ok.p(37) :                               IntegerConstant
+; increment_test_ok.p(37) :                                   "10"
+; increment_test_ok.p(38) :                       "{"
+; increment_test_ok.p(39) :                       StatementList
+; increment_test_ok.p(39) :                           Statement
+; increment_test_ok.p(39) :                               AssignmentStatement
+; increment_test_ok.p(39) :                                   VariableExpression
+; increment_test_ok.p(39) :                                       VariableName
+; increment_test_ok.p(39) :                                           "i"
+; increment_test_ok.p(39) :                                   "="
+; increment_test_ok.p(39) :                                   FunctionCallExpression
+; increment_test_ok.p(39) :                                       FunctionCall
+; increment_test_ok.p(39) :                                           FunctionName
+; increment_test_ok.p(39) :                                               "increment"
+; increment_test_ok.p(39) :                                           "("
+; increment_test_ok.p(39) :                                           FunctionArgumentList
+; increment_test_ok.p(39) :                                               FunctionArgument
+; increment_test_ok.p(39) :                                                   VariableExpression
+; increment_test_ok.p(39) :                                                       VariableName
+; increment_test_ok.p(39) :                                                           "i"
+; increment_test_ok.p(39) :                                               ","
+; increment_test_ok.p(39) :                                               FunctionArgument
+; increment_test_ok.p(39) :                                                   VariableExpression
+; increment_test_ok.p(39) :                                                       VariableName
+; increment_test_ok.p(39) :                                                           "j"
+; increment_test_ok.p(39) :                                           ")"
+; increment_test_ok.p(39) :                                   ";"
+; increment_test_ok.p(40) :                           Statement
+; increment_test_ok.p(40) :                               WriteStatement
+; increment_test_ok.p(40) :                                   "write"
+; increment_test_ok.p(40) :                                   VariableExpression
+; increment_test_ok.p(40) :                                       VariableName
+; increment_test_ok.p(40) :                                           "j"
+; increment_test_ok.p(40) :                                   ";"
+; increment_test_ok.p(41) :                       "}"
+; increment_test_ok.p(42) :           "}"

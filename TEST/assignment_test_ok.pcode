@@ -1,0 +1,173 @@
+ssp 0
+ujp @program
+define @function_void_main
+ssp 9
+; assignment_test_ok.p(10) : b = true ;
+; b of void_main
+lda b 0 5
+; true
+ldc b 1
+; assignment_test_ok.p(10) : :=
+sto b
+; assignment_test_ok.p(11) : i = 1 ;
+; i of void_main
+lda i 0 6
+; 1
+ldc i 1
+; assignment_test_ok.p(11) : :=
+sto i
+; assignment_test_ok.p(12) : j = i ;
+; j of void_main
+lda i 0 7
+; i of void_main
+lda i 0 6
+ind i
+; assignment_test_ok.p(12) : :=
+sto i
+; assignment_test_ok.p(13) : k = j + 1 ;
+; k of void_main
+lda i 0 8
+; j of void_main
+lda i 0 7
+ind i
+; 1
+ldc i 1
+; assignment_test_ok.p(13) : +
+add i
+; assignment_test_ok.p(13) : :=
+sto i
+; assignment_test_ok.p(14) : write i ;
+; i of void_main
+lda i 0 6
+ind i
+; assignment_test_ok.p(14) : write
+prin
+; assignment_test_ok.p(15) : write j ;
+; j of void_main
+lda i 0 7
+ind i
+; assignment_test_ok.p(15) : write
+prin
+; assignment_test_ok.p(16) : write k ;
+; k of void_main
+lda i 0 8
+ind i
+; assignment_test_ok.p(16) : write
+prin
+retp
+define @program
+mst 0
+cup 0 @function_void_main
+stp
+; assignment_test_ok.p(1) :    Program
+; assignment_test_ok.p(1) :        FunctionDeclaration
+; assignment_test_ok.p(1) :            "func"
+; assignment_test_ok.p(1) :            FunctionName
+; assignment_test_ok.p(1) :                "main"
+; assignment_test_ok.p(1) :            "("
+; assignment_test_ok.p(2) :            FunctionParameterList
+; assignment_test_ok.p(2) :            ")"
+; assignment_test_ok.p(2) :            ":"
+; assignment_test_ok.p(2) :            FunctionType
+; assignment_test_ok.p(2) :                "void"
+; assignment_test_ok.p(3) :            "{"
+; assignment_test_ok.p(4) :            LocalDeclarationList
+; assignment_test_ok.p(4) :                LocalDeclaration
+; assignment_test_ok.p(4) :                    VariableDeclaration
+; assignment_test_ok.p(4) :                        "var"
+; assignment_test_ok.p(5) :                        Variable
+; assignment_test_ok.p(5) :                            VariableName
+; assignment_test_ok.p(5) :                                "b"
+; assignment_test_ok.p(5) :                            ":"
+; assignment_test_ok.p(5) :                            VariableType
+; assignment_test_ok.p(5) :                                "bool"
+; assignment_test_ok.p(5) :                        ","
+; assignment_test_ok.p(6) :                        Variable
+; assignment_test_ok.p(6) :                            VariableName
+; assignment_test_ok.p(6) :                                "i"
+; assignment_test_ok.p(6) :                            ":"
+; assignment_test_ok.p(6) :                            VariableType
+; assignment_test_ok.p(6) :                                "int"
+; assignment_test_ok.p(6) :                        ","
+; assignment_test_ok.p(7) :                        Variable
+; assignment_test_ok.p(7) :                            VariableName
+; assignment_test_ok.p(7) :                                "j"
+; assignment_test_ok.p(7) :                            ":"
+; assignment_test_ok.p(7) :                            VariableType
+; assignment_test_ok.p(7) :                                "int"
+; assignment_test_ok.p(7) :                        ","
+; assignment_test_ok.p(8) :                        Variable
+; assignment_test_ok.p(8) :                            VariableName
+; assignment_test_ok.p(8) :                                "k"
+; assignment_test_ok.p(8) :                            ":"
+; assignment_test_ok.p(8) :                            VariableType
+; assignment_test_ok.p(8) :                                "int"
+; assignment_test_ok.p(8) :                        ";"
+; assignment_test_ok.p(10) :           StatementList
+; assignment_test_ok.p(10) :               Statement
+; assignment_test_ok.p(10) :                   AssignmentStatement
+; assignment_test_ok.p(10) :                       VariableExpression
+; assignment_test_ok.p(10) :                           VariableName
+; assignment_test_ok.p(10) :                               "b"
+; assignment_test_ok.p(10) :                       "="
+; assignment_test_ok.p(10) :                       BooleanConstantExpression
+; assignment_test_ok.p(10) :                           BooleanConstant
+; assignment_test_ok.p(10) :                               "true"
+; assignment_test_ok.p(10) :                       ";"
+; assignment_test_ok.p(11) :               Statement
+; assignment_test_ok.p(11) :                   AssignmentStatement
+; assignment_test_ok.p(11) :                       VariableExpression
+; assignment_test_ok.p(11) :                           VariableName
+; assignment_test_ok.p(11) :                               "i"
+; assignment_test_ok.p(11) :                       "="
+; assignment_test_ok.p(11) :                       IntegerConstantExpression
+; assignment_test_ok.p(11) :                           IntegerConstant
+; assignment_test_ok.p(11) :                               "1"
+; assignment_test_ok.p(11) :                       ";"
+; assignment_test_ok.p(12) :               Statement
+; assignment_test_ok.p(12) :                   AssignmentStatement
+; assignment_test_ok.p(12) :                       VariableExpression
+; assignment_test_ok.p(12) :                           VariableName
+; assignment_test_ok.p(12) :                               "j"
+; assignment_test_ok.p(12) :                       "="
+; assignment_test_ok.p(12) :                       VariableExpression
+; assignment_test_ok.p(12) :                           VariableName
+; assignment_test_ok.p(12) :                               "i"
+; assignment_test_ok.p(12) :                       ";"
+; assignment_test_ok.p(13) :               Statement
+; assignment_test_ok.p(13) :                   AssignmentStatement
+; assignment_test_ok.p(13) :                       VariableExpression
+; assignment_test_ok.p(13) :                           VariableName
+; assignment_test_ok.p(13) :                               "k"
+; assignment_test_ok.p(13) :                       "="
+; assignment_test_ok.p(13) :                       PlusExpression
+; assignment_test_ok.p(13) :                           VariableExpression
+; assignment_test_ok.p(13) :                               VariableName
+; assignment_test_ok.p(13) :                                   "j"
+; assignment_test_ok.p(13) :                           "+"
+; assignment_test_ok.p(13) :                           IntegerConstantExpression
+; assignment_test_ok.p(13) :                               IntegerConstant
+; assignment_test_ok.p(13) :                                   "1"
+; assignment_test_ok.p(13) :                       ";"
+; assignment_test_ok.p(14) :               Statement
+; assignment_test_ok.p(14) :                   WriteStatement
+; assignment_test_ok.p(14) :                       "write"
+; assignment_test_ok.p(14) :                       VariableExpression
+; assignment_test_ok.p(14) :                           VariableName
+; assignment_test_ok.p(14) :                               "i"
+; assignment_test_ok.p(14) :                       ";"
+; assignment_test_ok.p(15) :               Statement
+; assignment_test_ok.p(15) :                   WriteStatement
+; assignment_test_ok.p(15) :                       "write"
+; assignment_test_ok.p(15) :                       VariableExpression
+; assignment_test_ok.p(15) :                           VariableName
+; assignment_test_ok.p(15) :                               "j"
+; assignment_test_ok.p(15) :                       ";"
+; assignment_test_ok.p(16) :               Statement
+; assignment_test_ok.p(16) :                   WriteStatement
+; assignment_test_ok.p(16) :                       "write"
+; assignment_test_ok.p(16) :                       VariableExpression
+; assignment_test_ok.p(16) :                           VariableName
+; assignment_test_ok.p(16) :                               "k"
+; assignment_test_ok.p(16) :                       ";"
+; assignment_test_ok.p(17) :           "}"
