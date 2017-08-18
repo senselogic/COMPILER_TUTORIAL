@@ -1,8 +1,8 @@
-# P-Code Tutorial
+# Compiler Tutorial
 
 ## Purpose
 
-Shows how to translate a minimalistic Go-like language to P-Code instructions, using Flex and Bison.
+Shows how to compile a minimalistic Go-like language to P-Code instructions, using Flex and Bison.
 
 ## Example
 

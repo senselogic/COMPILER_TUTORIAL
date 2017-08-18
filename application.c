@@ -1,15 +1,15 @@
 /*
-    This file is part of the PCodeTutorial distribution.
+    This file is part of the CompilerTutorial distribution.
 
-    https://github.com/senselogic/PCODE_TUTORIAL
+    https://github.com/senselogic/COMPILER_TUTORIAL
 
     Copyright (C) 2017 Eric Pelzer (ecstatic.coder@gmail.com)
 
-    PCodeTutorial is free software: you can redistribute it and/or modify
+    CompilerTutorial is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, version 3.
 
-    PCodeTutorial is distributed in the hope that it will be useful,
+    CompilerTutorial is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
