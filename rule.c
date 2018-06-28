@@ -487,7 +487,7 @@ void ParseFunctionTypeRule(
     Assert( function_type_token != 0 );
 
     token_type = function_type_token->Type;
-    
+
     if ( token_type == TOKEN_TYPE_Void )
     {
         *function_value_type = VALUE_TYPE_Void;
@@ -527,7 +527,7 @@ void ParseVariableTypeRule(
     Assert( variable_type_token != 0 );
 
     token_type = variable_type_token->Type;
-    
+
     if ( token_type == TOKEN_TYPE_Bool )
     {
         *variable_value_type = VALUE_TYPE_Bool;
@@ -535,11 +535,11 @@ void ParseVariableTypeRule(
     }
     else
     {
-		Assert( token_type == TOKEN_TYPE_Int );
+        Assert( token_type == TOKEN_TYPE_Int );
         *variable_value_type = VALUE_TYPE_Int;
         *variable_cell_count = 1;
     }
-  
+
 }
 
 // ~~
@@ -1511,7 +1511,7 @@ void ParseLocalDeclarationRule(
     {
         ParseVariableDeclarationRule( sub_rule, local_code, function );
     }
-    else 
+    else
     {
         Assert( sub_rule->Type == RULE_TYPE_FunctionDeclaration );
 
@@ -1719,11 +1719,11 @@ void ParseForStatementRule(
     int
         label_index;
     RULE
-		* variable_expression_rule,
+        * variable_expression_rule,
         * expression_rule,
         * statement_list_rule;
     VALUE_TYPE
-		variable_expression_value_type,
+        variable_expression_value_type,
         expression_value_type;
     VARIABLE
         * variable;
@@ -1734,7 +1734,7 @@ void ParseForStatementRule(
     Assert( function != 0 );
 
     label_index = MakeLabelIndex();
-	
+
     AddRuleLocationText2( for_statement_code, "; ", for_statement_rule );
     AddRuleText3( for_statement_code, "", for_statement_rule, 2, "\n" );
 
@@ -1756,7 +1756,7 @@ void ParseForStatementRule(
 
     AddText( for_statement_code, "sto i\n" );
     AddIntegerText3( for_statement_code, "define @for_", label_index, "\n" );
-	
+
     ParseVariableExpressionRule( variable_expression_rule, for_statement_code, &variable_expression_value_type, 0, function );
     SetNextExpressionRule( expression_rule, expression_rule );
     ParseExpressionRule( expression_rule, for_statement_code, &expression_value_type, 0, function );
@@ -1766,19 +1766,19 @@ void ParseForStatementRule(
         PrintRuleError( for_statement_rule, "bad value type", GetValueTypeString( expression_value_type ), 0 );
     }
 
-	AddText( for_statement_code, "leq i\n" );	
+    AddText( for_statement_code, "leq i\n" );
     AddIntegerText3( for_statement_code, "fjp @for_end_", label_index, "\n" );
 
     SetNextRule( statement_list_rule, expression_rule, RULE_TYPE_StatementList );
     Assert( statement_list_rule->NextRule == 0 );
     ParseStatementListRule( statement_list_rule, for_statement_code, function );
 
-	ParseVariableExpressionRule( variable_expression_rule, for_statement_code, &variable_expression_value_type, &variable, function );
-	ParseVariableExpressionRule( variable_expression_rule, for_statement_code, &variable_expression_value_type, 0, function );
+    ParseVariableExpressionRule( variable_expression_rule, for_statement_code, &variable_expression_value_type, &variable, function );
+    ParseVariableExpressionRule( variable_expression_rule, for_statement_code, &variable_expression_value_type, 0, function );
 
-	AddText( for_statement_code, "ldc i 1\n" );
-	AddText( for_statement_code, "add i\n" );
-	AddText( for_statement_code, "sto i\n" );
+    AddText( for_statement_code, "ldc i 1\n" );
+    AddText( for_statement_code, "add i\n" );
+    AddText( for_statement_code, "sto i\n" );
     AddIntegerText3( for_statement_code, "ujp @for_", label_index, "\n" );
     AddIntegerText3( for_statement_code, "define @for_end_", label_index, "\n" );
 }
@@ -1908,9 +1908,9 @@ void ParseExpressionStatementRule(
     Assert( expression_statement_rule->Type == RULE_TYPE_ExpressionStatement );
     Assert( expression_statement_code != 0 );
     Assert( function != 0 );
-        
+
     sub_rule = expression_statement_rule->FirstSubRule;
-    
+
     ParseExpressionRule( sub_rule, expression_statement_code, &expression_value_type, 0, function );
 }
 
@@ -1956,7 +1956,7 @@ void ParseStatementRule(
     {
         ParseForStatementRule( sub_rule, statement_code, function );
     }
-	else if ( sub_rule->Type == RULE_TYPE_WriteStatement )
+    else if ( sub_rule->Type == RULE_TYPE_WriteStatement )
     {
         ParseWriteStatementRule( sub_rule, statement_code, function );
     }
@@ -2117,7 +2117,7 @@ void ParseProgramRule(
     Assert( program_rule->Type == RULE_TYPE_Program );
     Assert( program_code != 0 );
     Assert( program != 0 );
-	
+
     AddText( program_code, "ssp 0\n" );
     AddText( program_code, "ujp @program\n" );
 

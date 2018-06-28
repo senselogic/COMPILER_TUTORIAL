@@ -24,7 +24,7 @@ const STRING GetTokenTypeString(
         case TOKEN_TYPE_Equal : return "Equal";
         case TOKEN_TYPE_EqualEqual : return "EqualEqual";
         case TOKEN_TYPE_False : return "False";
-		case TOKEN_TYPE_For : return "For";
+        case TOKEN_TYPE_For : return "For";
         case TOKEN_TYPE_Func : return "Func";
         case TOKEN_TYPE_Identifier : return "Identifier";
         case TOKEN_TYPE_If : return "If";
@@ -77,7 +77,7 @@ const STRING GetTokenString(
         case TOKEN_TYPE_Equal : return "=";
         case TOKEN_TYPE_EqualEqual : return "==";
         case TOKEN_TYPE_False : return "false";
-		case TOKEN_TYPE_For : return "for";
+        case TOKEN_TYPE_For : return "for";
         case TOKEN_TYPE_Func : return "func";
         case TOKEN_TYPE_Identifier : return "identifier";
         case TOKEN_TYPE_If : return "if";

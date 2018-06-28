@@ -52,7 +52,7 @@ const STRING GetRuleTypeString(
         case RULE_TYPE_ElseStatement : return "ElseStatement";
         case RULE_TYPE_IfStatement : return "IfStatement";
         case RULE_TYPE_WhileStatement : return "WhileStatement";
-		case RULE_TYPE_ForStatement : return "ForStatement";
+        case RULE_TYPE_ForStatement : return "ForStatement";
         case RULE_TYPE_WriteStatement : return "WriteStatement";
         case RULE_TYPE_ReadStatement : return "ReadStatement";
         case RULE_TYPE_ReturnStatement : return "ReturnStatement";

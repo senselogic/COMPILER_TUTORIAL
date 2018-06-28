@@ -52,7 +52,7 @@
         RULE_TYPE_ElseStatement,
         RULE_TYPE_IfStatement,
         RULE_TYPE_WhileStatement,
-		RULE_TYPE_ForStatement,
+        RULE_TYPE_ForStatement,
         RULE_TYPE_WriteStatement,
         RULE_TYPE_ReadStatement,
         RULE_TYPE_ReturnStatement,

@@ -120,7 +120,7 @@
         const CALL * call
         );
 
-	// ~~
+    // ~~
 
     int GetCalledFunctionDepth(
         const FUNCTION * called_function,

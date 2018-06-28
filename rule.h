@@ -363,7 +363,7 @@
         CODE * variable_code,
         FUNCTION * function
         );
-        
+
     // ~~
 
     void ParseVariableDeclarationRule(
@@ -419,8 +419,8 @@
         CODE * while_statement_code,
         FUNCTION * function
         );
-		
-	// ~~
+
+    // ~~
 
     void ParseForStatementRule(
         RULE * for_statement_rule,
