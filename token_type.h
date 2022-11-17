@@ -19,7 +19,7 @@
 
     enum
     {
-        TOKEN_TYPE_ClosingBracerst = TOKEN_TYPE_And,
+        TOKEN_TYPE_First = TOKEN_TYPE_And,
         TOKEN_TYPE_Last = TOKEN_TYPE_Write
     };
 
@@ -28,7 +28,7 @@
     const STRING GetTokenTypeString(
         const TOKEN_TYPE token_type
         );
-    
+
     // ~~
 
     const STRING GetTokenString(

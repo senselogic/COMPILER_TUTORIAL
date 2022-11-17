@@ -10,7 +10,7 @@ const STRING GetTokenTypeString(
     const TOKEN_TYPE token_type
     )
 {
-    Assert( token_type >= TOKEN_TYPE_ClosingBracerst && token_type <= TOKEN_TYPE_Last );
+    Assert( token_type >= TOKEN_TYPE_First && token_type <= TOKEN_TYPE_Last );
 
     switch ( token_type )
     {
@@ -63,7 +63,7 @@ const STRING GetTokenString(
     const TOKEN_TYPE token_type
     )
 {
-    Assert( token_type >= TOKEN_TYPE_ClosingBracerst && token_type <= TOKEN_TYPE_Last );
+    Assert( token_type >= TOKEN_TYPE_First && token_type <= TOKEN_TYPE_Last );
 
     switch ( token_type )
     {

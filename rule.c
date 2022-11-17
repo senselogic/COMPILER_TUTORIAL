@@ -174,7 +174,7 @@ TOKEN * AddLastTokenType(
         * last_token;
 
     Assert( rule != 0 );
-    Assert( last_token_type >= TOKEN_TYPE_ClosingBracerst && last_token_type <= TOKEN_TYPE_Last );
+    Assert( last_token_type >= TOKEN_TYPE_First && last_token_type <= TOKEN_TYPE_Last );
 
     last_token = MakeToken( last_token_type );
     AddLastTokens( rule, last_token, last_token );
